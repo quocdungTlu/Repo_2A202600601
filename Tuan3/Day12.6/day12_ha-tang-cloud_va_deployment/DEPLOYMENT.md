@@ -118,7 +118,7 @@ Rate limit kicks in at request 10 (429 Too Many Requests) — **verified working
 |----------|-------|
 | `PORT` | `8000` |
 | `ENVIRONMENT` | `production` |
-| `AGENT_API_KEY` | `059566baa83da0afcdca1b9e480da29d` |
+| `AGENT_API_KEY` | *(secret — set trên Railway dashboard)* |
 | `JWT_SECRET` | *(generated, 64-char hex)* |
 | `RATE_LIMIT_PER_MINUTE` | `10` |
 | `DAILY_BUDGET_USD` | `5.0` |
@@ -134,3 +134,10 @@ curl https://day12-agent-2a202600601-production.up.railway.app/
 # {"app":"Production AI Agent","version":"1.0.0","environment":"production",
 #  "endpoints":{"ask":"POST /ask (requires X-API-Key)","health":"GET /health","ready":"GET /ready"}}
 ```
+
+---
+
+## Screenshots
+
+- [Deployment dashboard](screenshots/dashboard.png)
+- [Service running](screenshots/running.png)

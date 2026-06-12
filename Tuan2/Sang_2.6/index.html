@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trang Web Demo Gemini</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#">Gemini Web Demo</a>
+      <button class="nav-toggle" aria-label="Mở menu">☰</button>
+      <nav class="site-nav">
+        <a href="#features">Tính Năng</a>
+        <a href="#prompt-demo">Prompt Demo</a>
+        <a href="#about">Giới Thiệu</a>
+        <a href="#contact">Liên Hệ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <h1>Trang Web Demo cho Gemini AI</h1>
+        <p>Trang web đơn giản, gọn nhẹ, phù hợp cho trình bày tính năng AI và demo nhanh.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#features">Xem Tính Năng</a>
+          <button class="button button-secondary" id="demoButton">Bật Demo</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="container">
+        <h2>Tính Năng Nổi Bật</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Nhanh và Nhẹ</h3>
+            <p>Giao diện tối giản để người dùng tập trung vào nội dung và trải nghiệm.</p>
+          </article>
+          <article class="card">
+            <h3>Tương Tác</h3>
+            <p>Chức năng demo đơn giản giúp bạn tương tác với nội dung AI trực tiếp.</p>
+          </article>
+          <article class="card">
+            <h3>Thiết Kế Đáp Ứng</h3>
+            <p>Hiển thị tốt trên cả máy tính, tablet và điện thoại di động.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section section-alt">
+      <div class="container">
+        <h2>Giới Thiệu</h2>
+        <p>Đây là một trang web demo được tạo ra nhanh chóng từ code để bạn có thể dùng làm mẫu hoặc tiếp tục phát triển với dự án hiện tại.</p>
+        <ul>
+          <li>Sử dụng HTML, CSS và JavaScript cơ bản.</li>
+          <li>Dễ sửa để tích hợp thêm API hay nội dung động.</li>
+          <li>Phù hợp trình bày ý tưởng hoặc demo học tập.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="prompt-demo" class="section">
+      <div class="container">
+        <h2>Prompt Demo từ prompt.py</h2>
+        <p>Trang web này tải nội dung file <code>prompt.py</code> và hiển thị rõ ràng cấu trúc Zero-shot / Few-shot cùng file prompt nguyên vẹn.</p>
+        <div class="grid prompt-grid">
+          <article class="card">
+            <h3>Thông tin prompt</h3>
+            <div class="prompt-summary">
+              <div><strong>Model hiện tại:</strong> <span id="promptModel">Đang tải...</span></div>
+              <div><strong>Trạng thái tải:</strong> <span id="promptStatus">Chưa tải</span></div>
+            </div>
+            <div class="prompt-block">
+              <h4>Zero-shot prompt</h4>
+              <pre id="zeroShotBlock"><code>Đang tải...</code></pre>
+            </div>
+            <div class="prompt-block">
+              <h4>Few-shot prompt</h4>
+              <pre id="fewShotBlock"><code>Đang tải...</code></pre>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Nội dung file prompt.py</h3>
+            <div id="promptCodeContainer">
+              <pre id="promptCode"><code>Đang tải nội dung file prompt.py...</code></pre>
+            </div>
+          </article>
+        </div>
+
+        <div class="hero-actions" style="margin: 24px 0;">
+          <button class="button button-primary" id="runDemoButton">Chạy demo API</button>
+        </div>
+
+        <div class="card api-result-card">
+          <h4>Kết quả API thực tế</h4>
+          <div id="apiLoading" class="api-loading hidden">
+            <div class="spinner"></div>
+            <span>Đang gọi API backend...</span>
+          </div>
+          <p id="apiStatus" class="api-status-text">Chưa chạy demo. Nhấn nút "Chạy demo API" để lấy dữ liệu từ backend.</p>
+          <div class="api-output-grid">
+            <article class="card api-output-card">
+              <h5>Zero-shot output</h5>
+              <pre id="zeroShotOutput"><code>Chưa chạy.</code></pre>
+            </article>
+            <article class="card api-output-card">
+              <h5>Few-shot output</h5>
+              <pre id="fewShotOutput"><code>Chưa chạy.</code></pre>
+            </article>
+          </div>
+          <div class="api-summary">
+            <p><strong>Model gọi API:</strong> <span id="apiModel">-</span></p>
+          </div>
+        </div>
+
+        <div class="container result-section">
+          <h3>Kết quả mẫu và so sánh</h3>
+          <div class="result-grid">
+            <article class="card">
+              <h4>Zero-shot</h4>
+              <pre><code>{
+  "Sentiment": "Tích cực",
+  "Target": "Bạn TA hỗ trợ",
+  "Emotion_Score": 4
+}</code></pre>
+            </article>
+            <article class="card">
+              <h4>Few-shot</h4>
+              <pre><code>{
+  "Sentiment": "Tích cực",
+  "Target": "Bạn TA hỗ trợ",
+  "Emotion_Score": 4
+}</code></pre>
+            </article>
+          </div>
+          <div class="comparison-card">
+            <h4>So sánh Zero-shot vs Few-shot</h4>
+            <div id="apiComparison">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Tiêu chí</th>
+                    <th>Zero-shot</th>
+                    <th>Few-shot</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Cách tiếp cận</td>
+                    <td>Gọi trực tiếp với phần mô tả yêu cầu.</td>
+                    <td>Cho ví dụ mẫu trước khi hỏi.</td>
+                  </tr>
+                  <tr>
+                    <td>Độ chính xác format</td>
+                    <td>Thấp hơn, dễ sai cấu trúc JSON.</td>
+                    <td>Cao hơn, AI dễ trả về cấu trúc giống mẫu.</td>
+                  </tr>
+                  <tr>
+                    <td>Chi phí token</td>
+                    <td>Thấp hơn vì prompt ngắn.</td>
+                    <td>Cao hơn vì có thêm ví dụ mẫu.</td>
+                  </tr>
+                  <tr>
+                    <td>Thích hợp khi</td>
+                    <td>Muốn thử nhanh, không cần mẫu.</td>
+                    <td>Muốn kết quả ổn định, chuẩn format.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact-panel">
+        <div>
+          <h2>Liên Hệ</h2>
+          <p>Nếu bạn muốn mở rộng trang web này, tôi có thể giúp bạn thêm form, API kết nối hoặc nội dung tự động.</p>
+        </div>
+        <div class="contact-card">
+          <label for="name">Tên của bạn</label>
+          <input id="name" type="text" placeholder="Nhập họ tên" />
+          <label for="message">Tin nhắn</label>
+          <textarea id="message" rows="4" placeholder="Nhập tin nhắn"></textarea>
+          <button id="sendButton" class="button button-primary">Gửi</button>
+          <p class="note">Chỉ là demo tĩnh, nút sẽ hiển thị thông báo ở ngay trang.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Gemini Web Demo. Tạo bởi AI demo.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

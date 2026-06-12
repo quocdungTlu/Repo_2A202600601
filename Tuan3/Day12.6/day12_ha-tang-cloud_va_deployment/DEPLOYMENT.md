@@ -5,163 +5,132 @@
 
 ---
 
-## Local Docker Deployment (verified)
+## Public URL
 
-Ung dung chay thanh cong voi Docker Compose tren may local.
-Cau hinh san sang de deploy len Railway / Render khi co tai khoan.
-
----
+```
+https://day12-agent-2a202600601-production.up.railway.app
+```
 
 ## Platform
 
-Railway (config: `06-lab-complete/railway.toml`) /
-Render  (config: `06-lab-complete/render.yaml`)
+**Railway** — DOCKERFILE builder, multi-stage Python 3.11-slim
+
+- Project: `day12-agent-2A202600601`
+- Region: US West 2 (edge: us-west2)
+- Status: ● Online
 
 ---
 
-## Test Commands (Local Docker)
-
-### Khoi dong
-
-```bash
-cd 06-lab-complete
-cp .env.example .env.local
-# Sua AGENT_API_KEY trong .env.local
-
-docker compose up --build
-```
+## Test Commands & Actual Results
 
 ### Health Check
 
 ```bash
-curl http://localhost:8000/health
+curl https://day12-agent-2a202600601-production.up.railway.app/health
 ```
 
-**Expected:**
+**Actual output:**
 ```json
 {
   "status": "ok",
   "version": "1.0.0",
-  "environment": "staging",
-  "uptime_seconds": 12.4,
-  "total_requests": 3,
+  "environment": "production",
+  "uptime_seconds": 1401.0,
+  "total_requests": 4,
   "checks": {"llm": "mock"},
-  "timestamp": "2026-06-12T04:00:00+00:00"
+  "timestamp": "2026-06-12T09:36:10.330587+00:00"
 }
 ```
 
 ### Readiness Check
 
 ```bash
-curl http://localhost:8000/ready
+curl https://day12-agent-2a202600601-production.up.railway.app/ready
 ```
 
-**Expected:** `{"ready": true}`
+**Actual output:** `{"ready":true}`
 
-### Auth required (no key → 401)
+### Auth Required (no key → 401)
 
 ```bash
-curl -X POST http://localhost:8000/ask \
+curl -X POST https://day12-agent-2a202600601-production.up.railway.app/ask \
   -H "Content-Type: application/json" \
   -d '{"question": "Hello"}'
 ```
 
-**Expected:**
-```json
-{"detail": "Invalid or missing API key. Include header: X-API-Key: <key>"}
-```
-HTTP status: **401**
+**Actual output:** `{"detail":"Invalid or missing API key. Include header: X-API-Key: <key>"}` — HTTP **401**
 
 ### API Test (with authentication)
 
 ```bash
-curl -X POST http://localhost:8000/ask \
-  -H "X-API-Key: dev-key-change-me" \
+curl -X POST https://day12-agent-2a202600601-production.up.railway.app/ask \
+  -H "X-API-Key: <AGENT_API_KEY>" \
   -H "Content-Type: application/json" \
   -d '{"question": "What is Docker?"}'
 ```
 
-**Expected:**
+**Actual output:**
 ```json
 {
   "question": "What is Docker?",
   "answer": "Container la cach dong goi app de chay o moi noi. Build once, run anywhere!",
   "model": "gpt-4o-mini",
-  "timestamp": "2026-06-12T04:00:01+00:00"
+  "timestamp": "2026-06-12T09:36:13.565599+00:00"
 }
 ```
-HTTP status: **200**
+HTTP **200**
 
-### Rate Limiting Test (viet bang bash)
+### Rate Limiting Test (10 req/min)
 
 ```bash
-for i in $(seq 1 25); do
-  STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
-    -X POST http://localhost:8000/ask \
-    -H "X-API-Key: dev-key-change-me" \
-    -H "Content-Type: application/json" \
-    -d "{\"question\":\"Test $i\"}")
+for i in $(seq 1 12); do
+  STATUS=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
+    https://day12-agent-2a202600601-production.up.railway.app/ask \
+    -H "X-API-Key: <KEY>" -H "Content-Type: application/json" \
+    -d "{\"question\":\"test $i\"}")
   echo "Request $i: HTTP $STATUS"
 done
-# Request 1-20:  HTTP 200
-# Request 21-25: HTTP 429 (rate limit = 20 req/min)
 ```
 
----
-
-## Deploy to Railway
-
-```bash
-cd 06-lab-complete
-npm i -g @railway/cli
-railway login
-railway init
-
-railway variables set ENVIRONMENT=production
-railway variables set AGENT_API_KEY=$(openssl rand -hex 16)
-railway variables set JWT_SECRET=$(openssl rand -hex 32)
-railway variables set RATE_LIMIT_PER_MINUTE=10
-railway variables set DAILY_BUDGET_USD=5.0
-
-railway up
-railway domain
-# → https://your-agent-xxxx.railway.app
+**Actual output:**
+```
+Request 1:  HTTP 200
+Request 2:  HTTP 200
+Request 3:  HTTP 200
+Request 4:  HTTP 200
+Request 5:  HTTP 200
+Request 6:  HTTP 200
+Request 7:  HTTP 200
+Request 8:  HTTP 200
+Request 9:  HTTP 200
+Request 10: HTTP 429
+Request 11: HTTP 429
+Request 12: HTTP 429
 ```
 
----
-
-## Deploy to Render
-
-1. Push repo len GitHub (public hoac grant access cho Render).
-2. Render Dashboard → **New** → **Blueprint**.
-3. Connect GitHub repo → Render doc `06-lab-complete/render.yaml`.
-4. Set secrets trong dashboard:
-   - `OPENAI_API_KEY` (neu co)
-   - `AGENT_API_KEY` → Render tu sinh neu `generateValue: true`
-5. Click **Apply** → Deploy tu dong.
-6. Render tra ve URL dang `https://ai-agent-production.onrender.com`.
+Rate limit kicks in at request 10 (429 Too Many Requests) — **verified working**.
 
 ---
 
-## Environment Variables
+## Environment Variables Set
 
-| Variable | Example | Description |
-|----------|---------|-------------|
-| `PORT` | `8000` | Port app lang nghe (inject tu platform) |
-| `ENVIRONMENT` | `production` | development / staging / production |
-| `AGENT_API_KEY` | `secret-key-xxx` | API key bao ve endpoint /ask |
-| `JWT_SECRET` | `random-256-bit` | Secret ky JWT tokens |
-| `REDIS_URL` | `redis://redis:6379/0` | Redis cho rate limit + session |
-| `RATE_LIMIT_PER_MINUTE` | `10` | So request toi da / phut / user |
-| `DAILY_BUDGET_USD` | `5.0` | Budget LLM toi da / ngay |
-| `LOG_LEVEL` | `INFO` | DEBUG / INFO / WARNING |
+| Variable | Value |
+|----------|-------|
+| `PORT` | `8000` |
+| `ENVIRONMENT` | `production` |
+| `AGENT_API_KEY` | `059566baa83da0afcdca1b9e480da29d` |
+| `JWT_SECRET` | *(generated, 64-char hex)* |
+| `RATE_LIMIT_PER_MINUTE` | `10` |
+| `DAILY_BUDGET_USD` | `5.0` |
+| `LOG_LEVEL` | `INFO` |
 
 ---
 
-## Production Readiness Check
+## Service Info
 
 ```bash
-cd 06-lab-complete
-python check_production_ready.py
-# Expected: 17/17 checks passed (100%)
+# Root endpoint
+curl https://day12-agent-2a202600601-production.up.railway.app/
+# {"app":"Production AI Agent","version":"1.0.0","environment":"production",
+#  "endpoints":{"ask":"POST /ask (requires X-API-Key)","health":"GET /health","ready":"GET /ready"}}
 ```

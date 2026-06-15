@@ -1,0 +1,21 @@
+{
+  "team": "quocdungTlu",
+  "phase": "private",
+  "headline": 91.24,
+  "sub": {
+    "correct": 0.6875,
+    "quality": 0.8078,
+    "error": 1.0,
+    "latency": 0.6937,
+    "cost": 0.168,
+    "drift": 0.6162,
+    "prompt": 0.8094
+  },
+  "diag_f1": 0.9,
+  "n": 80,
+  "n_correct": 49,
+  "judge_mode": "offline",
+  "weights_hash": "e81a8ed58d93",
+  "key_hash": "7e3905b75db0",
+  "sig": "7ab0d62e560bbb5ddcf0de0c9b46dc0286b87363fdb9dba173c63757ecf3b3c3"
+}

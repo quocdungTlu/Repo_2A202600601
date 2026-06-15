@@ -59,6 +59,34 @@ _INJECT_RE = re.compile(
     re.IGNORECASE,
 )
 
+# Where a customer note / injected instruction begins (it is DATA, not a command).
+_NOTE_SPLIT = re.compile(
+    r"(?:\n|\.\s|;\s|-\s)*\s*(?:ghi\s*ch[uú]|l[uư]u\s*[yý]|\bnote\b|remark)\b",
+    re.IGNORECASE,
+)
+# Markers that the note carries an injected price/instruction (vs. a harmless note).
+_INJECT_PAYLOAD = re.compile(
+    r"(gi[aá]|price|b[oỏ]\s*qua|ignore|h[eê]\s*th[oô]ng|d[uù]ng\s*gi[aá]|system|đơn\s*gi[aá])",
+    re.IGNORECASE,
+)
+
+
+def _sanitize(question):
+    """Strip a trailing customer note that embeds an injected price/instruction, so the
+    agent sees only the real order. Legal per WRAPPER_API (input sanitize / strip notes).
+    Leaves the question untouched when no injected note is present."""
+    if not isinstance(question, str):
+        return question
+    m = _NOTE_SPLIT.search(question)
+    if not m:
+        return question
+    tail = question[m.start():]
+    if _INJECT_PAYLOAD.search(tail):
+        cleaned = question[:m.start()].strip().rstrip(".;- ")
+        if len(cleaned) >= 10:   # never blank out the order
+            return cleaned
+    return question
+
 _TRANSIENT = {"wrapper_error", "loop", "max_steps", "no_action"}
 
 # Normalize a (possibly verbose) answer down to the single canonical total line, so
@@ -115,20 +143,24 @@ def mitigate(call_next, question, config, context):
                 return cached
 
     injected = bool(_INJECT_RE.search(question or ""))
+    # Strip an injected price/instruction note so the agent computes the REAL order
+    # (legal input sanitize). Keep the original question for cache key + logging.
+    clean_q = _sanitize(question)
 
     # Call with light retry: re-try transient failures (incl. provider exceptions),
     # never a clean answer.
     t0 = time.time()
     attempts = 0
     result = None
-    while attempts < 4:
+    max_attempts = 7
+    while attempts < max_attempts:
         attempts += 1
         try:
-            result = call_next(question, conf)
+            result = call_next(clean_q, conf)
         except Exception:
-            # transient provider/transport error -> back off and retry
-            if attempts < 4:
-                time.sleep(0.4 * attempts)
+            # transient provider/transport error (e.g. rate-limit 429) -> exponential backoff
+            if attempts < max_attempts:
+                time.sleep(min(8.0, 0.8 * (2 ** (attempts - 1))))
                 continue
             result = {"answer": None, "status": "wrapper_error", "steps": 0, "trace": [], "meta": {}}
             break
@@ -137,7 +169,7 @@ def mitigate(call_next, question, config, context):
         if status == "ok" and answer:
             break
         if status in _TRANSIENT:
-            time.sleep(0.3 * attempts)
+            time.sleep(min(8.0, 0.8 * (2 ** (attempts - 1))))
             continue
         break
     wall_ms = int((time.time() - t0) * 1000)

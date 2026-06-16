@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+.DS_Store
+# reports/ ĐƯỢC commit theo yêu cầu nộp bài (summary.json + benchmark_results.json).
+# golden_set.jsonl & corpus.json sinh lại bằng `python data/synthetic_gen.py`.
+data/golden_set.jsonl
+data/corpus.json
+.pytest_cache/
+.deepeval/
+.git.disabled/

@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "version": "Agent_V2_Optimized",
+    "version_key": "v2",
+    "total": 52,
+    "judges": [
+      "gpt-4o",
+      "claude-haiku-4-5-20251001"
+    ],
+    "wall_time_sec": 46.271,
+    "timestamp": "2026-06-16 17:51:16"
+  },
+  "metrics": {
+    "total": 52,
+    "pass": 36,
+    "fail": 16,
+    "avg_score": 3.7885,
+    "avg_faithfulness": 1.0,
+    "avg_relevancy": 0.3684,
+    "avg_safety": 4.9135,
+    "hit_rate": 0.9778,
+    "mrr": 0.9481,
+    "retrieval_evaluated": 45,
+    "agreement_rate": 0.6923,
+    "cohens_kappa": 0.5751,
+    "kappa_interpretation": "Trung bình (Moderate)",
+    "avg_position_bias": 0.0385,
+    "adversarial_total": 7,
+    "adversarial_defended": 5,
+    "guardrail_blocked": 3,
+    "avg_latency": 0.022,
+    "total_cost_usd": 0.040239,
+    "cost_per_eval_usd": 0.000774,
+    "total_tokens": 7558
+  },
+  "regression": {
+    "v1_metrics": {
+      "total": 52,
+      "pass": 34,
+      "fail": 18,
+      "avg_score": 3.6154,
+      "avg_faithfulness": 1.0,
+      "avg_relevancy": 0.3897,
+      "avg_safety": 4.8365,
+      "hit_rate": 0.9333,
+      "mrr": 0.9333,
+      "retrieval_evaluated": 45,
+      "agreement_rate": 0.6154,
+      "cohens_kappa": 0.4897,
+      "kappa_interpretation": "Trung bình (Moderate)",
+      "avg_position_bias": 0.1346,
+      "adversarial_total": 7,
+      "adversarial_defended": 1,
+      "guardrail_blocked": 0,
+      "avg_latency": 0.0184,
+      "total_cost_usd": 0.040081,
+      "cost_per_eval_usd": 0.000771,
+      "total_tokens": 5798
+    },
+    "v2_metrics": {
+      "total": 52,
+      "pass": 36,
+      "fail": 16,
+      "avg_score": 3.7885,
+      "avg_faithfulness": 1.0,
+      "avg_relevancy": 0.3684,
+      "avg_safety": 4.9135,
+      "hit_rate": 0.9778,
+      "mrr": 0.9481,
+      "retrieval_evaluated": 45,
+      "agreement_rate": 0.6923,
+      "cohens_kappa": 0.5751,
+      "kappa_interpretation": "Trung bình (Moderate)",
+      "avg_position_bias": 0.0385,
+      "adversarial_total": 7,
+      "adversarial_defended": 5,
+      "guardrail_blocked": 3,
+      "avg_latency": 0.022,
+      "total_cost_usd": 0.040239,
+      "cost_per_eval_usd": 0.000774,
+      "total_tokens": 7558
+    },
+    "gate": {
+      "decision": "APPROVE",
+      "delta_score": 0.1731,
+      "delta_hit_rate": 0.0445,
+      "cost_growth_ratio": 1.0039,
+      "checks": {
+        "quality_not_regressed": true,
+        "meets_min_score": true,
+        "meets_min_hit_rate": true,
+        "cost_within_budget": true,
+        "latency_within_budget": true
+      },
+      "failed_checks": []
+    }
+  }
+}

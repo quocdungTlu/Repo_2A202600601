@@ -30,15 +30,24 @@ _USAGE = threading.local()
 
 def reset_usage() -> None:
     _USAGE.tokens = 0
+    _USAGE.prompt_tokens = 0
+    _USAGE.completion_tokens = 0
     _USAGE.latency_ms = 0
 
 
 def get_usage() -> dict:
-    return {"tokens": getattr(_USAGE, "tokens", 0), "latency_ms": getattr(_USAGE, "latency_ms", 0)}
+    return {
+        "tokens": getattr(_USAGE, "tokens", 0),
+        "prompt_tokens": getattr(_USAGE, "prompt_tokens", 0),
+        "completion_tokens": getattr(_USAGE, "completion_tokens", 0),
+        "latency_ms": getattr(_USAGE, "latency_ms", 0),
+    }
 
 
 def _record(result: "llm.LLMResult") -> None:
     _USAGE.tokens = getattr(_USAGE, "tokens", 0) + result.total_tokens
+    _USAGE.prompt_tokens = getattr(_USAGE, "prompt_tokens", 0) + result.prompt_tokens
+    _USAGE.completion_tokens = getattr(_USAGE, "completion_tokens", 0) + result.completion_tokens
     _USAGE.latency_ms = getattr(_USAGE, "latency_ms", 0) + result.latency_ms
 
 

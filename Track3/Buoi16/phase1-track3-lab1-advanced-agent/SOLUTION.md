@@ -25,6 +25,18 @@
 Failure modes thật (suy từ `JudgeResult`): ReAct → `wrong_final_answer` (9), `entity_drift` (3),
 `incomplete_multi_hop` (1); Reflexion phục hồi phần lớn, còn `looping` (5) + `reflection_overfit` (1).
 
+### Chi phí thật (gpt-4.1-nano, 60 câu) — `python cost_report.py --runs-dir outputs/hotpot_llm`
+
+| | ReAct | Reflexion |
+|---|---:|---:|
+| Input / Output tokens | 36,917 / 4,356 | 51,764 / 6,471 |
+| **Tổng cost (60 câu)** | **$0.0054** | **$0.0078** |
+| Cost / câu | $0.000091 | $0.000129 |
+| Ước phóng 1,000 câu | $0.09 | $0.13 |
+
+→ Reflexion +10% EM nhưng +43% chi phí; output rất nhỏ nên cost chủ yếu do input/context.
+Bảng đầy đủ ở `BENCHMARK.md` (sinh tự động từ token thật trong runs jsonl).
+
 ### Mock mode (mô phỏng deterministic, 120 câu → 240 records)
 
 | Metric | ReAct | Reflexion | Delta |

@@ -62,23 +62,23 @@ class BaseAgent:
             # Token/latency: dùng số đo thật khi chạy LLM, ngược lại dùng ước lượng.
             if llm.llm_enabled():
                 usage = get_usage()
-                token_estimate = usage["tokens"]
-                latency_ms = usage["latency_ms"]
+                token_estimate, latency_ms = usage["tokens"], usage["latency_ms"]
+                p_tok, c_tok = usage["prompt_tokens"], usage["completion_tokens"]
             else:
                 token_estimate = _estimate_tokens(attempt_id, self.agent_type)
                 latency_ms = _estimate_latency(attempt_id, self.agent_type)
+                p_tok = c_tok = 0
 
-            traces.append(AttemptTrace(attempt_id=attempt_id, answer=answer, score=judge.score, reason=judge.reason, reflection=reflection, token_estimate=token_estimate, latency_ms=latency_ms))
+            traces.append(AttemptTrace(attempt_id=attempt_id, answer=answer, score=judge.score, reason=judge.reason, reflection=reflection, token_estimate=token_estimate, prompt_tokens=p_tok, completion_tokens=c_tok, latency_ms=latency_ms))
             if judge.score == 1:
                 break
 
-        total_tokens = sum(t.token_estimate for t in traces)
         total_latency = sum(t.latency_ms for t in traces)
         if not final_score and llm.llm_enabled():
             failure_mode = _classify_failure_llm(judge, traces, self.agent_type, self.max_attempts)
         else:
             failure_mode = final_failure_mode(example.qid, self.agent_type, bool(final_score))
-        return RunRecord(qid=example.qid, question=example.question, gold_answer=example.gold_answer, agent_type=self.agent_type, predicted_answer=final_answer, is_correct=bool(final_score), attempts=len(traces), token_estimate=total_tokens, latency_ms=total_latency, failure_mode=failure_mode, reflections=reflections, traces=traces)
+        return RunRecord(qid=example.qid, question=example.question, gold_answer=example.gold_answer, agent_type=self.agent_type, predicted_answer=final_answer, is_correct=bool(final_score), attempts=len(traces), token_estimate=sum(t.token_estimate for t in traces), prompt_tokens=sum(t.prompt_tokens for t in traces), completion_tokens=sum(t.completion_tokens for t in traces), latency_ms=total_latency, failure_mode=failure_mode, reflections=reflections, traces=traces)
 
 class ReActAgent(BaseAgent):
     def __init__(self) -> None:
@@ -122,11 +122,13 @@ def run_pair(example: QAExample, max_attempts: int = 3) -> tuple[RunRecord, RunR
         if llm.llm_enabled():
             usage = get_usage()
             token_estimate, latency_ms = usage["tokens"], usage["latency_ms"]
+            p_tok, c_tok = usage["prompt_tokens"], usage["completion_tokens"]
         else:
             token_estimate = _estimate_tokens(attempt_id, "reflexion")
             latency_ms = _estimate_latency(attempt_id, "reflexion")
+            p_tok = c_tok = 0
 
-        traces.append(AttemptTrace(attempt_id=attempt_id, answer=answer, score=judge.score, reason=judge.reason, reflection=reflection, token_estimate=token_estimate, latency_ms=latency_ms))
+        traces.append(AttemptTrace(attempt_id=attempt_id, answer=answer, score=judge.score, reason=judge.reason, reflection=reflection, token_estimate=token_estimate, prompt_tokens=p_tok, completion_tokens=c_tok, latency_ms=latency_ms))
         if judge.score == 1:
             break
 
@@ -135,7 +137,8 @@ def run_pair(example: QAExample, max_attempts: int = 3) -> tuple[RunRecord, RunR
     react_record = RunRecord(
         qid=example.qid, question=example.question, gold_answer=example.gold_answer,
         agent_type="react", predicted_answer=t0.answer, is_correct=react_correct, attempts=1,
-        token_estimate=t0.token_estimate, latency_ms=t0.latency_ms,
+        token_estimate=t0.token_estimate, prompt_tokens=t0.prompt_tokens, completion_tokens=t0.completion_tokens,
+        latency_ms=t0.latency_ms,
         failure_mode=_failure_mode(example.qid, "react", 1, first_judge, [t0], react_correct),
         reflections=[], traces=[t0],
     )
@@ -144,7 +147,8 @@ def run_pair(example: QAExample, max_attempts: int = 3) -> tuple[RunRecord, RunR
     reflexion_record = RunRecord(
         qid=example.qid, question=example.question, gold_answer=example.gold_answer,
         agent_type="reflexion", predicted_answer=traces[-1].answer, is_correct=refl_correct, attempts=len(traces),
-        token_estimate=sum(t.token_estimate for t in traces), latency_ms=sum(t.latency_ms for t in traces),
+        token_estimate=sum(t.token_estimate for t in traces), prompt_tokens=sum(t.prompt_tokens for t in traces),
+        completion_tokens=sum(t.completion_tokens for t in traces), latency_ms=sum(t.latency_ms for t in traces),
         failure_mode=_failure_mode(example.qid, "reflexion", max_attempts, judge, traces, refl_correct),
         reflections=reflections, traces=traces,
     )

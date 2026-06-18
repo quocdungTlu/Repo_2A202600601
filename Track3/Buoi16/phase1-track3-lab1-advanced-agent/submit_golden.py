@@ -69,8 +69,15 @@ def main(
 
     all_records = react_records + reflexion_records
     out_path = Path(out_dir)
+    out_path.mkdir(parents=True, exist_ok=True)
     save_jsonl(out_path / "react_runs.jsonl", react_records)
     save_jsonl(out_path / "reflexion_runs.jsonl", reflexion_records)
+
+    # Lưu wall-clock để cost_report tính running time.
+    (out_path / "run_meta.json").write_text(json.dumps({
+        "mode": mode, "examples": len(examples), "workers": workers,
+        "reflexion_attempts": reflexion_attempts, "elapsed_sec": round(elapsed, 2),
+    }, indent=2), encoding="utf-8")
 
     # File nộp gọn: dự đoán của agent Reflexion (agent tốt nhất).
     predictions = [{"qid": r.qid, "question": r.question, "predicted_answer": r.predicted_answer} for r in reflexion_records]

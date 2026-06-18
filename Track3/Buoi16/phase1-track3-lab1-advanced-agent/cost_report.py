@@ -63,6 +63,16 @@ def main(
     c_refl = _cost(reflexion, price_in, price_out)
     n = react["n"]
 
+    # Running time: wall-clock (chạy song song) lấy từ run_meta nếu có.
+    meta = {}
+    meta_path = d / "run_meta.json"
+    if meta_path.exists():
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    wall = meta.get("elapsed_sec")
+    workers = meta.get("workers")
+    react_compute_s = react["avg_latency_ms"] * n / 1000  # tổng thời gian suy luận (nếu tuần tự)
+    refl_compute_s = reflexion["avg_latency_ms"] * n / 1000
+
     lines: list[str] = []
     lines.append(f"# Lab 16 — Benchmark & Cost ({model})\n")
     lines.append(f"Dữ liệu: {n} câu hỏi · giá `{model}` = ${price_in}/1M in, ${price_out}/1M out\n")
@@ -94,6 +104,21 @@ def main(
     lines.append(f"| Cost / câu | ${c_react/n:.6f} | ${c_refl/n:.6f} |")
     lines.append(f"| Cost / câu đúng | ${c_react/max(react['em']*n,1e-9):.6f} | ${c_refl/max(reflexion['em']*n,1e-9):.6f} |")
     lines.append(f"| Ước phóng {project:,} câu | ${c_react/n*project:.2f} | ${c_refl/n*project:.2f} |")
+    lines.append("")
+
+    # --- Bảng running time ---
+    lines.append("## Running time\n")
+    lines.append("| | ReAct | Reflexion |")
+    lines.append("|---|---:|---:|")
+    lines.append(f"| Avg latency / câu (ms) | {react['avg_latency_ms']:.0f} | {reflexion['avg_latency_ms']:.0f} |")
+    lines.append(f"| Tổng thời gian suy luận nếu tuần tự (s) | {react_compute_s:.1f} | {refl_compute_s:.1f} |")
+    lines.append("")
+    if wall is not None:
+        thr = n / wall if wall else 0
+        speedup = (react_compute_s + refl_compute_s) / wall if wall else 0
+        lines.append(f"- **Wall-clock thực tế (cả 2 agent, {workers} luồng song song): {wall:.1f}s** → {thr:.2f} câu/s")
+        lines.append(f"- Nếu chạy tuần tự sẽ mất ~{react_compute_s + refl_compute_s:.0f}s → song song nhanh hơn **~{speedup:.1f}×**")
+        lines.append(f"- Ước phóng {project:,} câu (wall-clock): **~{wall/n*project/60:.1f} phút**")
     lines.append("")
 
     # --- Kết luận ---

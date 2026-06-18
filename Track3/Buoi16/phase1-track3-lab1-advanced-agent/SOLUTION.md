@@ -25,17 +25,21 @@
 Failure modes thật (suy từ `JudgeResult`): ReAct → `wrong_final_answer` (9), `entity_drift` (3),
 `incomplete_multi_hop` (1); Reflexion phục hồi phần lớn, còn `looping` (5) + `reflection_overfit` (1).
 
-### Chi phí thật (gpt-4.1-nano, 60 câu) — `python cost_report.py --runs-dir outputs/hotpot_llm`
+### Chi phí + Running time thật (gpt-4.1-nano, 60 câu) — `python cost_report.py --runs-dir outputs/hotpot_llm`
 
 | | ReAct | Reflexion |
 |---|---:|---:|
-| Input / Output tokens | 36,917 / 4,356 | 51,764 / 6,471 |
-| **Tổng cost (60 câu)** | **$0.0054** | **$0.0078** |
-| Cost / câu | $0.000091 | $0.000129 |
+| Input / Output tokens | 37,112 / 4,403 | 50,744 / 6,160 |
+| **Tổng cost (60 câu)** | **$0.0055** | **$0.0075** |
+| Cost / câu | $0.000091 | $0.000126 |
 | Ước phóng 1,000 câu | $0.09 | $0.13 |
+| Avg latency / câu | 2.2s | 3.3s |
 
-→ Reflexion +10% EM nhưng +43% chi phí; output rất nhỏ nên cost chủ yếu do input/context.
-Bảng đầy đủ ở `BENCHMARK.md` (sinh tự động từ token thật trong runs jsonl).
+**Running time:** wall-clock thực tế (10 luồng song song, cả 2 agent) = **47s cho 60 câu** (~1.3 câu/s);
+tuần tự sẽ mất ~333s → **nhanh hơn ~7×**. Ước phóng 1.000 câu ≈ **13 phút**.
+
+→ Reflexion +EM (≈+10–17% tuỳ run) nhưng +~38% chi phí; output rất nhỏ nên cost chủ yếu do input/context.
+Bảng đầy đủ ở `BENCHMARK.md` (sinh tự động từ token thật + wall-clock trong runs jsonl/run_meta).
 
 ### Mock mode (mô phỏng deterministic, 120 câu → 240 records)
 

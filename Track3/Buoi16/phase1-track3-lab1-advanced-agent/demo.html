@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lab 16 — Reflexion Agent · Demo</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --line:#30363d; --ink:#e6edf3; --mut:#8b949e;
+    --react:#58a6ff; --refl:#3fb950; --warn:#d29922; --acc:#bc8cff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  header{text-align:center;padding:60px 20px 40px;background:radial-gradient(1200px 400px at 50% -10%,#1f2937,transparent)}
+  header h1{font-size:2.4rem;font-weight:800;letter-spacing:-.5px}
+  header h1 span{background:linear-gradient(90deg,var(--react),var(--refl));-webkit-background-clip:text;background-clip:text;color:transparent}
+  header p{color:var(--mut);margin-top:10px;font-size:1.05rem}
+  .badges{margin-top:18px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .badge{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.85rem;color:var(--mut)}
+  .badge b{color:var(--refl)}
+  section{padding:38px 0;border-top:1px solid var(--line)}
+  h2{font-size:1.5rem;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+  h2 .n{font-size:.8rem;background:var(--acc);color:#1c1428;border-radius:6px;padding:2px 8px;font-weight:700}
+  .sub{color:var(--mut);margin-bottom:22px}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:760px){.g3,.g2{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .kpi{font-size:2rem;font-weight:800} .kpi.r{color:var(--react)} .kpi.f{color:var(--refl)}
+  .kpi small{font-size:.9rem;color:var(--mut);font-weight:400}
+  .lbl{color:var(--mut);font-size:.85rem;text-transform:uppercase;letter-spacing:.5px}
+  table{width:100%;border-collapse:collapse;margin-top:4px;font-variant-numeric:tabular-nums}
+  th,td{padding:11px 12px;text-align:right;border-bottom:1px solid var(--line)}
+  th:first-child,td:first-child{text-align:left}
+  thead th{color:var(--mut);font-size:.82rem;text-transform:uppercase;letter-spacing:.5px}
+  td.r{color:var(--react)} td.f{color:var(--refl);font-weight:600}
+  .delta{color:var(--refl);font-weight:700}
+  .bar{height:26px;border-radius:6px;display:flex;align-items:center;padding:0 10px;color:#0d1117;font-weight:700;font-size:.85rem;min-width:42px}
+  .bar.r{background:var(--react)} .bar.f{background:var(--refl)}
+  .barrow{display:grid;grid-template-columns:90px 1fr;align-items:center;gap:12px;margin:10px 0}
+  .barrow .t{color:var(--mut);font-size:.9rem}
+  pre{background:#0b0f14;border:1px solid var(--line);border-radius:10px;padding:16px;overflow:auto;font-size:.86rem;color:#c9d1d9}
+  code{color:var(--acc)}
+  .req{display:flex;align-items:flex-start;gap:12px;padding:14px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+  .req .ck{color:var(--refl);font-size:1.4rem;line-height:1.2}
+  .req b{display:block}
+  .arch{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;font-size:.9rem}
+  .node{background:#0b0f14;border:1px solid var(--line);border-radius:10px;padding:12px 16px;text-align:center}
+  .node.act{border-color:var(--react)} .node.ev{border-color:var(--warn)} .node.ref{border-color:var(--acc)}
+  .arrow{color:var(--mut);font-size:1.3rem}
+  .pill{display:inline-block;background:#0b0f14;border:1px solid var(--line);border-radius:6px;padding:2px 8px;margin:2px;font-size:.82rem}
+  .pill.fail{border-color:var(--warn);color:var(--warn)}
+  .pill.ok{border-color:var(--refl);color:var(--refl)}
+  footer{padding:40px 20px;text-align:center;color:var(--mut);font-size:.9rem}
+  a{color:var(--react)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Lab 16 — <span>Reflexion Agent</span></h1>
+    <p>Multi-hop QA (HotpotQA) · ReAct vs Reflexion · LLM thật <code>gpt-4.1-nano</code></p>
+    <div class="badges">
+      <span class="badge">Autograde <b>100/100</b></span>
+      <span class="badge">60 câu HotpotQA hard</span>
+      <span class="badge">Token &amp; thời gian <b>đo thật</b></span>
+      <span class="badge">6/6 unit test pass</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- KPI -->
+  <section>
+    <div class="grid g3">
+      <div class="card"><div class="lbl">Exact Match</div><div class="kpi r">76.7%</div><div class="kpi f">93.3% <small>Reflexion</small></div><div style="color:var(--refl);font-weight:700;margin-top:4px">▲ +16.7%</div></div>
+      <div class="card"><div class="lbl">Cost / 60 câu</div><div class="kpi r">$0.0055</div><div class="kpi f">$0.0075 <small>Reflexion</small></div><div style="color:var(--mut);margin-top:4px">+38% chi phí</div></div>
+      <div class="card"><div class="lbl">Running time (song song)</div><div class="kpi f">47s</div><div style="color:var(--mut);margin-top:8px">~7× nhanh hơn chạy tuần tự (~333s)</div></div>
+    </div>
+  </section>
+
+  <!-- Cách hoạt động -->
+  <section>
+    <h2>Reflexion hoạt động thế nào</h2>
+    <p class="sub">Agent tự phản chiếu sau mỗi lần sai, nạp "bài học" vào bộ nhớ để thử lại tốt hơn (tối đa 3 lượt).</p>
+    <div class="card">
+      <div class="arch">
+        <div class="node">Câu hỏi + Context</div><span class="arrow">→</span>
+        <div class="node act">Actor<br><small>trả lời</small></div><span class="arrow">→</span>
+        <div class="node ev">Evaluator<br><small>chấm 0/1 (JSON)</small></div><span class="arrow">→</span>
+        <div class="node ref">Reflector<br><small>rút bài học</small></div>
+      </div>
+      <p style="text-align:center;color:var(--mut);margin-top:14px">↑ nếu sai &amp; còn lượt: <code>reflection_memory</code> được nạp lại cho Actor → thử lại</p>
+    </div>
+  </section>
+
+  <!-- Yêu cầu -->
+  <section>
+    <h2>3 yêu cầu — đã hoàn thành</h2>
+    <div class="grid g3" style="margin-top:10px">
+      <div class="req"><span class="ck">✓</span><div><b>1. Bảng so sánh</b><span style="color:var(--mut)">ReAct vs Reflexion</span></div></div>
+      <div class="req"><span class="ck">✓</span><div><b>2. Bảng cost + running time</b><span style="color:var(--mut)">token &amp; wall-clock thật</span></div></div>
+      <div class="req"><span class="ck">✓</span><div><b>3. Chạy ngay golden set</b><span style="color:var(--mut)">submit_golden.py</span></div></div>
+    </div>
+  </section>
+
+  <!-- Bảng so sánh -->
+  <section>
+    <h2><span class="n">1</span> So sánh ReAct vs Reflexion</h2>
+    <p class="sub">60 câu HotpotQA "hard" · LLM gpt-4.1-nano</p>
+    <div class="card" style="margin-bottom:16px">
+      <div class="barrow"><span class="t">ReAct</span><div class="bar r" style="width:76.7%">EM 76.7%</div></div>
+      <div class="barrow"><span class="t">Reflexion</span><div class="bar f" style="width:93.3%">EM 93.3%</div></div>
+    </div>
+    <div class="card">
+      <table>
+        <thead><tr><th>Metric</th><th>ReAct</th><th>Reflexion</th><th>Delta</th></tr></thead>
+        <tbody>
+          <tr><td>Exact Match (EM)</td><td class="r">0.767</td><td class="f">0.933</td><td class="delta">+0.167</td></tr>
+          <tr><td>Avg attempts</td><td class="r">1.00</td><td class="f">1.33</td><td>+0.33</td></tr>
+          <tr><td>Avg tokens / câu</td><td class="r">692</td><td class="f">948</td><td>+256</td></tr>
+          <tr><td>Avg latency (ms)</td><td class="r">2223</td><td class="f">3334</td><td>+1112</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Cost + time -->
+  <section>
+    <h2><span class="n">2</span> Chi phí &amp; Running time</h2>
+    <p class="sub">Giá gpt-4.1-nano: $0.10 / 1M input · $0.40 / 1M output</p>
+    <div class="grid g2">
+      <div class="card">
+        <table>
+          <thead><tr><th>Cost</th><th>ReAct</th><th>Reflexion</th></tr></thead>
+          <tbody>
+            <tr><td>Input tokens</td><td class="r">37,112</td><td class="f">50,744</td></tr>
+            <tr><td>Output tokens</td><td class="r">4,403</td><td class="f">6,160</td></tr>
+            <tr><td><b>Tổng (60 câu)</b></td><td class="r"><b>$0.0055</b></td><td class="f"><b>$0.0075</b></td></tr>
+            <tr><td>Cost / câu</td><td class="r">$0.000091</td><td class="f">$0.000126</td></tr>
+            <tr><td>Ước phóng 1.000 câu</td><td class="r">$0.09</td><td class="f">$0.13</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <table>
+          <thead><tr><th>Running time</th><th>Giá trị</th></tr></thead>
+          <tbody>
+            <tr><td>Wall-clock (10 luồng song song)</td><td class="f">47.3 s</td></tr>
+            <tr><td>Throughput</td><td>1.27 câu/s</td></tr>
+            <tr><td>Nếu chạy tuần tự</td><td>~333 s</td></tr>
+            <tr><td>Tăng tốc</td><td class="delta">~7.1×</td></tr>
+            <tr><td>Ước phóng 1.000 câu</td><td>~13 phút</td></tr>
+          </tbody>
+        </table>
+        <p style="color:var(--mut);margin-top:10px;font-size:.85rem">Tối ưu <code>run_pair</code>: chạy 1 lượt Reflexion, suy ReAct từ attempt-1 → giảm ~½ số call.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Failure modes -->
+  <section>
+    <h2>Phân tích failure modes <small style="font-size:.8rem;color:var(--mut)">(suy từ JudgeResult thật)</small></h2>
+    <div class="grid g2">
+      <div class="card">
+        <div class="lbl" style="color:var(--react)">ReAct gây ra</div>
+        <div style="margin-top:10px">
+          <span class="pill fail">wrong_final_answer · 7</span>
+          <span class="pill fail">entity_drift · 6</span>
+          <span class="pill fail">incomplete_multi_hop · 1</span>
+          <span class="pill ok">none · 46</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="lbl" style="color:var(--refl)">Reflexion còn lại</div>
+        <div style="margin-top:10px">
+          <span class="pill fail">looping · 4</span>
+          <span class="pill ok">none · 56</span>
+        </div>
+        <p style="color:var(--mut);margin-top:10px;font-size:.85rem">Reflexion phục hồi 10 câu ReAct sai, chỉ còn 4 câu "looping".</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cách chạy -->
+  <section>
+    <h2><span class="n">3</span> Chạy ngay với Golden Test Set</h2>
+    <p class="sub">1 lệnh — loader nuốt mọi format, chạy song song, tự xuất report + predictions + cost.</p>
+    <pre><code># 1) Chạy agent trên golden set (song song)</code>
+python submit_golden.py --dataset data/golden.json --out-dir outputs/golden --workers 10
+
+<code># 2) Bảng benchmark + cost + running time</code>
+python cost_report.py --runs-dir outputs/golden
+
+<code># 3) Chấm điểm</code>
+python autograde.py --report-path outputs/golden/report.json
+
+<code># Dự phòng rớt mạng → mock tức thì</code>
+$env:REFLEXION_USE_LLM=0; python submit_golden.py --dataset data/golden.json --out-dir outputs/golden</pre>
+  </section>
+
+  <!-- Sample predictions -->
+  <section>
+    <h2>Ví dụ dự đoán (predictions sạch)</h2>
+    <div class="card">
+      <span class="pill">yes</span><span class="pill">Animorphs</span><span class="pill">no</span>
+      <span class="pill">Greenwich Village</span><span class="pill">YG Entertainment</span>
+      <span class="pill">Chief of Protocol of the United States</span>
+      <p style="color:var(--mut);margin-top:10px;font-size:.85rem"><code>_clean_answer()</code> gọt bỏ tiền tố lan man → câu trả lời ngắn gọn, tốt cho chấm exact-match.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  Lab 16 · Reflexion Agent — Lương Quốc Dũng ·
+  <a href="https://github.com/quocdungTlu/Repo_2A202600601">GitHub: Repo_2A202600601</a><br>
+  Số liệu đo thật từ <code>gpt-4.1-nano</code> · 60 câu HotpotQA hard · autograde 100/100
+</footer>
+</body>
+</html>

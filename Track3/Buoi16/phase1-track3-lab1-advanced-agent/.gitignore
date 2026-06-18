@@ -8,4 +8,5 @@ env/
 .env
 .pytest_cache/
 outputs/
+nop/
 .DS_Store

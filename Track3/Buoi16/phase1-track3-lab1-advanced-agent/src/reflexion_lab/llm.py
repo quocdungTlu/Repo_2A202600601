@@ -93,5 +93,5 @@ def chat(system: str, user: str, *, temperature: float = 0.0, json_mode: bool = 
                 raise  # lỗi không thể retry (vd 401/400) -> ném ngay
         except (urllib.error.URLError, TimeoutError, OSError, KeyError, json.JSONDecodeError) as e:
             last_err = e
-        time.sleep(2 ** attempt)  # 1s, 2s, 4s, 8s
+        time.sleep(min(2 ** attempt, 8))  # backoff có trần: 1,2,4,8,8,8s
     raise RuntimeError(f"LLM call failed after {MAX_RETRIES} retries: {last_err}")

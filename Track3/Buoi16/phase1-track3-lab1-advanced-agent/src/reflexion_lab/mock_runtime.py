@@ -152,17 +152,38 @@ def _format_context(example: QAExample) -> str:
     return "\n".join(f"[{c.title}] {c.text}" for c in example.context)
 
 
+_ANSWER_PREFIXES = ("the answer is", "answer:", "final answer:", "answer is")
+
+
+def _clean_answer(text: str) -> str:
+    """Gọt câu trả lời actor về dạng ngắn gọn (tốt cho chấm exact-match):
+    bỏ tiền tố lan man, dấu nháy bao quanh, dấu chấm cuối, lấy dòng đầu."""
+    text = (text or "").strip()
+    if not text:
+        return ""
+    text = text.splitlines()[0].strip()  # chỉ giữ dòng đầu
+    low = text.lower()
+    for p in _ANSWER_PREFIXES:
+        if low.startswith(p):
+            text = text[len(p):].strip()
+            break
+    text = text.strip().strip('"\'').strip()
+    if text.endswith(".") and text.count(".") == 1:
+        text = text[:-1].strip()
+    return text
+
+
 def _actor_llm(example: QAExample, reflection_memory: list[str]) -> str:
     memo = ""
     if reflection_memory:
         memo = "\n\nLessons from previous attempts:\n" + "\n".join(f"- {m}" for m in reflection_memory)
-    user = f"Question: {example.question}\n\nContext:\n{_format_context(example)}{memo}\n\nAnswer concisely with only the final answer."
+    user = f"Question: {example.question}\n\nContext:\n{_format_context(example)}{memo}\n\nAnswer concisely with only the final answer (a short phrase, name, or yes/no)."
     try:
         res = llm.chat(ACTOR_SYSTEM, user, temperature=0.0)
     except RuntimeError:
         return ""  # call chết hẳn -> coi như trả lời rỗng (sẽ bị chấm sai), không sập run
     _record(res)
-    return res.text
+    return _clean_answer(res.text)
 
 
 def _evaluator_llm(example: QAExample, answer: str) -> JudgeResult:

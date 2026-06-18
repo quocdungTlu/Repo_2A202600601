@@ -36,3 +36,23 @@ def test_flexible_loader_missing_gold(tmp_path):
     p.write_text(json.dumps([{"qid": "b1", "question": "Q?", "context": []}]), encoding="utf-8")
     ex = load_dataset_flexible(p)
     assert ex[0].gold_answer == ""
+
+
+def test_clean_answer():
+    from src.reflexion_lab.mock_runtime import _clean_answer
+    assert _clean_answer("The answer is Paris.") == "Paris"
+    assert _clean_answer('"Oxford University"') == "Oxford University"
+    assert _clean_answer("Answer: yes\nbecause...") == "yes"
+    assert _clean_answer("") == ""
+
+
+def test_run_pair_react_is_reflexion_first_attempt():
+    """ReAct phải bằng attempt-1 của Reflexion (mock mode)."""
+    from src.reflexion_lab.agents import run_pair
+    from src.reflexion_lab.schemas import QAExample
+    ex = QAExample(qid="hp1", difficulty="easy", question="Q?", gold_answer="A",
+                   context=[{"title": "T", "text": "t"}])
+    react, reflexion = run_pair(ex, max_attempts=3)
+    assert react.agent_type == "react" and reflexion.agent_type == "reflexion"
+    assert react.attempts == 1
+    assert react.predicted_answer == reflexion.traces[0].answer

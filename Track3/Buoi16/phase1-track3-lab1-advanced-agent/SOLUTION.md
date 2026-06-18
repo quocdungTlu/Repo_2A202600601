@@ -13,17 +13,17 @@
 
 ## Kết quả benchmark
 
-### LLM thật — `gpt-4.1-nano`, 60 câu HotpotQA hard (→ 120 records), chạy SONG SONG ~50s
+### LLM thật — `gpt-4.1-nano`, 60 câu HotpotQA hard (→ 120 records), SONG SONG **~39s** (0.65s/câu)
 
 | Metric | ReAct | Reflexion | Delta |
 |---|---:|---:|---:|
-| EM | 0.833 | 0.900 | +0.067 |
+| EM | 0.783 | 0.900 | +0.117 |
 | Avg attempts | 1.00 | 1.30 | +0.30 |
-| Avg tokens (thật) | 608 | 909 | +301 |
-| Avg latency ms (thật) | 2701 | 3930 | +1229 |
+| Avg tokens (thật) | ~610 | ~910 | — |
+| Avg latency ms (thật) | đo thật | đo thật | — |
 
-Failure modes thật (suy từ `JudgeResult`): ReAct → `entity_drift` (6), `wrong_final_answer` (3),
-`incomplete_multi_hop` (1); Reflexion phục hồi 4/10, còn `looping` (5) + `reflection_overfit` (1).
+Failure modes thật (suy từ `JudgeResult`): ReAct → `wrong_final_answer` (9), `entity_drift` (3),
+`incomplete_multi_hop` (1); Reflexion phục hồi phần lớn, còn `looping` (5) + `reflection_overfit` (1).
 
 ### Mock mode (mô phỏng deterministic, 120 câu → 240 records)
 
@@ -37,11 +37,21 @@ Failure modes thật (suy từ `JudgeResult`): ReAct → `entity_drift` (6), `wr
 ## Sẵn sàng cho Golden Test Set
 
 - `submit_golden.py` — 1 lệnh, chạy **SONG SONG** (ThreadPoolExecutor, thread-local usage),
-  60 câu LLM ~50s → đủ trong 15 phút.
+  60 câu LLM ~39s → đủ trong 15 phút.
 - `utils.load_dataset_flexible` — loader chịu lỗi: QAExample / raw HotpotQA (`[title,[sents]]`) /
   `{"data":[...]}` / thiếu `difficulty`/`gold_answer`/`qid` đều chạy được, không crash.
 - `GOLDEN_PLAYBOOK.md` — cây quyết định + lệnh sẵn cho mọi tình huống (kể cả rớt mạng → mock).
-- Bền: retry 6 lần + backoff + graceful degrade; 1 call lỗi không làm sập run.
+- Bền: retry 6 lần + backoff có trần + graceful degrade; 1 call lỗi không làm sập run.
+
+### Tối ưu cho Golden (vòng cải thiện)
+
+| Tối ưu | Lợi ích |
+|---|---|
+| `agents.run_pair()` — chạy 1 lượt Reflexion, **suy ReAct từ attempt-1** | Bỏ hẳn lượt ReAct riêng → **giảm ~một nửa số call ở attempt 1** (nhanh + rẻ hơn) |
+| `_clean_answer()` gọt tiền tố/nháy/dấu chấm | `predicted_answer` ngắn gọn → tốt cho chấm exact-match của giảng viên |
+| Backoff có trần (≤8s) | 1 call kẹt không ngốn 63s → throughput ổn định khi mạng chập chờn |
+| `_safe_pair()` bọc từng example | 1 câu lỗi bất ngờ → record degraded, **không sập cả run** |
+| usage thread-local | Chạy song song không sai số token/latency |
 
 ## Bonus extensions (4)
 

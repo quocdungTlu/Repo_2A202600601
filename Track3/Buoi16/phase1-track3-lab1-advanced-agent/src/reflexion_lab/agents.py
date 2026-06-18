@@ -87,3 +87,65 @@ class ReActAgent(BaseAgent):
 class ReflexionAgent(BaseAgent):
     def __init__(self, max_attempts: int = 3) -> None:
         super().__init__(agent_type="reflexion", max_attempts=max_attempts)
+
+
+def _failure_mode(qid: str, agent_type: str, max_attempts: int, judge: JudgeResult, traces: list[AttemptTrace], correct: bool) -> str:
+    if not correct and llm.llm_enabled():
+        return _classify_failure_llm(judge, traces, agent_type, max_attempts)
+    return final_failure_mode(qid, agent_type, correct)
+
+
+def run_pair(example: QAExample, max_attempts: int = 3) -> tuple[RunRecord, RunRecord]:
+    """Chạy MỘT vòng Reflexion và suy ra cả ReAct lẫn Reflexion record.
+
+    Tối ưu chi phí: ReAct == attempt-1 của Reflexion (cùng actor, chưa có memory),
+    nên không cần chạy ReAct riêng -> tiết kiệm ~một nửa số call ở attempt 1.
+    """
+    reflection_memory: list[str] = []
+    reflections: list[ReflectionEntry] = []
+    traces: list[AttemptTrace] = []
+    first_judge: JudgeResult | None = None
+    judge: JudgeResult | None = None
+    for attempt_id in range(1, max_attempts + 1):
+        reset_usage()
+        answer = actor_answer(example, attempt_id, "reflexion", reflection_memory)
+        judge = evaluator(example, answer)
+        if first_judge is None:
+            first_judge = judge
+
+        reflection: ReflectionEntry | None = None
+        if judge.score == 0 and attempt_id < max_attempts:
+            reflection = reflector(example, attempt_id, judge)
+            reflections.append(reflection)
+            reflection_memory.append(reflection.next_strategy)
+
+        if llm.llm_enabled():
+            usage = get_usage()
+            token_estimate, latency_ms = usage["tokens"], usage["latency_ms"]
+        else:
+            token_estimate = _estimate_tokens(attempt_id, "reflexion")
+            latency_ms = _estimate_latency(attempt_id, "reflexion")
+
+        traces.append(AttemptTrace(attempt_id=attempt_id, answer=answer, score=judge.score, reason=judge.reason, reflection=reflection, token_estimate=token_estimate, latency_ms=latency_ms))
+        if judge.score == 1:
+            break
+
+    t0 = traces[0]
+    react_correct = bool(t0.score)
+    react_record = RunRecord(
+        qid=example.qid, question=example.question, gold_answer=example.gold_answer,
+        agent_type="react", predicted_answer=t0.answer, is_correct=react_correct, attempts=1,
+        token_estimate=t0.token_estimate, latency_ms=t0.latency_ms,
+        failure_mode=_failure_mode(example.qid, "react", 1, first_judge, [t0], react_correct),
+        reflections=[], traces=[t0],
+    )
+
+    refl_correct = bool(traces[-1].score)
+    reflexion_record = RunRecord(
+        qid=example.qid, question=example.question, gold_answer=example.gold_answer,
+        agent_type="reflexion", predicted_answer=traces[-1].answer, is_correct=refl_correct, attempts=len(traces),
+        token_estimate=sum(t.token_estimate for t in traces), latency_ms=sum(t.latency_ms for t in traces),
+        failure_mode=_failure_mode(example.qid, "reflexion", max_attempts, judge, traces, refl_correct),
+        reflections=reflections, traces=traces,
+    )
+    return react_record, reflexion_record

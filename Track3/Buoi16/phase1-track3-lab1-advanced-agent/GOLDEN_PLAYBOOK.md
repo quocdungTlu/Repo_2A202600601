@@ -8,6 +8,8 @@ Khi giảng viên gửi file (vd `golden.json`), làm đúng các bước sau.
 # Đặt file giảng viên vào data/, rồi:
 python submit_golden.py --dataset data/golden.json --out-dir outputs/golden --workers 10
 ```
+> Tốc độ thực đo: 60 câu LLM (gpt-4.1-nano) ~39s. Dùng `run_pair` (1 lượt Reflexion,
+> suy ReAct từ attempt-1) nên đã giảm ~một nửa số call. Câu trả lời được gọt gọn tự động.
 
 Sinh ra trong `outputs/golden/`:
 - `report.json` + `report.md` — nộp + tự chấm

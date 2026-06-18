@@ -21,17 +21,25 @@ from rich import print
 
 load_dotenv()
 from src.reflexion_lab import llm
-from src.reflexion_lab.agents import ReActAgent, ReflexionAgent
+from src.reflexion_lab.agents import run_pair
 from src.reflexion_lab.reporting import build_report, save_report
+from src.reflexion_lab.schemas import RunRecord
 from src.reflexion_lab.utils import load_dataset_flexible, save_jsonl
 
 app = typer.Typer(add_completion=False)
 
 
-def _run_all(agent, examples, workers: int):
-    """Chạy agent trên tất cả example song song, GIỮ NGUYÊN THỨ TỰ."""
-    with ThreadPoolExecutor(max_workers=workers) as ex:
-        return list(ex.map(agent.run, examples))
+def _safe_pair(example, max_attempts: int):
+    """Chạy 1 example; nếu lỗi bất ngờ -> trả record degraded (không sập cả run)."""
+    try:
+        return run_pair(example, max_attempts=max_attempts)
+    except Exception as e:  # noqa: BLE001 - cố ý nuốt mọi lỗi để giữ run sống
+        base = dict(qid=example.qid, question=example.question, gold_answer=example.gold_answer,
+                    predicted_answer="", is_correct=False, token_estimate=0, latency_ms=0,
+                    failure_mode="wrong_final_answer")
+        print(f"[yellow]WARN[/yellow] {example.qid}: {type(e).__name__}: {str(e)[:80]}")
+        return (RunRecord(agent_type="react", attempts=1, **base),
+                RunRecord(agent_type="reflexion", attempts=1, **base))
 
 
 @app.command()
@@ -50,11 +58,14 @@ def main(
     print(f"[cyan]GOLDEN[/cyan] mode={mode.upper()} examples={len(examples)} "
           f"with_gold={has_gold} workers={workers}")
 
+    # Một lượt Reflexion/example -> suy ra cả ReAct (tiết kiệm ~nửa số call ở attempt 1).
     t0 = time.time()
-    react_records = _run_all(ReActAgent(), examples, workers)
-    reflexion_records = _run_all(ReflexionAgent(max_attempts=reflexion_attempts), examples, workers)
+    with ThreadPoolExecutor(max_workers=workers) as ex:
+        pairs = list(ex.map(lambda e: _safe_pair(e, reflexion_attempts), examples))
+    react_records = [p[0] for p in pairs]
+    reflexion_records = [p[1] for p in pairs]
     elapsed = time.time() - t0
-    print(f"[green]Done[/green] in {elapsed:.1f}s")
+    print(f"[green]Done[/green] in {elapsed:.1f}s ({elapsed / max(len(examples), 1):.2f}s/câu)")
 
     all_records = react_records + reflexion_records
     out_path = Path(out_dir)

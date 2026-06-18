@@ -1,0 +1,102 @@
+[
+  {
+    "qid": "gold1",
+    "question": "What is the capital of the country where the Great Wall was built?",
+    "predicted_answer": "Beijing"
+  },
+  {
+    "qid": "gold2",
+    "question": "What genre of music is the composer of Swan Lake most known for?",
+    "predicted_answer": "classical"
+  },
+  {
+    "qid": "gold3",
+    "question": "What currency is used in the country where Machu Picchu is located?",
+    "predicted_answer": "Peruvian sol"
+  },
+  {
+    "qid": "gold4",
+    "question": "In which body of water does the longest river in Africa empty?",
+    "predicted_answer": "Mediterranean Sea"
+  },
+  {
+    "qid": "gold5",
+    "question": "What programming language was used to originally write the operating system created by Linus Torvalds?",
+    "predicted_answer": "C"
+  },
+  {
+    "qid": "gold6",
+    "question": "What is the official language of the country that borders France to the northeast and has Brussels as its capital?",
+    "predicted_answer": "Dutch French German"
+  },
+  {
+    "qid": "gold7",
+    "question": "What award did the director of the 1994 film that is set in Shawshank State Penitentiary receive from the Academy?",
+    "predicted_answer": "none"
+  },
+  {
+    "qid": "gold8",
+    "question": "What planet is the NASA rover Curiosity currently exploring?",
+    "predicted_answer": "Mars"
+  },
+  {
+    "qid": "gold9",
+    "question": "What is the highest mountain in the country where the Colosseum is located?",
+    "predicted_answer": "Mont Blanc"
+  },
+  {
+    "qid": "gold10",
+    "question": "Which element did the scientist who developed the theory of general relativity help theorize could be released from atoms for enormous energy?",
+    "predicted_answer": "uranium"
+  },
+  {
+    "qid": "gold11",
+    "question": "What ocean does the Amazon River flow into?",
+    "predicted_answer": "Atlantic Ocean"
+  },
+  {
+    "qid": "gold12",
+    "question": "What type of government does the country where the Taj Mahal is located have?",
+    "predicted_answer": "federal parliamentary democratic republic"
+  },
+  {
+    "qid": "gold13",
+    "question": "What is the population of the city where the headquarters of the company that created the iPhone is located?",
+    "predicted_answer": "66,000"
+  },
+  {
+    "qid": "gold14",
+    "question": "What strait separates the continent where Mount Kilimanjaro is located from the Arabian Peninsula?",
+    "predicted_answer": "Bab-el-Mandeb strait"
+  },
+  {
+    "qid": "gold15",
+    "question": "Who was the first person to set foot on the celestial body that causes tides on Earth?",
+    "predicted_answer": "Neil Armstrong"
+  },
+  {
+    "qid": "gold16",
+    "question": "What sport is the club that plays at Camp Nou known for?",
+    "predicted_answer": "football"
+  },
+  {
+    "qid": "gold17",
+    "question": "What is the deepest point in the ocean that borders Japan to the east?",
+    "predicted_answer": "Challenger Deep"
+  },
+  {
+    "qid": "gold18",
+    "question": "What nationality was the architect who designed the museum in Bilbao that is part of the Guggenheim network?",
+    "predicted_answer": "Canadian-American"
+  },
+  {
+    "qid": "gold19",
+    "question": "What continent is the country where the pyramids of Giza are located on?",
+    "predicted_answer": "Africa"
+  },
+  {
+    "qid": "gold20",
+    "question": "In what year was the treaty signed that ended the war in which the atomic bomb was first used in combat?",
+    "predicted_answer": "1951"
+  }
+]

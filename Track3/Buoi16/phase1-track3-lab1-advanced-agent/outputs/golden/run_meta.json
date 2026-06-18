@@ -1,0 +1,7 @@
+{
+  "mode": "llm",
+  "examples": 20,
+  "workers": 10,
+  "reflexion_attempts": 3,
+  "elapsed_sec": 11.21
+}

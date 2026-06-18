@@ -1,0 +1,488 @@
+{
+  "meta": {
+    "dataset": "golden.json",
+    "mode": "llm",
+    "num_records": 40,
+    "agents": [
+      "react",
+      "reflexion"
+    ]
+  },
+  "summary": {
+    "react": {
+      "count": 20,
+      "em": 1.0,
+      "avg_attempts": 1,
+      "avg_token_estimate": 454.1,
+      "avg_latency_ms": 5088
+    },
+    "reflexion": {
+      "count": 20,
+      "em": 1.0,
+      "avg_attempts": 1,
+      "avg_token_estimate": 454.1,
+      "avg_latency_ms": 5088
+    },
+    "delta_reflexion_minus_react": {
+      "em_abs": 0.0,
+      "attempts_abs": 0,
+      "tokens_abs": 0.0,
+      "latency_abs": 0
+    }
+  },
+  "failure_modes": {
+    "none": {
+      "react": 20,
+      "reflexion": 20
+    }
+  },
+  "examples": [
+    {
+      "qid": "gold1",
+      "agent_type": "react",
+      "question": "What is the capital of the country where the Great Wall was built?",
+      "gold_answer": "Beijing",
+      "predicted_answer": "Beijing",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold2",
+      "agent_type": "react",
+      "question": "What genre of music is the composer of Swan Lake most known for?",
+      "gold_answer": "classical",
+      "predicted_answer": "classical",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold3",
+      "agent_type": "react",
+      "question": "What currency is used in the country where Machu Picchu is located?",
+      "gold_answer": "Peruvian sol",
+      "predicted_answer": "Peruvian sol",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold4",
+      "agent_type": "react",
+      "question": "In which body of water does the longest river in Africa empty?",
+      "gold_answer": "Mediterranean Sea",
+      "predicted_answer": "Mediterranean Sea",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold5",
+      "agent_type": "react",
+      "question": "What programming language was used to originally write the operating system created by Linus Torvalds?",
+      "gold_answer": "C",
+      "predicted_answer": "C",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold6",
+      "agent_type": "react",
+      "question": "What is the official language of the country that borders France to the northeast and has Brussels as its capital?",
+      "gold_answer": "Dutch, French, and German",
+      "predicted_answer": "Dutch French German",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold7",
+      "agent_type": "react",
+      "question": "What award did the director of the 1994 film that is set in Shawshank State Penitentiary receive from the Academy?",
+      "gold_answer": "no Academy Award win",
+      "predicted_answer": "none",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold8",
+      "agent_type": "react",
+      "question": "What planet is the NASA rover Curiosity currently exploring?",
+      "gold_answer": "Mars",
+      "predicted_answer": "Mars",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold9",
+      "agent_type": "react",
+      "question": "What is the highest mountain in the country where the Colosseum is located?",
+      "gold_answer": "Mont Blanc",
+      "predicted_answer": "Mont Blanc",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold10",
+      "agent_type": "react",
+      "question": "Which element did the scientist who developed the theory of general relativity help theorize could be released from atoms for enormous energy?",
+      "gold_answer": "uranium",
+      "predicted_answer": "uranium",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold11",
+      "agent_type": "react",
+      "question": "What ocean does the Amazon River flow into?",
+      "gold_answer": "Atlantic Ocean",
+      "predicted_answer": "Atlantic Ocean",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold12",
+      "agent_type": "react",
+      "question": "What type of government does the country where the Taj Mahal is located have?",
+      "gold_answer": "federal parliamentary democratic republic",
+      "predicted_answer": "federal parliamentary democratic republic",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold13",
+      "agent_type": "react",
+      "question": "What is the population of the city where the headquarters of the company that created the iPhone is located?",
+      "gold_answer": "approximately 66000",
+      "predicted_answer": "66,000",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold14",
+      "agent_type": "react",
+      "question": "What strait separates the continent where Mount Kilimanjaro is located from the Arabian Peninsula?",
+      "gold_answer": "Bab-el-Mandeb",
+      "predicted_answer": "Bab-el-Mandeb strait",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold15",
+      "agent_type": "react",
+      "question": "Who was the first person to set foot on the celestial body that causes tides on Earth?",
+      "gold_answer": "Neil Armstrong",
+      "predicted_answer": "Neil Armstrong",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold16",
+      "agent_type": "react",
+      "question": "What sport is the club that plays at Camp Nou known for?",
+      "gold_answer": "football",
+      "predicted_answer": "football",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold17",
+      "agent_type": "react",
+      "question": "What is the deepest point in the ocean that borders Japan to the east?",
+      "gold_answer": "Challenger Deep",
+      "predicted_answer": "Challenger Deep",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold18",
+      "agent_type": "react",
+      "question": "What nationality was the architect who designed the museum in Bilbao that is part of the Guggenheim network?",
+      "gold_answer": "Canadian-American",
+      "predicted_answer": "Canadian-American",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold19",
+      "agent_type": "react",
+      "question": "What continent is the country where the pyramids of Giza are located on?",
+      "gold_answer": "Africa",
+      "predicted_answer": "Africa",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold20",
+      "agent_type": "react",
+      "question": "In what year was the treaty signed that ended the war in which the atomic bomb was first used in combat?",
+      "gold_answer": "1951",
+      "predicted_answer": "1951",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold1",
+      "agent_type": "reflexion",
+      "question": "What is the capital of the country where the Great Wall was built?",
+      "gold_answer": "Beijing",
+      "predicted_answer": "Beijing",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold2",
+      "agent_type": "reflexion",
+      "question": "What genre of music is the composer of Swan Lake most known for?",
+      "gold_answer": "classical",
+      "predicted_answer": "classical",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold3",
+      "agent_type": "reflexion",
+      "question": "What currency is used in the country where Machu Picchu is located?",
+      "gold_answer": "Peruvian sol",
+      "predicted_answer": "Peruvian sol",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold4",
+      "agent_type": "reflexion",
+      "question": "In which body of water does the longest river in Africa empty?",
+      "gold_answer": "Mediterranean Sea",
+      "predicted_answer": "Mediterranean Sea",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold5",
+      "agent_type": "reflexion",
+      "question": "What programming language was used to originally write the operating system created by Linus Torvalds?",
+      "gold_answer": "C",
+      "predicted_answer": "C",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold6",
+      "agent_type": "reflexion",
+      "question": "What is the official language of the country that borders France to the northeast and has Brussels as its capital?",
+      "gold_answer": "Dutch, French, and German",
+      "predicted_answer": "Dutch French German",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold7",
+      "agent_type": "reflexion",
+      "question": "What award did the director of the 1994 film that is set in Shawshank State Penitentiary receive from the Academy?",
+      "gold_answer": "no Academy Award win",
+      "predicted_answer": "none",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold8",
+      "agent_type": "reflexion",
+      "question": "What planet is the NASA rover Curiosity currently exploring?",
+      "gold_answer": "Mars",
+      "predicted_answer": "Mars",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold9",
+      "agent_type": "reflexion",
+      "question": "What is the highest mountain in the country where the Colosseum is located?",
+      "gold_answer": "Mont Blanc",
+      "predicted_answer": "Mont Blanc",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold10",
+      "agent_type": "reflexion",
+      "question": "Which element did the scientist who developed the theory of general relativity help theorize could be released from atoms for enormous energy?",
+      "gold_answer": "uranium",
+      "predicted_answer": "uranium",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold11",
+      "agent_type": "reflexion",
+      "question": "What ocean does the Amazon River flow into?",
+      "gold_answer": "Atlantic Ocean",
+      "predicted_answer": "Atlantic Ocean",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold12",
+      "agent_type": "reflexion",
+      "question": "What type of government does the country where the Taj Mahal is located have?",
+      "gold_answer": "federal parliamentary democratic republic",
+      "predicted_answer": "federal parliamentary democratic republic",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold13",
+      "agent_type": "reflexion",
+      "question": "What is the population of the city where the headquarters of the company that created the iPhone is located?",
+      "gold_answer": "approximately 66000",
+      "predicted_answer": "66,000",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold14",
+      "agent_type": "reflexion",
+      "question": "What strait separates the continent where Mount Kilimanjaro is located from the Arabian Peninsula?",
+      "gold_answer": "Bab-el-Mandeb",
+      "predicted_answer": "Bab-el-Mandeb strait",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold15",
+      "agent_type": "reflexion",
+      "question": "Who was the first person to set foot on the celestial body that causes tides on Earth?",
+      "gold_answer": "Neil Armstrong",
+      "predicted_answer": "Neil Armstrong",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold16",
+      "agent_type": "reflexion",
+      "question": "What sport is the club that plays at Camp Nou known for?",
+      "gold_answer": "football",
+      "predicted_answer": "football",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold17",
+      "agent_type": "reflexion",
+      "question": "What is the deepest point in the ocean that borders Japan to the east?",
+      "gold_answer": "Challenger Deep",
+      "predicted_answer": "Challenger Deep",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold18",
+      "agent_type": "reflexion",
+      "question": "What nationality was the architect who designed the museum in Bilbao that is part of the Guggenheim network?",
+      "gold_answer": "Canadian-American",
+      "predicted_answer": "Canadian-American",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold19",
+      "agent_type": "reflexion",
+      "question": "What continent is the country where the pyramids of Giza are located on?",
+      "gold_answer": "Africa",
+      "predicted_answer": "Africa",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "gold20",
+      "agent_type": "reflexion",
+      "question": "In what year was the treaty signed that ended the war in which the atomic bomb was first used in combat?",
+      "gold_answer": "1951",
+      "predicted_answer": "1951",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    }
+  ],
+  "extensions": [
+    "structured_evaluator",
+    "reflection_memory",
+    "benchmark_report_json",
+    "mock_mode_for_autograding"
+  ],
+  "discussion": "Across 40 runs, Reflexion lifted exact-match from 100.00% (ReAct) to 100.00% (delta +0.0000), at the cost of more attempts (+0.00), more tokens (+0) and higher latency (+0 ms). The reflection memory was most useful on failure modes that ReAct produced but Reflexion recovered from: none observed. Failure modes that persisted even with reflection were: none \u2014 'looping' shows the agent repeating an unproductive trajectory while 'reflection_overfit' shows the reflection over-correcting away from a near-correct answer. Net takeaway: Reflexion pays off when the first error is a recoverable reasoning gap (an incomplete hop or an entity drift) that a concrete next-attempt strategy can close, but it cannot rescue questions where the evaluator signal is weak or the agent gets stuck in a loop, and the extra token/latency budget must be justified by the EM gain."
+}

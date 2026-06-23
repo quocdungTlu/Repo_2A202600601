@@ -57,12 +57,14 @@ def parse_doc(path: str) -> dict:
     # Full Content: lấy phần sau "Full Content:"
     idx = raw.find("Full Content:")
     content = raw[idx + len("Full Content:"):] if idx != -1 else raw
-    fields["content"] = clean_content(content)
+    cleaned = clean_content(content)
+    fields["content"] = cleaned[: config.MAX_DOC_CHARS]          # cho flat_rag (tương thích cũ)
+    fields["full_content"] = cleaned[: config.FULL_DOC_CHARS]    # cho extraction (chunk được)
     return fields
 
 
 def clean_content(text: str) -> str:
-    """Loại boilerplate + nén khoảng trắng, cắt còn MAX_DOC_CHARS."""
+    """Loại boilerplate + nén khoảng trắng (KHÔNG cắt — caller tự cắt)."""
     lines = []
     for line in text.splitlines():
         line = line.strip()
@@ -72,8 +74,7 @@ def clean_content(text: str) -> str:
             continue
         lines.append(line)
     cleaned = " ".join(lines)
-    cleaned = re.sub(r"\s+", " ", cleaned)
-    return cleaned[: config.MAX_DOC_CHARS]
+    return re.sub(r"\s+", " ", cleaned)
 
 
 # ----------------------------- LLM extraction -----------------------------
@@ -113,17 +114,35 @@ def _parse_json(text: str) -> dict:
 
 
 def extract_from_doc(llm: LLM, doc: dict, doc_id: str) -> list[dict]:
-    if not doc["content"].strip():
+    """Trích triples từ 1 doc. Doc dài -> chunk theo MAX_DOC_CHARS rồi trích từng phần."""
+    full = doc.get("full_content") or doc.get("content", "")
+    if not full.strip():
         return []
     header = f"Title: {doc['title']}\nTopic query: {doc['query']}\n\n"
-    user = header + "Document:\n" + doc["content"]
-    out = _parse_json(llm.chat(EXTRACT_SYS, user, stage="extract_text", max_tokens=2000))
+
+    # cắt full_content thành tối đa MAX_EXTRACT_CHUNKS chunk
+    chunks = [full[i:i + config.MAX_DOC_CHARS] for i in range(0, len(full), config.MAX_DOC_CHARS)]
+    chunks = chunks[: config.MAX_EXTRACT_CHUNKS]
+
     triples = []
-    for t in out.get("triples", []) or []:
-        s = str(t.get("subject", "")).strip()
-        r = str(t.get("relation", "")).strip().upper().replace(" ", "_")
-        o = str(t.get("object", "")).strip()
-        if s and r and o and s.lower() != o.lower():
+    seen = set()
+    for chunk in chunks:
+        if not chunk.strip():
+            continue
+        # KHÔNG thêm hậu tố "(part X/N)" — nó gây nhiễu output của model (một số chunk
+        # trả rỗng) và làm chunk đầu lệch khỏi prompt gốc. Giữ prompt thuần nhất.
+        user = header + "Document:\n" + chunk
+        out = _parse_json(llm.chat(EXTRACT_SYS, user, stage="extract_text", max_tokens=2000))
+        for t in out.get("triples", []) or []:
+            s = str(t.get("subject", "")).strip()
+            r = str(t.get("relation", "")).strip().upper().replace(" ", "_")
+            o = str(t.get("object", "")).strip()
+            if not (s and r and o) or s.lower() == o.lower():
+                continue
+            key = (s.lower(), r, o.lower())
+            if key in seen:                 # khử trùng triple trong cùng doc
+                continue
+            seen.add(key)
             triples.append({"subject": s, "relation": r, "object": o,
                             "kind": "edge", "source": doc_id})
     return triples

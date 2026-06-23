@@ -3,44 +3,81 @@
   "entities": [
     "1974",
     "23 CFR 680.106",
+    "AAA Electric Vehicle Range Testing Report",
+    "AAdvantage",
     "ACC",
     "AFDC",
     "AI and geopolitics",
     "AI infrastructure build-out",
     "APEC Summit",
+    "ARPA-E",
     "Abigail Ross Hopper",
+    "Accelerated Answers",
+    "Accelerating fleet electrification in Europe",
     "Advanced Clean Fleets Regulation",
     "Advanced Electric Cars 2020-2040",
+    "Aero Crew Solutions",
     "Agency Forward",
+    "Airline ImPax Report",
+    "Akshay Singh",
+    "Alaska Airlines",
     "Alec Tyson",
+    "Ali Tanweer",
     "Alison Spencer",
+    "AlixPartners",
     "All-electric vehicles",
     "Alliance for Automotive Innovation",
     "AllianceBernstein",
     "Allianz Global Investors",
+    "Alternative Fuel Data Center",
     "Alternative Fueling Station Locator",
     "Alternative Fuels Data Center",
+    "Amazon",
     "American Airlines",
+    "American Axle",
     "American Axle & Manufacturing",
+    "American EV investments",
     "American Trends Panel",
     "Americans",
+    "Ampere",
+    "Anand Manthena",
     "Andrew Yates",
     "Andy An",
+    "Anna-Sophie Smith",
+    "Annual General Meeting",
+    "Anthony Williams",
     "Anti-Foreign Sanctions Law",
+    "Appendix A",
+    "Apple",
     "Argentina",
     "Argonne National Laboratory",
+    "Ascend Elements",
     "Atlanta",
     "Audi",
+    "Austin",
+    "Australian Strategic Policy Institute",
     "AustralianSuper",
+    "Autopilot system",
+    "Autotrader",
+    "Avatr",
     "BAIC",
+    "BCD Travel",
+    "BEV",
     "BMW",
     "BNY Investments",
+    "BPI France",
     "BYD",
+    "BYD batteries",
     "Ban on polluting vehicles",
+    "Bank of England",
     "Barron’s",
     "Bas Kooijman",
+    "Battery Materials",
     "Battery electric vehicles",
     "Battery factories",
+    "Battery-electric vehicles",
+    "Bay Area Charge Program",
+    "Beat",
     "Beijing",
     "Berkshire Hathaway",
     "Beyond Tailpipe Emissions Calculator",
@@ -51,18 +88,31 @@
     "Bitcoin",
     "BlackRock",
     "Blackwell platform",
+    "Blink",
     "Bloomberg",
+    "Bloomberg Electric Vehicles Index",
     "Bloomberg Finance LP",
     "Bloomberg TV",
     "BloombergNEF",
+    "BluSmart",
+    "Boeing",
     "Bosch Fuel Cell Power Module",
+    "Boston",
     "Box-Jenkins method",
+    "Brazil",
+    "Brembo",
     "Brexit",
     "Build a Better Grid Initiative",
     "Bureau of Industry and Security",
+    "BusinessTravelers",
     "CATL",
+    "CATL batteries",
+    "CBT News",
+    "CO2 emission standards",
+    "CO2 emissions targets",
     "COVID-19",
     "COVID-19 pandemic",
+    "COVID-19 vaccination",
     "CUDA",
     "Cadillac",
     "California",
@@ -70,71 +120,139 @@
     "California Net Metering",
     "Canada",
     "Capital Group",
+    "Car manufacturers",
     "Carbon neutrality",
     "Carola Binder",
+    "Center for Strategic and International Studies",
+    "Central Hudson EV Make-Ready program",
+    "Central Military Commission",
     "Central banks",
+    "CentralDispatch",
+    "ChargePoint",
     "Charging and Fueling Infrastructure Program",
     "Chengdu-Chongqing Economic Circle",
+    "Chery Automobile",
     "Chevrolet Bolt",
     "Chevy Bolt",
     "Chevy Bolt EV",
     "Chile",
     "China",
     "China EV players",
+    "China Permanent Normal Trade Relations",
     "China Show",
     "China Statistics Bureau",
+    "China's AML laws",
+    "Chinese Academy of Sciences",
+    "Chinese EV Demand",
+    "Chinese EV industry",
+    "Chinese EV innovation",
     "Chinese EV makers",
+    "Chinese EV manufacturers",
+    "Chinese EVs",
+    "Chinese firms",
     "Christos Makridis",
     "Chrysler",
     "Citi BEV Forecast",
     "Citi Research",
     "Citigroup",
+    "City access restrictions",
+    "Clean Cities and Communities",
     "Clean Cities and Communities coalition",
     "Clean Vehicle Tax Credits",
     "Colette Kress",
+    "Colleen Barrett",
     "Columbia Climate School",
     "Columbia University",
+    "Company car schemes",
+    "Consumer attitudes",
     "Consumer attitudes towards EVs",
+    "Contemporary Amperex Technology",
     "Coolidge, Arizona",
+    "Corporate agenda",
+    "Coventry",
     "Cox Automotive",
     "Cox Automotive Dealer Sentiment Index",
+    "Cox Enterprises",
+    "Critical Technology Tracker",
+    "Cybertruck",
+    "DAT Deutsche Automobil Treuhand GmbH",
+    "DOE EV Pro Lite Tool",
+    "Daimler Trucks North America",
     "Daniel Barel",
     "Data-as-a-Service",
+    "Dealer Sentiment Index",
+    "Dealertrack",
+    "DeepWay",
     "Deloitte",
     "Deloitte Insights",
     "Delta Air Lines",
     "Democrats",
     "Department of Energy",
     "Department of Homeland Security",
+    "DoE Advanced Research Projects Agency–Energy",
     "Donald Trump",
+    "Doug Eroh",
+    "Dubai",
     "E-Class",
     "EAVX",
     "ECB easing",
+    "EIT InnoEnergy",
+    "EPA Fuel Economy",
+    "EPA emissions targets",
     "EQT",
+    "EQV",
+    "ETF",
     "EU",
+    "EU guide",
+    "EV Connect",
+    "EV Subsidies",
     "EV adoption",
     "EV batteries",
+    "EV battery industry",
+    "EV battery manufacturing",
+    "EV battery manufacturing operations",
+    "EV car models",
+    "EV chargers",
+    "EV charging infrastructure",
     "EV charging market",
+    "EV charging ports",
+    "EV charging station",
+    "EV charging station credits",
     "EV charging stations",
     "EV demand",
+    "EV exports",
     "EV industry",
     "EV industry stakeholders",
+    "EV investments losses",
     "EV manufacturing investments",
+    "EV market",
     "EV penetration matrix",
+    "EV production targets",
+    "EV road use taxes",
     "EV sales",
+    "EV sales mandates",
     "EV sector policies",
     "EV stocks",
     "EV subsidies",
     "EV tax credit",
+    "EV tax credits",
     "EV volume growth",
+    "EVE",
     "EVSE market",
+    "EVgo",
     "EVs",
     "EVs account for half of all car and truck sales by 2030",
+    "EVs and Battery Supply Chain",
+    "EVs assembled in North America",
+    "EX90",
     "EY",
     "EcoPro BM",
     "Economy",
+    "Electreon",
     "Electric Car Sales, Models & Technologies Database",
+    "Electric Highway Coalition",
     "Electric Power Monthly",
+    "Electric Vehicle Charging Stations map",
     "Electric Vehicle Industry",
     "Electric Vehicle Infrastructure Training Program",
     "Electric Vehicle Market Growth",
@@ -150,52 +268,106 @@
     "Electric vehicle charging stations",
     "Electric vehicle incentives",
     "Electric vehicle mandate",
+    "Electric vehicle market",
     "Electric vehicle prices",
     "Electric vehicle purchases",
+    "Electric vehicle sector sentiment analysis",
     "Electric vehicle sentiment",
     "Electric vehicle supply equipment",
+    "Electric vehicle trends",
     "Electric vehicles",
     "Electricity Sources and Emissions Tool",
+    "Electrify America",
     "Elon Musk",
+    "Emerging markets",
+    "Emilie Harkin",
+    "Emissions regulations",
     "Enchem",
+    "Energy Information Administration",
     "Entity List",
     "Environmental Defense Fund",
     "Environmental tech",
+    "Envision",
     "Erin Mansur",
     "Ethereum",
+    "Eurelectric",
     "Europe",
+    "European CO2 emission targets",
     "European Central Bank",
     "European Commission",
+    "European EV adoption",
+    "European EV manufacturers",
+    "European Federation for Transport and Environment",
+    "European Green Deal",
+    "European Infrastructure Fund",
+    "European Investment Bank",
     "European Union",
+    "European competition regulators",
     "European emissions standards",
+    "Eurovia",
+    "Expedia Group",
+    "Export controls on drones",
     "F-150 Lightning",
     "FDB",
+    "Factorial Energy",
+    "Federal Motor Vehicle Safety Standards",
     "Federal Reserve",
     "Federal Reserve Bank of St. Louis",
+    "Federal Reserve Board",
     "Felix Kuhnert",
+    "Felix Rupalla",
+    "Financial Conduct Authority",
     "Find A Car tool",
+    "First operational EV",
+    "Fisker",
     "Five-Year Plan",
+    "FleetNet America",
     "Ford",
     "Ford Motor Company",
+    "Ford Mustang Mach-E",
+    "Ford plant",
+    "Form 10-K",
+    "Form 10-Q",
+    "Form 20-F",
     "Fortescue Future Industries",
+    "France",
+    "Free Now",
+    "Fuel economy and emission targets",
+    "Fuel stations EV charging point",
     "FuelEconomy.gov",
+    "G6",
     "GCL Technology",
     "GHG emissions reduction plans",
+    "GM",
+    "GM-SAIC-Wuling",
     "GREET",
+    "Geely",
     "Geely Group",
+    "General Administration of Customs",
     "General Motors",
     "Georgia",
     "Germany",
+    "Gigafactory in Shanghai",
     "GitHub",
     "Glencore",
     "Global EV Outlook 2024",
+    "Global Systemically Important Banks",
     "Global market",
+    "Global markets",
     "Goldman Sachs",
+    "Google",
     "Google Trend analysis",
+    "Google Trends",
     "Gothenburg, Sweden",
+    "Gotion",
+    "Great Wall Motors",
     "Green New Deal",
     "Greenhouse gas emissions",
+    "Greg Schulze",
+    "Gregory John Sweeney",
+    "Guangzhou",
     "HEVs",
+    "HM Treasury",
     "HYLA Hydrogen Refueling Stations",
     "Hamas attack on Israel",
     "Hangzhou",
@@ -205,19 +377,36 @@
     "Hedges & Company",
     "Hefei city government",
     "Henry Hub Natural Gas",
+    "Hertz",
+    "Hitachi America",
+    "Hithium",
     "Honda",
+    "Hong Kong",
     "Hopper platform",
+    "House of Commons Treasury Committee",
+    "Hozon Auto",
+    "Hozon Automobile",
     "Hyliion",
     "Hyundai",
     "Hyundai Elantra",
     "Hyundai Ioniq 6",
+    "Hyundai Motor Company",
+    "Hyundai-Kia",
     "IBES",
+    "IBIT",
     "ICCT",
+    "ICE vehicle ban",
+    "ICE vehicle bans",
+    "ICE vehicles",
     "ID series",
     "IDTechEx",
     "IEA",
     "IEC Training Advantage",
+    "IHS Markit",
     "IP theft",
+    "IRA",
+    "IRROPS",
+    "ITILITE",
     "Ilaria Mazzocco",
     "Illinois",
     "Indeed",
@@ -225,90 +414,172 @@
     "Indonesia",
     "Inflation",
     "Inflation Reduction Act",
+    "Information Technology and Innovation Foundation",
     "Infrastructure Investment and Jobs Act",
+    "Inlyte Energy",
     "Interest Rates",
+    "Interest rates",
     "International Council on Clean Transportation",
+    "International Monetary Fund",
     "Investment Bankers",
+    "Investor sentiment",
     "Ioniq 5 N",
+    "Israel",
+    "Israeli law",
     "Itay Michaeli",
     "Iveco Group",
     "J.D. Power",
     "J.D. Vance",
     "JB Poindexter",
+    "JBF Business Media",
+    "Jake Sullivan",
     "Japan",
     "Japanese brands",
     "Jensen Huang",
+    "Jinling shipyard",
     "Joe Biden",
+    "John Podesta",
     "Joint Office of Energy and Transportation",
+    "Jolt Energy",
     "Jonathan Smoke",
     "Jörn Neuhausen",
+    "KARS",
     "KPMG",
     "Kantar",
+    "Kantar Profiles Audience Network",
     "Kelley Blue Book",
+    "Kia",
     "Korea",
     "Kota Yuzawa",
     "Krane Funds Advisors",
+    "KraneShares",
+    "LFP Batteries",
     "LG",
+    "LG Energy",
     "LG Energy Solution",
+    "Lauritz Fischer",
     "Laws and Incentives database",
+    "Leapmotor",
     "Li Auto",
+    "LiAuto",
     "Lithium iron phosphate batteries",
+    "Liu Zhenmin",
+    "London",
     "Longo Toyota",
+    "Longwoods International",
+    "Lucid",
+    "Lucid Air Sapphire",
     "Lucid Motors",
+    "Lucid Technology",
     "Lyriq",
     "MB.OS",
+    "MG",
     "MIT Technology Review",
     "MSCI",
     "MSCI AC World Index",
     "MSTA",
+    "Madrid",
+    "Magna International",
+    "Malaysia",
+    "Manheim",
     "Market Conditions",
     "Market Insights",
+    "Massachusetts",
+    "Matrix Partners",
     "McKinsey",
     "McKinsey Center for Future Mobility",
     "McKinsey Mobility Consumer Pulse Survey",
+    "McMurty",
+    "McMurty Spéirling",
     "Mercedes",
     "Mercedes-Benz AG",
+    "Mercedes-Benz Group",
     "Mercedes-Benz Group AG",
+    "Mercedes-Benz Mobility AG",
+    "Mercedes-Benz Vans",
+    "Meta",
     "Mexico",
+    "Mexico City",
     "Michigan",
     "Microvast",
+    "Midwestern coalition",
+    "Miles Partnership",
     "Ministry of Commerce",
     "Ministry of Foreign Affairs of China",
+    "Ministry of Industry and Information Technology",
     "Model 3",
     "Model X",
     "Model Y",
     "Monthly Energy Review",
     "Monthly Energy Review—Content Changes",
+    "Morgan Lee",
     "Morgan Olson",
+    "Morgan Stanley",
     "Morgan Stanley Research",
     "Motor Intelligence",
+    "MotorTrend",
     "Mustang Mach-E",
+    "NDC capabilities",
     "NEVI Formula Program",
+    "NEVs",
     "NIO",
     "NMC cathodes",
     "NVIDIA",
+    "Nasdaq.com",
     "National Charging Experience Consortium",
+    "National Household Travel Survey",
     "National Renewable Energy Laboratory",
+    "National Resources Defense Council",
     "National Zero-Emission Freight Corridor Strategy",
+    "Nationwide",
     "Nationwide Market Insights podcast",
     "Nationwide P&C",
+    "Nationwide economics team",
     "Navya",
     "Net zero emissions",
     "Net zero emissions target",
+    "Netherlands",
     "Neural network modeling",
     "Nevada",
+    "New Energy Vehicle mandates",
+    "New York",
+    "NextGear Capital",
     "Nikola",
     "Nikola Corporation",
+    "Nio",
+    "Nissan",
     "Nomura International Wealth Management",
+    "Noon Energy",
+    "North America",
     "North Carolina",
+    "Northeast",
     "Northern Ireland",
+    "Northvolt",
     "Norway",
+    "Numbat",
+    "OEMs",
     "OPEC+",
+    "Office of Foreign Assets Control",
+    "Office of the United States Trade Representative",
+    "Ohio",
     "Ola Källenius",
     "One-China principle",
+    "Ontario asset manager",
+    "Organization for Economic Cooperation and Development",
     "P7 Modular Platform",
+    "PHEV",
     "PHEVs",
+    "PKW-EnVKV",
+    "PSE&G",
+    "Panasonic",
+    "Paris Agreement",
+    "Patrick Rak",
+    "People's Bank of China",
     "Pew Research Center",
+    "Pham Nhat Vuong",
+    "Phil Crofton",
+    "Philippines",
+    "Phoenix, Arizona",
     "Pilbara Minerals",
     "Plug-in hybrid electric vehicles",
     "Plug-in hybrids",
@@ -318,67 +589,132 @@
     "Polestar 4",
     "Polestar 5",
     "Polestar 6",
+    "Polestar Automotive Holding UK PLC",
     "Political Climate",
+    "Portland General Electric",
+    "Powell",
     "Power Profiler",
+    "Preliminary Unaudited Consolidated Statement of Cash Flows",
+    "Preliminary Unaudited Consolidated Statement of Financial Position",
+    "Preliminary Unaudited Consolidated Statement of Income",
     "President Joe Biden",
+    "Private Securities Litigation Reform Act",
     "Private sector",
     "Production Halt",
     "Profiles Audience Network",
     "PwC",
     "PwC Germany",
+    "PwC US",
+    "Qin Plus",
     "QuantumScape",
     "R1S",
     "REE Automotive",
     "REEcorner",
     "RIES Holdings",
     "Rapid-charging stations",
+    "Recurly",
     "Reddit r wallstreetbets",
+    "Regional Economic Outlook for Asia and Pacific",
+    "Renault",
     "Republican Party",
     "Republicans",
+    "Reuters",
     "Reverence Capital Partners",
     "Rivian",
     "Roadster",
     "Rob Haworth",
     "Robert Heppenstall",
+    "Robinhood",
+    "Romania",
+    "Rome",
+    "Romeo Power, Inc.",
+    "Rox Motor",
     "Russell Investments",
     "Russia's War on Ukraine",
     "Russia-Ukraine war",
     "Russian Ukraine war",
     "S&P 500",
+    "S&P 500 Energy Index",
     "S&P 500 Energy index",
+    "S&P 500 index fund",
+    "S&P Dow Jones Indices",
     "S&P Global Luxury Index",
     "SAIC",
+    "SAIC-GM-Wuling",
+    "SARS-CoV-2",
+    "SEC",
+    "SEIA",
     "SK",
+    "Samsung SDI",
     "Scenario Forecasting Spreadsheet: Materials for Electric Vehicle Battery Cells and Packs",
+    "Scout Motors",
+    "Seagull",
+    "Seattle",
+    "Securities and Exchange Commission",
+    "SemaConnect",
+    "Sequoia Capital",
+    "Shanghai",
+    "Shanghai Gigafactory",
+    "Shanghai government",
+    "Share Buyback policy",
+    "Shenzhen",
+    "Shenzhen Boyu Imports and Exports Co",
+    "Shenzhen Jinghon Electronics Limited",
+    "Shivika Sahdev",
+    "Simple Energy India",
     "Singapore",
     "Sino Auto Insights",
+    "Smart",
+    "Smith Richardson Foundation",
     "SolSmart",
     "Solar Automated Permit Processing",
     "Solar Energy Industries Association",
     "Solar Investment Tax Credit",
+    "Solar Means Business report",
+    "Solid Power",
+    "South Carolina",
+    "Southeast",
     "Southeast Asia",
+    "Southwest Airlines",
     "Special Purpose Acquisition Company",
     "Standard & Poor's",
     "Standard & Poor’s",
     "Stanford University",
     "Stellantis",
+    "Stellantis N.V.",
     "Stephanie Ross",
     "Stephen Holland",
+    "Sterling Pound",
     "Steven van Arsdale",
     "Strategy&",
     "Strategy& Germany",
     "Stuttgart",
+    "Subaru",
     "SunEdison solar business",
+    "Supercharger network",
+    "Suzuki",
     "TA Associates Management",
     "Taiwan",
+    "Tariffs on Chinese EVs",
+    "Tata",
     "Tax credits",
+    "Taylor Putnam",
     "Tech Review Explains",
+    "Tech stocks",
+    "Ted Christie",
     "Tesla",
+    "Tesla Model 3",
+    "Tesla Supercharger",
     "Tesla owners",
+    "Texas",
     "Thailand",
+    "The Bank of New York Mellon Corporation",
+    "The Guardian",
     "The Motley Fool",
     "The Pew Charitable Trusts",
     "Thuy Le",
+    "Tim Scott",
+    "Tim Stevens",
     "Toyota",
     "Toyota Corolla",
     "Toyota Corolla Hybrid",
@@ -388,100 +724,193 @@
     "Trump administration",
     "Tu Le",
     "Twitter-sentiment analysis",
+    "U.S. Automobile Dealer Sentiment Index",
+    "U.S. Bank",
     "U.S. Bank Asset Management",
+    "U.S. Congress",
     "U.S. Customs and Border Protection",
+    "U.S. Department of Homeland Security",
     "U.S. Electric Vehicle Manufacturing Investments",
     "U.S. Energy Information Administration",
+    "U.S. Private Securities Litigation Reform Act",
+    "U.S. Securities and Exchange Commission",
+    "U.S. auto dealers",
     "U.S. electric grid",
+    "U.S. electric vehicle industry",
+    "U.S. government",
     "U.S. presidential election",
+    "U.S. solar manufacturing",
     "U.S.-China Economic and Security Review Commission",
+    "UAW",
     "UAW labor agreement negotiations",
     "UC Berkeley",
+    "UK",
+    "UK Government",
+    "UN Comtrade data",
     "US",
     "US Department of Commerce",
+    "US Department of Energy",
+    "US Department of Homeland Security",
+    "US Department of the Treasury",
     "US EPA",
+    "US State Department",
+    "US Treasury Department",
+    "US economy",
+    "US election",
     "US electric vehicle charging market",
+    "US electric vehicle industry",
     "US electric vehicle sector",
     "US federal funding",
     "US-China Economic and Security Review Commission",
+    "US-Mexico-Canada agreement",
+    "USA",
     "USMCA renegotiations",
+    "Uber Technologies",
+    "Understanding Consumer Attitudes Towards Electric Vehicles",
+    "United Airlines",
+    "United Arab Emirates",
+    "United Auto Workers",
     "United Automobile Workers",
     "United Kingdom",
+    "United Nations",
+    "United Nations Economic Commission for Europe",
     "United States",
     "Uyghur Forced Labor Prevention Act",
     "VF 5",
     "VF 9",
     "VF e34",
+    "VINCI",
     "Value-Up program",
     "Vehicle Cost Calculator",
     "Vehicle Technologies Office",
+    "Verkor",
     "Vietnam",
     "VinFast",
+    "VinFast Auto",
     "Vingroup",
+    "Vingroup Joint Stock Company",
+    "Virginia",
     "Volkswagen",
     "Volkswagen AG",
     "Voltera Power",
+    "Volvo",
+    "Volvo Cars",
+    "WSJ",
     "WSP USA",
     "Wales",
+    "Walmart",
+    "Walter Scott",
     "Wan Gang",
+    "Wang Yi",
+    "Washington",
     "Washington, D.C.",
+    "West Coast Clean Transit Corridor initiative",
+    "West Midlands",
     "West Texas Intermediate",
     "What’s next for the auto market?",
+    "William Morrison",
+    "Wood Mackenzie",
     "Wood Mackenzie Power & Renewables",
     "Workhorse",
     "World Bank",
+    "World Health Organization",
     "Wuling-SAIC-GM",
     "XPeng",
     "Xi Jinping",
+    "Xiaomi",
+    "Xingguang",
+    "Xingji Meizu Group",
     "Xpeng",
     "ZEEKR",
     "ZEEKR 001",
     "ZEEKR 001 FR",
     "ZEEKR 009",
     "ZEEKR 009 Grand",
+    "ZEEKR Inc.",
+    "ZEEKR Intelligent Technology Holding Limited",
     "ZEEKR X",
     "ZEV Regulation",
+    "aa.com",
+    "all-solid-state batteries",
     "automotive sector",
     "ban sale of new internal combustion engine-powered vehicles",
+    "battery recycling regulations",
+    "bonus-malus scheme",
     "car chip shortage",
+    "car manufacturers",
+    "cargo ship to Europe",
+    "carmakers",
+    "charging infrastructure",
+    "charging infrastructure initiatives",
     "clean energy",
     "climate agenda",
     "consumer incentives",
     "consumer sentiment",
     "corporate governance reforms",
+    "critical minerals",
     "dual credits",
+    "eCitan",
     "eMobility ecosystem",
     "eSprinter",
+    "eVito",
+    "eVito Tourer",
     "electric charging infrastructure",
+    "electric vehicle",
+    "electric vehicle charging",
     "electric vehicle charging stations",
     "electric vehicle market",
     "electric vehicle sales",
+    "electric vehicle sector",
     "electric vehicles",
     "electric-vehicle charging",
     "electrifying car miles",
     "emissions limits for car manufacturers",
+    "energy.gov",
     "existing tax credits",
+    "fast-charging technology",
+    "federal tax credits",
     "fossil fuel share",
     "friendshoring",
     "fuel economy and greenhouse gas regulation",
     "future-mobility scenarios",
+    "global EV market",
+    "government agencies",
     "government schemes and incentives",
+    "iBonds ETFs",
     "iShares",
+    "international harmonization",
+    "lithium refining",
     "local content requirements",
     "low-carbon technologies",
+    "mass production",
+    "more affordable models",
+    "mpox",
+    "municipalities",
     "national public electric vehicle charging network",
     "nearshoring",
+    "net losses",
+    "pilot-hiring market",
     "polysilicon",
+    "power distribution grids",
+    "proprietary chargers",
     "public R&D investment",
     "renewables",
+    "robo-taxi service",
     "silicon",
+    "solar and storage",
+    "solar deployment",
+    "states",
     "tariff campaign promises",
     "tariffs",
     "tax credits for EV buyers",
     "tax credits for electric passenger vehicles",
+    "technology neutrality",
     "technology transfer requirements",
     "trade tariffs",
+    "utilities",
+    "vAuto",
     "wages increases",
+    "zero-/low-emission zones",
     "zero-emission vehicles"
   ],
   "triples": [
@@ -657,6 +1086,34 @@
       "subject": "Electric vehicle supply equipment",
       "relation": "SUPPLIES",
       "object": "Electric vehicle batteries",
+      "kind": "edge",
+      "source": "doc_3.txt"
+    },
+    {
+      "subject": "Alternative Fueling Station Locator",
+      "relation": "MENTIONS",
+      "object": "EV charging station",
+      "kind": "edge",
+      "source": "doc_3.txt"
+    },
+    {
+      "subject": "Clean Cities and Communities",
+      "relation": "PARTNERS_WITH",
+      "object": "states",
+      "kind": "edge",
+      "source": "doc_3.txt"
+    },
+    {
+      "subject": "Clean Cities and Communities",
+      "relation": "PARTNERS_WITH",
+      "object": "municipalities",
+      "kind": "edge",
+      "source": "doc_3.txt"
+    },
+    {
+      "subject": "Clean Cities and Communities",
+      "relation": "PARTNERS_WITH",
+      "object": "government agencies",
       "kind": "edge",
       "source": "doc_3.txt"
     },
@@ -871,6 +1328,132 @@
       "source": "doc_7.txt"
     },
     {
+      "subject": "Tesla",
+      "relation": "PARTNERS_WITH",
+      "object": "Shanghai government",
+      "kind": "edge",
+      "source": "doc_7.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "PRODUCES",
+      "object": "Model 3",
+      "kind": "edge",
+      "source": "doc_7.txt"
+    },
+    {
+      "subject": "NIO",
+      "relation": "SELLS",
+      "object": "Model 3",
+      "kind": "edge",
+      "source": "doc_7.txt"
+    },
+    {
+      "subject": "BYD",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_7.txt"
+    },
+    {
+      "subject": "BYD",
+      "relation": "PRODUCES",
+      "object": "Seagull",
+      "kind": "edge",
+      "source": "doc_7.txt"
+    },
+    {
+      "subject": "BYD",
+      "relation": "COMPETES_WITH",
+      "object": "Volkswagen",
+      "kind": "edge",
+      "source": "doc_7.txt"
+    },
+    {
+      "subject": "Volkswagen",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_7.txt"
+    },
+    {
+      "subject": "GM",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_7.txt"
+    },
+    {
+      "subject": "Volvo",
+      "relation": "SUBSIDIARY_OF",
+      "object": "Chinese firms",
+      "kind": "edge",
+      "source": "doc_7.txt"
+    },
+    {
+      "subject": "Polestar",
+      "relation": "SUBSIDIARY_OF",
+      "object": "Chinese firms",
+      "kind": "edge",
+      "source": "doc_7.txt"
+    },
+    {
+      "subject": "Smart",
+      "relation": "SUBSIDIARY_OF",
+      "object": "Chinese firms",
+      "kind": "edge",
+      "source": "doc_7.txt"
+    },
+    {
+      "subject": "MG",
+      "relation": "SUBSIDIARY_OF",
+      "object": "Chinese firms",
+      "kind": "edge",
+      "source": "doc_7.txt"
+    },
+    {
+      "subject": "CATL",
+      "relation": "OWNS",
+      "object": "Germany",
+      "kind": "edge",
+      "source": "doc_7.txt"
+    },
+    {
+      "subject": "CATL",
+      "relation": "PARTNERS_WITH",
+      "object": "Ford",
+      "kind": "edge",
+      "source": "doc_7.txt"
+    },
+    {
+      "subject": "BYD",
+      "relation": "ACQUIRED",
+      "object": "Ford plant",
+      "kind": "edge",
+      "source": "doc_7.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "INVESTED_IN",
+      "object": "lithium refining",
+      "kind": "edge",
+      "source": "doc_7.txt"
+    },
+    {
+      "subject": "IRA",
+      "relation": "SUPPORTS",
+      "object": "United States",
+      "kind": "edge",
+      "source": "doc_7.txt"
+    },
+    {
+      "subject": "Gotion",
+      "relation": "LOCATED_IN",
+      "object": "Michigan",
+      "kind": "edge",
+      "source": "doc_7.txt"
+    },
+    {
       "subject": "US EPA",
       "relation": "MENTIONS",
       "object": "Power Profiler",
@@ -923,6 +1506,76 @@
       "subject": "US EPA",
       "relation": "MENTIONS",
       "object": "Bipartisan Infrastructure Law",
+      "kind": "edge",
+      "source": "doc_8.txt"
+    },
+    {
+      "subject": "US EPA",
+      "relation": "MENTIONS",
+      "object": "Alternative Fuel Data Center",
+      "kind": "edge",
+      "source": "doc_8.txt"
+    },
+    {
+      "subject": "US EPA",
+      "relation": "MENTIONS",
+      "object": "Joint Office of Energy and Transportation",
+      "kind": "edge",
+      "source": "doc_8.txt"
+    },
+    {
+      "subject": "US EPA",
+      "relation": "MENTIONS",
+      "object": "Electric Vehicle Charging Stations map",
+      "kind": "edge",
+      "source": "doc_8.txt"
+    },
+    {
+      "subject": "US EPA",
+      "relation": "MENTIONS",
+      "object": "DOE EV Pro Lite Tool",
+      "kind": "edge",
+      "source": "doc_8.txt"
+    },
+    {
+      "subject": "US EPA",
+      "relation": "MENTIONS",
+      "object": "Federal Motor Vehicle Safety Standards",
+      "kind": "edge",
+      "source": "doc_8.txt"
+    },
+    {
+      "subject": "US EPA",
+      "relation": "MENTIONS",
+      "object": "Find A Car tool",
+      "kind": "edge",
+      "source": "doc_8.txt"
+    },
+    {
+      "subject": "US EPA",
+      "relation": "MENTIONS",
+      "object": "EPA Fuel Economy",
+      "kind": "edge",
+      "source": "doc_8.txt"
+    },
+    {
+      "subject": "US EPA",
+      "relation": "MENTIONS",
+      "object": "National Household Travel Survey",
+      "kind": "edge",
+      "source": "doc_8.txt"
+    },
+    {
+      "subject": "US EPA",
+      "relation": "MENTIONS",
+      "object": "AAA Electric Vehicle Range Testing Report",
+      "kind": "edge",
+      "source": "doc_8.txt"
+    },
+    {
+      "subject": "US EPA",
+      "relation": "MENTIONS",
+      "object": "U.S. Energy Information Administration",
       "kind": "edge",
       "source": "doc_8.txt"
     },
@@ -1011,6 +1664,202 @@
       "source": "doc_9.txt"
     },
     {
+      "subject": "Deloitte",
+      "relation": "ANALYZES",
+      "object": "Electric vehicle sector sentiment analysis",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "Tesla Model 3",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Tesla Model 3",
+      "relation": "PRODUCES",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "SELLS",
+      "object": "Tesla Model 3",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "OPERATES_IN",
+      "object": "United States",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "United States",
+      "relation": "OPERATES_IN",
+      "object": "Tesla Model 3",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Japan",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla Model 3",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "China",
+      "relation": "OPERATES_IN",
+      "object": "Electric vehicle sector sentiment analysis",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Deloitte Insights",
+      "relation": "MENTIONS",
+      "object": "US electric vehicle sector",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Germany",
+      "relation": "REGULATES",
+      "object": "EV charging infrastructure",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Germany",
+      "relation": "SUPPORTS",
+      "object": "EV charging infrastructure",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Germany",
+      "relation": "REGULATES",
+      "object": "Fuel economy and emission targets",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Norway",
+      "relation": "SUPPORTS",
+      "object": "EV adoption",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Netherlands",
+      "relation": "SUPPORTS",
+      "object": "EV adoption",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "China",
+      "relation": "SUPPORTS",
+      "object": "EV charging infrastructure",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Paris Agreement",
+      "relation": "SUPPORTS",
+      "object": "EV adoption",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Seattle",
+      "relation": "REGULATES",
+      "object": "ICE vehicle bans",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Mexico City",
+      "relation": "REGULATES",
+      "object": "ICE vehicle bans",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Madrid",
+      "relation": "REGULATES",
+      "object": "ICE vehicle bans",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Rome",
+      "relation": "REGULATES",
+      "object": "ICE vehicle bans",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "Electric vehicle trends",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "US electric vehicle sector",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "IHS Markit",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "European Federation for Transport and Environment",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "Germany",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "France",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "China",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "Netherlands",
+      "kind": "edge",
+      "source": "doc_9.txt"
+    },
+    {
       "subject": "BloombergNEF",
       "relation": "MENTIONS",
       "object": "Electric Vehicle Outlook",
@@ -1021,6 +1870,13 @@
       "subject": "Bloomberg Finance LP",
       "relation": "MENTIONS",
       "object": "Electric Vehicle Outlook",
+      "kind": "edge",
+      "source": "doc_10.txt"
+    },
+    {
+      "subject": "BloombergNEF",
+      "relation": "MENTIONS",
+      "object": "Bloomberg Finance LP",
       "kind": "edge",
       "source": "doc_10.txt"
     },
@@ -1109,6 +1965,27 @@
       "source": "doc_11.txt"
     },
     {
+      "subject": "NVIDIA",
+      "relation": "REPORTED_ON",
+      "object": "Securities and Exchange Commission",
+      "kind": "edge",
+      "source": "doc_11.txt"
+    },
+    {
+      "subject": "NVIDIA",
+      "relation": "MENTIONS",
+      "object": "Form 10-K",
+      "kind": "edge",
+      "source": "doc_11.txt"
+    },
+    {
+      "subject": "NVIDIA",
+      "relation": "MENTIONS",
+      "object": "Form 10-Q",
+      "kind": "edge",
+      "source": "doc_11.txt"
+    },
+    {
       "subject": "Polestar",
       "relation": "HEADQUARTERED_IN",
       "object": "Gothenburg, Sweden",
@@ -1147,6 +2024,90 @@
       "subject": "Polestar",
       "relation": "MENTIONS",
       "object": "Polestar 6",
+      "kind": "edge",
+      "source": "doc_12.txt"
+    },
+    {
+      "subject": "Polestar",
+      "relation": "MENTIONS",
+      "object": "Private Securities Litigation Reform Act",
+      "kind": "edge",
+      "source": "doc_12.txt"
+    },
+    {
+      "subject": "Polestar",
+      "relation": "PARTNERS_WITH",
+      "object": "Volvo Cars",
+      "kind": "edge",
+      "source": "doc_12.txt"
+    },
+    {
+      "subject": "Polestar",
+      "relation": "PARTNERS_WITH",
+      "object": "Geely",
+      "kind": "edge",
+      "source": "doc_12.txt"
+    },
+    {
+      "subject": "Polestar",
+      "relation": "PARTNERS_WITH",
+      "object": "Xingji Meizu Group",
+      "kind": "edge",
+      "source": "doc_12.txt"
+    },
+    {
+      "subject": "Polestar",
+      "relation": "MENTIONS",
+      "object": "SEC",
+      "kind": "edge",
+      "source": "doc_12.txt"
+    },
+    {
+      "subject": "Polestar",
+      "relation": "REPORTED_ON",
+      "object": "Polestar Automotive Holding UK PLC",
+      "kind": "edge",
+      "source": "doc_12.txt"
+    },
+    {
+      "subject": "Polestar Automotive Holding UK PLC",
+      "relation": "MENTIONS",
+      "object": "Appendix A",
+      "kind": "edge",
+      "source": "doc_12.txt"
+    },
+    {
+      "subject": "Polestar Automotive Holding UK PLC",
+      "relation": "MENTIONS",
+      "object": "Preliminary Unaudited Consolidated Statement of Income",
+      "kind": "edge",
+      "source": "doc_12.txt"
+    },
+    {
+      "subject": "Polestar Automotive Holding UK PLC",
+      "relation": "MENTIONS",
+      "object": "Preliminary Unaudited Consolidated Statement of Financial Position",
+      "kind": "edge",
+      "source": "doc_12.txt"
+    },
+    {
+      "subject": "Polestar Automotive Holding UK PLC",
+      "relation": "MENTIONS",
+      "object": "Preliminary Unaudited Consolidated Statement of Cash Flows",
+      "kind": "edge",
+      "source": "doc_12.txt"
+    },
+    {
+      "subject": "Polestar Automotive Holding UK PLC",
+      "relation": "MENTIONS",
+      "object": "Form 20-F",
+      "kind": "edge",
+      "source": "doc_12.txt"
+    },
+    {
+      "subject": "Polestar Automotive Holding UK PLC",
+      "relation": "REPORTED_ON",
+      "object": "SEC",
       "kind": "edge",
       "source": "doc_12.txt"
     },
@@ -1228,6 +2189,76 @@
       "source": "doc_13.txt"
     },
     {
+      "subject": "VinFast",
+      "relation": "SUBSIDIARY_OF",
+      "object": "Vingroup Joint Stock Company",
+      "kind": "edge",
+      "source": "doc_13.txt"
+    },
+    {
+      "subject": "Pham Nhat Vuong",
+      "relation": "CEO_OF",
+      "object": "VinFast",
+      "kind": "edge",
+      "source": "doc_13.txt"
+    },
+    {
+      "subject": "Vingroup Joint Stock Company",
+      "relation": "INVESTED_IN",
+      "object": "VinFast",
+      "kind": "edge",
+      "source": "doc_13.txt"
+    },
+    {
+      "subject": "VinFast",
+      "relation": "OPERATES_IN",
+      "object": "United Arab Emirates",
+      "kind": "edge",
+      "source": "doc_13.txt"
+    },
+    {
+      "subject": "VinFast",
+      "relation": "OPERATES_IN",
+      "object": "Philippines",
+      "kind": "edge",
+      "source": "doc_13.txt"
+    },
+    {
+      "subject": "VinFast",
+      "relation": "OPERATES_IN",
+      "object": "North America",
+      "kind": "edge",
+      "source": "doc_13.txt"
+    },
+    {
+      "subject": "VinFast",
+      "relation": "OPERATES_IN",
+      "object": "Europe",
+      "kind": "edge",
+      "source": "doc_13.txt"
+    },
+    {
+      "subject": "VinFast",
+      "relation": "PRODUCES",
+      "object": "VF 9",
+      "kind": "edge",
+      "source": "doc_13.txt"
+    },
+    {
+      "subject": "VinFast Auto",
+      "relation": "OPERATES_IN",
+      "object": "United States",
+      "kind": "edge",
+      "source": "doc_13.txt"
+    },
+    {
+      "subject": "VinFast Auto",
+      "relation": "OPERATES_IN",
+      "object": "Dubai",
+      "kind": "edge",
+      "source": "doc_13.txt"
+    },
+    {
       "subject": "ZEEKR",
       "relation": "PRODUCES",
       "object": "ZEEKR 001",
@@ -1280,6 +2311,34 @@
       "subject": "ZEEKR",
       "relation": "PARTNERS_WITH",
       "object": "Geely Group",
+      "kind": "edge",
+      "source": "doc_14.txt"
+    },
+    {
+      "subject": "ZEEKR Inc.",
+      "relation": "MENTIONS",
+      "object": "Federal Reserve Board",
+      "kind": "edge",
+      "source": "doc_14.txt"
+    },
+    {
+      "subject": "ZEEKR Inc.",
+      "relation": "MENTIONS",
+      "object": "U.S. Private Securities Litigation Reform Act",
+      "kind": "edge",
+      "source": "doc_14.txt"
+    },
+    {
+      "subject": "ZEEKR Inc.",
+      "relation": "REPORTED_ON",
+      "object": "SEC",
+      "kind": "edge",
+      "source": "doc_14.txt"
+    },
+    {
+      "subject": "ZEEKR Inc.",
+      "relation": "MENTIONS",
+      "object": "ZEEKR Intelligent Technology Holding Limited",
       "kind": "edge",
       "source": "doc_14.txt"
     },
@@ -1357,6 +2416,251 @@
       "subject": "IEA",
       "relation": "MENTIONS",
       "object": "Global EV Outlook 2024",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "BYD",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "SELLS",
+      "object": "Model 3",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "SELLS",
+      "object": "Model Y",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "BYD",
+      "relation": "SELLS",
+      "object": "Qin Plus",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "XPeng",
+      "relation": "SELLS",
+      "object": "G6",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "GM-SAIC-Wuling",
+      "relation": "SELLS",
+      "object": "Xingguang",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "OPERATES_IN",
+      "object": "United States",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "BYD",
+      "relation": "OPERATES_IN",
+      "object": "China",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Hyundai-Kia",
+      "relation": "OPERATES_IN",
+      "object": "United States",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Stellantis",
+      "relation": "OPERATES_IN",
+      "object": "United States",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Volkswagen",
+      "relation": "OPERATES_IN",
+      "object": "China",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Nio",
+      "relation": "MENTIONS",
+      "object": "net losses",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Ministry of Industry and Information Technology",
+      "relation": "REGULATES",
+      "object": "carmakers",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Ford",
+      "relation": "MENTIONS",
+      "object": "EV investments losses",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "General Motors",
+      "relation": "MENTIONS",
+      "object": "EV investments losses",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Stellantis",
+      "relation": "INVESTED_IN",
+      "object": "Leapmotor",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "BYD",
+      "relation": "MENTIONS",
+      "object": "cargo ship to Europe",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "MENTIONS",
+      "object": "more affordable models",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Ford",
+      "relation": "PARTNERS_WITH",
+      "object": "General Motors",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "European Infrastructure Fund",
+      "relation": "INVESTED_IN",
+      "object": "Numbat",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Jolt Energy",
+      "relation": "MENTIONS",
+      "object": "fast-charging technology",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "DeepWay",
+      "relation": "MENTIONS",
+      "object": "mass production",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Simple Energy India",
+      "relation": "MENTIONS",
+      "object": "electric vehicle charging",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Verkor",
+      "relation": "PARTNERS_WITH",
+      "object": "EIT InnoEnergy",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Verkor",
+      "relation": "PARTNERS_WITH",
+      "object": "BPI France",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Verkor",
+      "relation": "SUPPLIES",
+      "object": "European Investment Bank",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Northvolt",
+      "relation": "INVESTED_IN",
+      "object": "Ontario asset manager",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Hozon Automobile",
+      "relation": "COMPETES_WITH",
+      "object": "Rox Motor",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Avatr",
+      "relation": "INVESTED_IN",
+      "object": "European Investment Bank",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Beat",
+      "relation": "MENTIONS",
+      "object": "Free Now",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "BluSmart",
+      "relation": "MENTIONS",
+      "object": "India",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Noon Energy",
+      "relation": "MENTIONS",
+      "object": "US Department of Energy",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Ascend Elements",
+      "relation": "MENTIONS",
+      "object": "DoE Advanced Research Projects Agency–Energy",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Ascend Elements",
+      "relation": "MENTIONS",
+      "object": "ARPA-E",
+      "kind": "edge",
+      "source": "doc_15.txt"
+    },
+    {
+      "subject": "Inlyte Energy",
+      "relation": "MENTIONS",
+      "object": "US Department of Energy",
       "kind": "edge",
       "source": "doc_15.txt"
     },
@@ -1445,6 +2749,104 @@
       "source": "doc_16.txt"
     },
     {
+      "subject": "Mercedes-Benz Group AG",
+      "relation": "HEADQUARTERED_IN",
+      "object": "Germany",
+      "kind": "edge",
+      "source": "doc_16.txt"
+    },
+    {
+      "subject": "Mercedes-Benz Mobility AG",
+      "relation": "OPERATES_IN",
+      "object": "United States",
+      "kind": "edge",
+      "source": "doc_16.txt"
+    },
+    {
+      "subject": "Mercedes-Benz Mobility AG",
+      "relation": "PARTNERS_WITH",
+      "object": "Germany",
+      "kind": "edge",
+      "source": "doc_16.txt"
+    },
+    {
+      "subject": "Mercedes-Benz Vans",
+      "relation": "PRODUCES",
+      "object": "eSprinter",
+      "kind": "edge",
+      "source": "doc_16.txt"
+    },
+    {
+      "subject": "Mercedes-Benz Vans",
+      "relation": "PRODUCES",
+      "object": "eVito",
+      "kind": "edge",
+      "source": "doc_16.txt"
+    },
+    {
+      "subject": "Mercedes-Benz Vans",
+      "relation": "PRODUCES",
+      "object": "eVito Tourer",
+      "kind": "edge",
+      "source": "doc_16.txt"
+    },
+    {
+      "subject": "Mercedes-Benz Vans",
+      "relation": "PRODUCES",
+      "object": "EQV",
+      "kind": "edge",
+      "source": "doc_16.txt"
+    },
+    {
+      "subject": "Mercedes-Benz Vans",
+      "relation": "PRODUCES",
+      "object": "eCitan",
+      "kind": "edge",
+      "source": "doc_16.txt"
+    },
+    {
+      "subject": "Mercedes-Benz Vans",
+      "relation": "PRODUCES",
+      "object": "EQT",
+      "kind": "edge",
+      "source": "doc_16.txt"
+    },
+    {
+      "subject": "Mercedes-Benz Group AG",
+      "relation": "SUPPORTS",
+      "object": "Share Buyback policy",
+      "kind": "edge",
+      "source": "doc_16.txt"
+    },
+    {
+      "subject": "Mercedes-Benz Group AG",
+      "relation": "SUBJECT_TO",
+      "object": "Annual General Meeting",
+      "kind": "edge",
+      "source": "doc_16.txt"
+    },
+    {
+      "subject": "Mercedes-Benz Group",
+      "relation": "MENTIONS",
+      "object": "PKW-EnVKV",
+      "kind": "edge",
+      "source": "doc_16.txt"
+    },
+    {
+      "subject": "Mercedes-Benz Group",
+      "relation": "MENTIONS",
+      "object": "DAT Deutsche Automobil Treuhand GmbH",
+      "kind": "edge",
+      "source": "doc_16.txt"
+    },
+    {
+      "subject": "Mercedes-Benz Group",
+      "relation": "MENTIONS",
+      "object": "EU guide",
+      "kind": "edge",
+      "source": "doc_16.txt"
+    },
+    {
       "subject": "Alternative Fuels Data Center",
       "relation": "MENTIONS",
       "object": "Clean Vehicle Tax Credits",
@@ -1529,6 +2931,90 @@
       "source": "doc_17.txt"
     },
     {
+      "subject": "Volkswagen",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_18.txt"
+    },
+    {
+      "subject": "Toyota",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_18.txt"
+    },
+    {
+      "subject": "Nissan",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_18.txt"
+    },
+    {
+      "subject": "Hyundai",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_18.txt"
+    },
+    {
+      "subject": "Kia",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_18.txt"
+    },
+    {
+      "subject": "SAIC",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_18.txt"
+    },
+    {
+      "subject": "Geely",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_18.txt"
+    },
+    {
+      "subject": "Suzuki",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_18.txt"
+    },
+    {
+      "subject": "Subaru",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_18.txt"
+    },
+    {
+      "subject": "Tata",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_18.txt"
+    },
+    {
+      "subject": "Ampere",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_18.txt"
+    },
+    {
+      "subject": "IEA",
+      "relation": "MENTIONS",
+      "object": "Electric vehicles",
+      "kind": "edge",
+      "source": "doc_18.txt"
+    },
+    {
       "subject": "REE Automotive",
       "relation": "PRODUCES",
       "object": "P7 Modular Platform",
@@ -1595,6 +3081,104 @@
       "subject": "REE Automotive",
       "relation": "SUPPLIES",
       "object": "American Axle & Manufacturing",
+      "kind": "edge",
+      "source": "doc_19.txt"
+    },
+    {
+      "subject": "REE Automotive",
+      "relation": "PARTNERS_WITH",
+      "object": "Hitachi America",
+      "kind": "edge",
+      "source": "doc_19.txt"
+    },
+    {
+      "subject": "REE Automotive",
+      "relation": "PARTNERS_WITH",
+      "object": "Magna International",
+      "kind": "edge",
+      "source": "doc_19.txt"
+    },
+    {
+      "subject": "REE Automotive",
+      "relation": "SUPPLIES",
+      "object": "American Axle",
+      "kind": "edge",
+      "source": "doc_19.txt"
+    },
+    {
+      "subject": "REE Automotive",
+      "relation": "PARTNERS_WITH",
+      "object": "Brembo",
+      "kind": "edge",
+      "source": "doc_19.txt"
+    },
+    {
+      "subject": "REE Automotive",
+      "relation": "HEADQUARTERED_IN",
+      "object": "Coventry",
+      "kind": "edge",
+      "source": "doc_19.txt"
+    },
+    {
+      "subject": "REE Automotive",
+      "relation": "OPERATES_IN",
+      "object": "Austin",
+      "kind": "edge",
+      "source": "doc_19.txt"
+    },
+    {
+      "subject": "REE Automotive",
+      "relation": "REGULATES",
+      "object": "UK Government",
+      "kind": "edge",
+      "source": "doc_19.txt"
+    },
+    {
+      "subject": "REE Automotive",
+      "relation": "HEADQUARTERED_IN",
+      "object": "Israel",
+      "kind": "edge",
+      "source": "doc_19.txt"
+    },
+    {
+      "subject": "REE Automotive",
+      "relation": "OPERATES_IN",
+      "object": "USA",
+      "kind": "edge",
+      "source": "doc_19.txt"
+    },
+    {
+      "subject": "REE Automotive",
+      "relation": "OPERATES_IN",
+      "object": "UK",
+      "kind": "edge",
+      "source": "doc_19.txt"
+    },
+    {
+      "subject": "REE Automotive",
+      "relation": "OPERATES_IN",
+      "object": "Germany",
+      "kind": "edge",
+      "source": "doc_19.txt"
+    },
+    {
+      "subject": "REE Automotive",
+      "relation": "OPERATES_IN",
+      "object": "Japan",
+      "kind": "edge",
+      "source": "doc_19.txt"
+    },
+    {
+      "subject": "REE Automotive",
+      "relation": "MENTIONS",
+      "object": "U.S. Securities and Exchange Commission",
+      "kind": "edge",
+      "source": "doc_19.txt"
+    },
+    {
+      "subject": "REE Automotive",
+      "relation": "SUBJECT_TO",
+      "object": "Israeli law",
       "kind": "edge",
       "source": "doc_19.txt"
     },
@@ -1683,6 +3267,27 @@
       "source": "doc_20.txt"
     },
     {
+      "subject": "Nikola Corporation",
+      "relation": "FOUNDED",
+      "object": "Phoenix, Arizona",
+      "kind": "edge",
+      "source": "doc_20.txt"
+    },
+    {
+      "subject": "Nikola Corporation",
+      "relation": "HEADQUARTERED_IN",
+      "object": "Phoenix, Arizona",
+      "kind": "edge",
+      "source": "doc_20.txt"
+    },
+    {
+      "subject": "Nikola Corporation",
+      "relation": "MENTIONS",
+      "object": "Romeo Power, Inc.",
+      "kind": "edge",
+      "source": "doc_20.txt"
+    },
+    {
       "subject": "Cox Automotive",
       "relation": "MENTIONS",
       "object": "Cox Automotive Dealer Sentiment Index",
@@ -1754,6 +3359,34 @@
     },
     {
       "subject": "Cox Automotive",
+      "relation": "REPORTED_ON",
+      "object": "U.S. Automobile Dealer Sentiment Index",
+      "kind": "edge",
+      "source": "doc_21.txt"
+    },
+    {
+      "subject": "Cox Automotive",
+      "relation": "SUBSIDIARY_OF",
+      "object": "Cox Enterprises",
+      "kind": "edge",
+      "source": "doc_21.txt"
+    },
+    {
+      "subject": "Cox Enterprises",
+      "relation": "HEADQUARTERED_IN",
+      "object": "Atlanta",
+      "kind": "edge",
+      "source": "doc_21.txt"
+    },
+    {
+      "subject": "Cox Automotive",
+      "relation": "OPERATES_IN",
+      "object": "United States",
+      "kind": "edge",
+      "source": "doc_21.txt"
+    },
+    {
+      "subject": "Cox Automotive",
       "relation": "MENTIONS",
       "object": "Cox Automotive Dealer Sentiment Index",
       "kind": "edge",
@@ -1784,6 +3417,83 @@
       "subject": "EV tax credit",
       "relation": "SUPPORTS",
       "object": "electric vehicle sales",
+      "kind": "edge",
+      "source": "doc_23.txt"
+    },
+    {
+      "subject": "Cox Automotive",
+      "relation": "ISSUES",
+      "object": "Dealer Sentiment Index",
+      "kind": "edge",
+      "source": "doc_23.txt"
+    },
+    {
+      "subject": "Cox Automotive",
+      "relation": "SUBSIDIARY_OF",
+      "object": "Cox Enterprises",
+      "kind": "edge",
+      "source": "doc_23.txt"
+    },
+    {
+      "subject": "Cox Enterprises",
+      "relation": "HEADQUARTERED_IN",
+      "object": "Atlanta",
+      "kind": "edge",
+      "source": "doc_23.txt"
+    },
+    {
+      "subject": "Cox Automotive",
+      "relation": "MENTIONS",
+      "object": "Autotrader",
+      "kind": "edge",
+      "source": "doc_23.txt"
+    },
+    {
+      "subject": "Cox Automotive",
+      "relation": "MENTIONS",
+      "object": "Kelley Blue Book",
+      "kind": "edge",
+      "source": "doc_23.txt"
+    },
+    {
+      "subject": "Cox Automotive",
+      "relation": "MENTIONS",
+      "object": "Manheim",
+      "kind": "edge",
+      "source": "doc_23.txt"
+    },
+    {
+      "subject": "Cox Automotive",
+      "relation": "MENTIONS",
+      "object": "vAuto",
+      "kind": "edge",
+      "source": "doc_23.txt"
+    },
+    {
+      "subject": "Cox Automotive",
+      "relation": "MENTIONS",
+      "object": "Dealertrack",
+      "kind": "edge",
+      "source": "doc_23.txt"
+    },
+    {
+      "subject": "Cox Automotive",
+      "relation": "MENTIONS",
+      "object": "NextGear Capital",
+      "kind": "edge",
+      "source": "doc_23.txt"
+    },
+    {
+      "subject": "Cox Automotive",
+      "relation": "MENTIONS",
+      "object": "CentralDispatch",
+      "kind": "edge",
+      "source": "doc_23.txt"
+    },
+    {
+      "subject": "Cox Automotive",
+      "relation": "MENTIONS",
+      "object": "FleetNet America",
       "kind": "edge",
       "source": "doc_23.txt"
     },
@@ -1872,6 +3582,41 @@
       "source": "doc_24.txt"
     },
     {
+      "subject": "Robinhood",
+      "relation": "MENTIONS",
+      "object": "Federal Reserve",
+      "kind": "edge",
+      "source": "doc_24.txt"
+    },
+    {
+      "subject": "Federal Reserve",
+      "relation": "MENTIONS",
+      "object": "Powell",
+      "kind": "edge",
+      "source": "doc_24.txt"
+    },
+    {
+      "subject": "Federal Reserve",
+      "relation": "SUPPORTS",
+      "object": "US economy",
+      "kind": "edge",
+      "source": "doc_24.txt"
+    },
+    {
+      "subject": "Patrick Rak",
+      "relation": "MENTIONS",
+      "object": "Federal Reserve",
+      "kind": "edge",
+      "source": "doc_24.txt"
+    },
+    {
+      "subject": "Patrick Rak",
+      "relation": "MENTIONS",
+      "object": "electric vehicle sector",
+      "kind": "edge",
+      "source": "doc_24.txt"
+    },
+    {
       "subject": "Inflation Reduction Act",
       "relation": "SUPPORTS",
       "object": "Electric vehicles",
@@ -1910,6 +3655,41 @@
       "subject": "Microvast",
       "relation": "INVESTED_IN",
       "object": "China",
+      "kind": "edge",
+      "source": "doc_25.txt"
+    },
+    {
+      "subject": "Ford",
+      "relation": "PARTNERS_WITH",
+      "object": "CATL",
+      "kind": "edge",
+      "source": "doc_25.txt"
+    },
+    {
+      "subject": "Michigan",
+      "relation": "REGULATES",
+      "object": "EV industry",
+      "kind": "edge",
+      "source": "doc_25.txt"
+    },
+    {
+      "subject": "Virginia",
+      "relation": "REGULATES",
+      "object": "EV industry",
+      "kind": "edge",
+      "source": "doc_25.txt"
+    },
+    {
+      "subject": "Inflation Reduction Act",
+      "relation": "SUBJECT_TO",
+      "object": "Ford",
+      "kind": "edge",
+      "source": "doc_25.txt"
+    },
+    {
+      "subject": "US-Mexico-Canada agreement",
+      "relation": "SUBJECT_TO",
+      "object": "CATL",
       "kind": "edge",
       "source": "doc_25.txt"
     },
@@ -1980,6 +3760,83 @@
       "subject": "Tesla",
       "relation": "COMPETES_WITH",
       "object": "BYD",
+      "kind": "edge",
+      "source": "doc_26.txt"
+    },
+    {
+      "subject": "Rivian",
+      "relation": "PARTNERS_WITH",
+      "object": "Ford",
+      "kind": "edge",
+      "source": "doc_26.txt"
+    },
+    {
+      "subject": "Rivian",
+      "relation": "SUPPLIES",
+      "object": "Inflation Reduction Act",
+      "kind": "edge",
+      "source": "doc_26.txt"
+    },
+    {
+      "subject": "Hyundai",
+      "relation": "PARTNERS_WITH",
+      "object": "Rivian",
+      "kind": "edge",
+      "source": "doc_26.txt"
+    },
+    {
+      "subject": "Fisker",
+      "relation": "ACQUIRED",
+      "object": "Ohio",
+      "kind": "edge",
+      "source": "doc_26.txt"
+    },
+    {
+      "subject": "Ford",
+      "relation": "PARTNERS_WITH",
+      "object": "General Motors",
+      "kind": "edge",
+      "source": "doc_26.txt"
+    },
+    {
+      "subject": "General Motors",
+      "relation": "PARTNERS_WITH",
+      "object": "Michigan",
+      "kind": "edge",
+      "source": "doc_26.txt"
+    },
+    {
+      "subject": "KraneShares",
+      "relation": "MENTIONS",
+      "object": "KARS",
+      "kind": "edge",
+      "source": "doc_26.txt"
+    },
+    {
+      "subject": "KARS",
+      "relation": "SUPPLIES",
+      "object": "Bloomberg Electric Vehicles Index",
+      "kind": "edge",
+      "source": "doc_26.txt"
+    },
+    {
+      "subject": "CATL",
+      "relation": "COMPETES_WITH",
+      "object": "Samsung SDI",
+      "kind": "edge",
+      "source": "doc_26.txt"
+    },
+    {
+      "subject": "Samsung SDI",
+      "relation": "COMPETES_WITH",
+      "object": "CATL",
+      "kind": "edge",
+      "source": "doc_26.txt"
+    },
+    {
+      "subject": "Inflation Reduction Act",
+      "relation": "REGULATES",
+      "object": "US election",
       "kind": "edge",
       "source": "doc_26.txt"
     },
@@ -2113,6 +3970,216 @@
       "subject": "Deloitte Insights",
       "relation": "MENTIONS",
       "object": "Ban on polluting vehicles",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "PRODUCES",
+      "object": "Model 3",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "SELLS",
+      "object": "Model 3",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "ANALYZES",
+      "object": "Electric vehicle market",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "United States",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "China",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "Europe",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "European EV manufacturers",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "Chinese EV manufacturers",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "Deloitte Insights",
+      "relation": "MENTIONS",
+      "object": "Investor sentiment",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "Germany",
+      "relation": "REGULATES",
+      "object": "EV charging infrastructure",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "Germany",
+      "relation": "SUPPORTS",
+      "object": "EV charging infrastructure",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "Norway",
+      "relation": "SUPPORTS",
+      "object": "EV adoption",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "Netherlands",
+      "relation": "SUPPORTS",
+      "object": "EV adoption",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "China",
+      "relation": "SUPPORTS",
+      "object": "EV charging infrastructure",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "Paris Agreement",
+      "relation": "SUPPORTS",
+      "object": "EV adoption",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "European CO2 emission targets",
+      "relation": "REGULATES",
+      "object": "car manufacturers",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "City access restrictions",
+      "relation": "REGULATES",
+      "object": "ICE vehicles",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "United Kingdom",
+      "relation": "REGULATES",
+      "object": "zero-/low-emission zones",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "Electric vehicle trends",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "Inflation Reduction Act",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "IHS Markit",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "IHS Markit",
+      "relation": "MENTIONS",
+      "object": "United States",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "European Federation for Transport and Environment",
+      "relation": "MENTIONS",
+      "object": "Europe",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "European Federation for Transport and Environment",
+      "relation": "MENTIONS",
+      "object": "BEV",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "COVID-19",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "OEMs",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "ICE vehicles",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "PHEV",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "Corporate agenda",
+      "kind": "edge",
+      "source": "doc_28.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "Company car schemes",
       "kind": "edge",
       "source": "doc_28.txt"
     },
@@ -2260,6 +4327,174 @@
       "subject": "BMW",
       "relation": "COMPETES_WITH",
       "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "PRODUCES",
+      "object": "Tesla Supercharger",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "Tesla Supercharger",
+      "relation": "SUPPLIES",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "ChargePoint",
+      "relation": "OPERATES_IN",
+      "object": "United States",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "ChargePoint",
+      "relation": "SUPPLIES",
+      "object": "EV charging ports",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "Inflation Reduction Act",
+      "relation": "SUPPORTS",
+      "object": "EV tax credits",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "Inflation Reduction Act",
+      "relation": "SUPPORTS",
+      "object": "charging infrastructure",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "California",
+      "relation": "LOCATED_IN",
+      "object": "United States",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "Hyundai",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "Kia",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "Hyundai",
+      "relation": "COMPETES_WITH",
+      "object": "Kia",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "LG Energy Solution",
+      "relation": "ANALYZES",
+      "object": "global EV market",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "McKinsey",
+      "relation": "ANALYZES",
+      "object": "consumer sentiment",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "PARTNERS_WITH",
+      "object": "AFDC",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "MENTIONS",
+      "object": "energy.gov",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "Blink",
+      "relation": "ACQUIRED",
+      "object": "SemaConnect",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "Electrify America",
+      "relation": "PARTNERS_WITH",
+      "object": "AFDC",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "EVgo",
+      "relation": "MENTIONS",
+      "object": "AFDC",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "ChargePoint",
+      "relation": "MENTIONS",
+      "object": "AFDC",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "EV Connect",
+      "relation": "MENTIONS",
+      "object": "AFDC",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "Alliance for Automotive Innovation",
+      "relation": "MENTIONS",
+      "object": "AFDC",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "Kelley Blue Book",
+      "relation": "MENTIONS",
+      "object": "AFDC",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "WSJ",
+      "relation": "MENTIONS",
+      "object": "AFDC",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "Reuters",
+      "relation": "MENTIONS",
+      "object": "AFDC",
+      "kind": "edge",
+      "source": "doc_30.txt"
+    },
+    {
+      "subject": "Nasdaq.com",
+      "relation": "MENTIONS",
+      "object": "AFDC",
       "kind": "edge",
       "source": "doc_30.txt"
     },
@@ -2460,6 +4695,48 @@
       "source": "doc_34.txt"
     },
     {
+      "subject": "CBT News",
+      "relation": "MENTIONS",
+      "object": "Hyundai",
+      "kind": "edge",
+      "source": "doc_34.txt"
+    },
+    {
+      "subject": "CBT News",
+      "relation": "MENTIONS",
+      "object": "Ioniq 5 N",
+      "kind": "edge",
+      "source": "doc_34.txt"
+    },
+    {
+      "subject": "CBT News",
+      "relation": "MENTIONS",
+      "object": "Longo Toyota",
+      "kind": "edge",
+      "source": "doc_34.txt"
+    },
+    {
+      "subject": "CBT News",
+      "relation": "MENTIONS",
+      "object": "Doug Eroh",
+      "kind": "edge",
+      "source": "doc_34.txt"
+    },
+    {
+      "subject": "CBT News",
+      "relation": "MENTIONS",
+      "object": "Japan",
+      "kind": "edge",
+      "source": "doc_34.txt"
+    },
+    {
+      "subject": "CBT News",
+      "relation": "MENTIONS",
+      "object": "JBF Business Media",
+      "kind": "edge",
+      "source": "doc_34.txt"
+    },
+    {
       "subject": "Tesla",
       "relation": "PRODUCES",
       "object": "Model Y",
@@ -2540,6 +4817,69 @@
       "subject": "United States",
       "relation": "REGULATES",
       "object": "Tax credits",
+      "kind": "edge",
+      "source": "doc_35.txt"
+    },
+    {
+      "subject": "Biden administration",
+      "relation": "SUPPORTS",
+      "object": "EV chargers",
+      "kind": "edge",
+      "source": "doc_35.txt"
+    },
+    {
+      "subject": "United Auto Workers",
+      "relation": "COMPETES_WITH",
+      "object": "GM",
+      "kind": "edge",
+      "source": "doc_35.txt"
+    },
+    {
+      "subject": "United Auto Workers",
+      "relation": "COMPETES_WITH",
+      "object": "Ford",
+      "kind": "edge",
+      "source": "doc_35.txt"
+    },
+    {
+      "subject": "United Auto Workers",
+      "relation": "COMPETES_WITH",
+      "object": "Stellantis",
+      "kind": "edge",
+      "source": "doc_35.txt"
+    },
+    {
+      "subject": "GM",
+      "relation": "COMPETES_WITH",
+      "object": "Ford",
+      "kind": "edge",
+      "source": "doc_35.txt"
+    },
+    {
+      "subject": "GM",
+      "relation": "COMPETES_WITH",
+      "object": "Stellantis",
+      "kind": "edge",
+      "source": "doc_35.txt"
+    },
+    {
+      "subject": "Ford",
+      "relation": "COMPETES_WITH",
+      "object": "Stellantis",
+      "kind": "edge",
+      "source": "doc_35.txt"
+    },
+    {
+      "subject": "Biden administration",
+      "relation": "REGULATES",
+      "object": "EV chargers",
+      "kind": "edge",
+      "source": "doc_35.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "SUPPLIES",
+      "object": "proprietary chargers",
       "kind": "edge",
       "source": "doc_35.txt"
     },
@@ -2670,6 +5010,41 @@
       "source": "doc_37.txt"
     },
     {
+      "subject": "Nationwide",
+      "relation": "MENTIONS",
+      "object": "Inflation Reduction Act",
+      "kind": "edge",
+      "source": "doc_37.txt"
+    },
+    {
+      "subject": "Nationwide",
+      "relation": "MENTIONS",
+      "object": "Cox Automotive",
+      "kind": "edge",
+      "source": "doc_37.txt"
+    },
+    {
+      "subject": "Nationwide",
+      "relation": "MENTIONS",
+      "object": "UAW",
+      "kind": "edge",
+      "source": "doc_37.txt"
+    },
+    {
+      "subject": "Nationwide",
+      "relation": "MENTIONS",
+      "object": "Nationwide Market Insights podcast",
+      "kind": "edge",
+      "source": "doc_37.txt"
+    },
+    {
+      "subject": "Nationwide",
+      "relation": "MENTIONS",
+      "object": "Nationwide economics team",
+      "kind": "edge",
+      "source": "doc_37.txt"
+    },
+    {
       "subject": "Donald Trump",
       "relation": "COMPETES_WITH",
       "object": "Joe Biden",
@@ -2733,6 +5108,111 @@
       "source": "doc_38.txt"
     },
     {
+      "subject": "Tesla",
+      "relation": "PRODUCES",
+      "object": "Model Y",
+      "kind": "edge",
+      "source": "doc_38.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "CEO_OF",
+      "object": "Elon Musk",
+      "kind": "edge",
+      "source": "doc_38.txt"
+    },
+    {
+      "subject": "Donald Trump",
+      "relation": "MENTIONS",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_38.txt"
+    },
+    {
+      "subject": "General Motors",
+      "relation": "INVESTED_IN",
+      "object": "EVs",
+      "kind": "edge",
+      "source": "doc_38.txt"
+    },
+    {
+      "subject": "Scout Motors",
+      "relation": "INVESTED_IN",
+      "object": "South Carolina",
+      "kind": "edge",
+      "source": "doc_38.txt"
+    },
+    {
+      "subject": "Volvo",
+      "relation": "MANUFACTURES",
+      "object": "EX90",
+      "kind": "edge",
+      "source": "doc_38.txt"
+    },
+    {
+      "subject": "Volvo",
+      "relation": "INVESTED_IN",
+      "object": "South Carolina",
+      "kind": "edge",
+      "source": "doc_38.txt"
+    },
+    {
+      "subject": "Honda",
+      "relation": "INVESTED_IN",
+      "object": "Ohio",
+      "kind": "edge",
+      "source": "doc_38.txt"
+    },
+    {
+      "subject": "Texas",
+      "relation": "REGULATES",
+      "object": "EV road use taxes",
+      "kind": "edge",
+      "source": "doc_38.txt"
+    },
+    {
+      "subject": "Tim Scott",
+      "relation": "REGULATES",
+      "object": "EPA emissions targets",
+      "kind": "edge",
+      "source": "doc_38.txt"
+    },
+    {
+      "subject": "National Resources Defense Council",
+      "relation": "MENTIONS",
+      "object": "American EV investments",
+      "kind": "edge",
+      "source": "doc_38.txt"
+    },
+    {
+      "subject": "MotorTrend",
+      "relation": "MENTIONS",
+      "object": "Tim Stevens",
+      "kind": "edge",
+      "source": "doc_38.txt"
+    },
+    {
+      "subject": "Tim Stevens",
+      "relation": "MENTIONS",
+      "object": "MotorTrend",
+      "kind": "edge",
+      "source": "doc_38.txt"
+    },
+    {
+      "subject": "Lucid Air Sapphire",
+      "relation": "PRODUCES",
+      "object": "Lucid",
+      "kind": "edge",
+      "source": "doc_38.txt"
+    },
+    {
+      "subject": "McMurty Spéirling",
+      "relation": "PRODUCES",
+      "object": "McMurty",
+      "kind": "edge",
+      "source": "doc_38.txt"
+    },
+    {
       "subject": "Kantar",
       "relation": "ANALYZES",
       "object": "Consumer attitudes towards EVs",
@@ -2778,6 +5258,90 @@
       "subject": "Kantar",
       "relation": "OPERATES_IN",
       "object": "Singapore",
+      "kind": "edge",
+      "source": "doc_39.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "Ford",
+      "kind": "edge",
+      "source": "doc_39.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "BMW",
+      "kind": "edge",
+      "source": "doc_39.txt"
+    },
+    {
+      "subject": "Ford",
+      "relation": "PRODUCES",
+      "object": "EV car models",
+      "kind": "edge",
+      "source": "doc_39.txt"
+    },
+    {
+      "subject": "BMW",
+      "relation": "PRODUCES",
+      "object": "EV car models",
+      "kind": "edge",
+      "source": "doc_39.txt"
+    },
+    {
+      "subject": "Kantar",
+      "relation": "ANALYZES",
+      "object": "Consumer attitudes",
+      "kind": "edge",
+      "source": "doc_39.txt"
+    },
+    {
+      "subject": "Kantar",
+      "relation": "REPORTED_ON",
+      "object": "Understanding Consumer Attitudes Towards Electric Vehicles",
+      "kind": "edge",
+      "source": "doc_39.txt"
+    },
+    {
+      "subject": "Accelerated Answers",
+      "relation": "SUPPLIES",
+      "object": "Kantar Profiles Audience Network",
+      "kind": "edge",
+      "source": "doc_39.txt"
+    },
+    {
+      "subject": "Kantar Profiles Audience Network",
+      "relation": "OPERATES_IN",
+      "object": "United States",
+      "kind": "edge",
+      "source": "doc_39.txt"
+    },
+    {
+      "subject": "Kantar Profiles Audience Network",
+      "relation": "OPERATES_IN",
+      "object": "United Kingdom",
+      "kind": "edge",
+      "source": "doc_39.txt"
+    },
+    {
+      "subject": "Kantar Profiles Audience Network",
+      "relation": "OPERATES_IN",
+      "object": "Germany",
+      "kind": "edge",
+      "source": "doc_39.txt"
+    },
+    {
+      "subject": "Kantar Profiles Audience Network",
+      "relation": "OPERATES_IN",
+      "object": "Singapore",
+      "kind": "edge",
+      "source": "doc_39.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "MENTIONS",
+      "object": "Autopilot system",
       "kind": "edge",
       "source": "doc_39.txt"
     },
@@ -2915,6 +5479,69 @@
       "source": "doc_41.txt"
     },
     {
+      "subject": "SEIA",
+      "relation": "MENTIONS",
+      "object": "Solar Means Business report",
+      "kind": "edge",
+      "source": "doc_41.txt"
+    },
+    {
+      "subject": "SEIA",
+      "relation": "HEADQUARTERED_IN",
+      "object": "Washington, D.C.",
+      "kind": "edge",
+      "source": "doc_41.txt"
+    },
+    {
+      "subject": "Meta",
+      "relation": "INVESTED_IN",
+      "object": "solar and storage",
+      "kind": "edge",
+      "source": "doc_41.txt"
+    },
+    {
+      "subject": "Amazon",
+      "relation": "INVESTED_IN",
+      "object": "solar and storage",
+      "kind": "edge",
+      "source": "doc_41.txt"
+    },
+    {
+      "subject": "Google",
+      "relation": "INVESTED_IN",
+      "object": "solar and storage",
+      "kind": "edge",
+      "source": "doc_41.txt"
+    },
+    {
+      "subject": "Apple",
+      "relation": "INVESTED_IN",
+      "object": "solar and storage",
+      "kind": "edge",
+      "source": "doc_41.txt"
+    },
+    {
+      "subject": "Walmart",
+      "relation": "INVESTED_IN",
+      "object": "solar and storage",
+      "kind": "edge",
+      "source": "doc_41.txt"
+    },
+    {
+      "subject": "Inflation Reduction Act",
+      "relation": "SUPPORTS",
+      "object": "solar deployment",
+      "kind": "edge",
+      "source": "doc_41.txt"
+    },
+    {
+      "subject": "Inflation Reduction Act",
+      "relation": "SUPPORTS",
+      "object": "U.S. solar manufacturing",
+      "kind": "edge",
+      "source": "doc_41.txt"
+    },
+    {
       "subject": "Bureau of Industry and Security",
       "relation": "REGULATES",
       "object": "China",
@@ -2981,6 +5608,195 @@
       "subject": "Anti-Foreign Sanctions Law",
       "relation": "REGULATES",
       "object": "Ministry of Foreign Affairs of China",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "US-China Economic and Security Review Commission",
+      "relation": "REPORTED_ON",
+      "object": "United States",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "US-China Economic and Security Review Commission",
+      "relation": "SUPPORTS",
+      "object": "China Permanent Normal Trade Relations",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "US Treasury Department",
+      "relation": "REGULATES",
+      "object": "China",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "Office of Foreign Assets Control",
+      "relation": "REGULATES",
+      "object": "Shenzhen Boyu Imports and Exports Co",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "Office of Foreign Assets Control",
+      "relation": "REGULATES",
+      "object": "Shenzhen Jinghon Electronics Limited",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "Office of the United States Trade Representative",
+      "relation": "REGULATES",
+      "object": "China",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "Sequoia Capital",
+      "relation": "OPERATES_IN",
+      "object": "China",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "Matrix Partners",
+      "relation": "OPERATES_IN",
+      "object": "China",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "U.S. Department of Homeland Security",
+      "relation": "REGULATES",
+      "object": "Uyghur Forced Labor Prevention Act",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "US Department of Commerce",
+      "relation": "REGULATES",
+      "object": "China",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "US Department of Homeland Security",
+      "relation": "REGULATES",
+      "object": "Gotion",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "US Department of Homeland Security",
+      "relation": "REGULATES",
+      "object": "BYD",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "US Department of Homeland Security",
+      "relation": "REGULATES",
+      "object": "CATL",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "US Department of Homeland Security",
+      "relation": "REGULATES",
+      "object": "Envision",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "US Department of Homeland Security",
+      "relation": "REGULATES",
+      "object": "EVE",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "US Department of Homeland Security",
+      "relation": "REGULATES",
+      "object": "Hithium",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "US State Department",
+      "relation": "MENTIONS",
+      "object": "John Podesta",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "John Podesta",
+      "relation": "MEETS_WITH",
+      "object": "Liu Zhenmin",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "Jake Sullivan",
+      "relation": "MEETS_WITH",
+      "object": "Xi Jinping",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "Jake Sullivan",
+      "relation": "MEETS_WITH",
+      "object": "Wang Yi",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "People's Bank of China",
+      "relation": "PARTNERS_WITH",
+      "object": "US Department of the Treasury",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "US Department of the Treasury",
+      "relation": "PARTNERS_WITH",
+      "object": "People's Bank of China",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "People's Bank of China",
+      "relation": "REGULATES",
+      "object": "China's AML laws",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "US Department of the Treasury",
+      "relation": "MENTIONS",
+      "object": "Global Systemically Important Banks",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "Ministry of Commerce",
+      "relation": "REGULATES",
+      "object": "Export controls on drones",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "General Administration of Customs",
+      "relation": "REGULATES",
+      "object": "Export controls on drones",
+      "kind": "edge",
+      "source": "doc_42.txt"
+    },
+    {
+      "subject": "Central Military Commission",
+      "relation": "REGULATES",
+      "object": "Export controls on drones",
       "kind": "edge",
       "source": "doc_42.txt"
     },
@@ -3065,6 +5881,230 @@
       "subject": "China",
       "relation": "SUPPORTS",
       "object": "electric charging infrastructure",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "Xiaomi",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "BMW",
+      "relation": "COMPETES_WITH",
+      "object": "BYD",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "BYD",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "Li Auto",
+      "relation": "COMPETES_WITH",
+      "object": "BMW",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "United States",
+      "relation": "REGULATES",
+      "object": "Chinese EVs",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "European Union",
+      "relation": "REGULATES",
+      "object": "Chinese EVs",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "Organization for Economic Cooperation and Development",
+      "relation": "COMPETES_WITH",
+      "object": "China",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "China",
+      "relation": "SUPPORTS",
+      "object": "Chinese EVs",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "United States",
+      "relation": "SUPPORTS",
+      "object": "EV charging infrastructure",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "Information Technology and Innovation Foundation",
+      "relation": "ANALYZES",
+      "object": "Chinese EV industry",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "Smith Richardson Foundation",
+      "relation": "PARTNERS_WITH",
+      "object": "Information Technology and Innovation Foundation",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "Australian Strategic Policy Institute",
+      "relation": "ANALYZES",
+      "object": "Chinese Academy of Sciences",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "CATL",
+      "relation": "PRODUCES",
+      "object": "EV batteries",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "BYD",
+      "relation": "PRODUCES",
+      "object": "EVs",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "PRODUCES",
+      "object": "EVs",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "Rivian",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "Lucid Technology",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "Ford",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "General Motors",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "LG",
+      "relation": "SUPPLIES",
+      "object": "EV battery manufacturing",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "SK",
+      "relation": "SUPPLIES",
+      "object": "EV battery manufacturing",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "QuantumScape",
+      "relation": "ANALYZES",
+      "object": "all-solid-state batteries",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "Factorial Energy",
+      "relation": "ANALYZES",
+      "object": "all-solid-state batteries",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "Solid Power",
+      "relation": "ANALYZES",
+      "object": "all-solid-state batteries",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "LG Energy",
+      "relation": "PRODUCES",
+      "object": "EV batteries",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "Panasonic",
+      "relation": "PRODUCES",
+      "object": "EV batteries",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "BYD",
+      "relation": "MANUFACTURES",
+      "object": "NEVs",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "BYD",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "Elon Musk",
+      "relation": "CEO_OF",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "China",
+      "relation": "OPERATES_IN",
+      "object": "EV battery industry",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "United Nations",
+      "relation": "ANALYZES",
+      "object": "EV exports",
+      "kind": "edge",
+      "source": "doc_43.txt"
+    },
+    {
+      "subject": "Germany",
+      "relation": "COMPETES_WITH",
+      "object": "China",
       "kind": "edge",
       "source": "doc_43.txt"
     },
@@ -3174,6 +6214,160 @@
       "source": "doc_45.txt"
     },
     {
+      "subject": "American Airlines",
+      "relation": "MENTIONS",
+      "object": "Airline ImPax Report",
+      "kind": "edge",
+      "source": "doc_45.txt"
+    },
+    {
+      "subject": "United Airlines",
+      "relation": "MENTIONS",
+      "object": "Airline ImPax Report",
+      "kind": "edge",
+      "source": "doc_45.txt"
+    },
+    {
+      "subject": "Longwoods International",
+      "relation": "MENTIONS",
+      "object": "Miles Partnership",
+      "kind": "edge",
+      "source": "doc_45.txt"
+    },
+    {
+      "subject": "American Airlines",
+      "relation": "MENTIONS",
+      "object": "AAdvantage",
+      "kind": "edge",
+      "source": "doc_45.txt"
+    },
+    {
+      "subject": "Alaska Airlines",
+      "relation": "MENTIONS",
+      "object": "Recurly",
+      "kind": "edge",
+      "source": "doc_45.txt"
+    },
+    {
+      "subject": "The Guardian",
+      "relation": "MENTIONS",
+      "object": "Recurly",
+      "kind": "edge",
+      "source": "doc_45.txt"
+    },
+    {
+      "subject": "BCD Travel",
+      "relation": "MENTIONS",
+      "object": "BusinessTravelers",
+      "kind": "edge",
+      "source": "doc_45.txt"
+    },
+    {
+      "subject": "American Airlines",
+      "relation": "MENTIONS",
+      "object": "NDC capabilities",
+      "kind": "edge",
+      "source": "doc_45.txt"
+    },
+    {
+      "subject": "American Airlines",
+      "relation": "MENTIONS",
+      "object": "aa.com",
+      "kind": "edge",
+      "source": "doc_45.txt"
+    },
+    {
+      "subject": "United Airlines",
+      "relation": "MENTIONS",
+      "object": "IRROPS",
+      "kind": "edge",
+      "source": "doc_45.txt"
+    },
+    {
+      "subject": "Aero Crew Solutions",
+      "relation": "MENTIONS",
+      "object": "pilot-hiring market",
+      "kind": "edge",
+      "source": "doc_45.txt"
+    },
+    {
+      "subject": "Longwoods International",
+      "relation": "MENTIONS",
+      "object": "electric vehicle",
+      "kind": "edge",
+      "source": "doc_45.txt"
+    },
+    {
+      "subject": "American Airlines",
+      "relation": "MENTIONS",
+      "object": "Robert Heppenstall",
+      "kind": "edge",
+      "source": "doc_45.txt"
+    },
+    {
+      "subject": "Southwest Airlines",
+      "relation": "MENTIONS",
+      "object": "Gregory John Sweeney",
+      "kind": "edge",
+      "source": "doc_45.txt"
+    },
+    {
+      "subject": "Southwest Airlines",
+      "relation": "MENTIONS",
+      "object": "Phil Crofton",
+      "kind": "edge",
+      "source": "doc_45.txt"
+    },
+    {
+      "subject": "Expedia Group",
+      "relation": "MENTIONS",
+      "object": "Greg Schulze",
+      "kind": "edge",
+      "source": "doc_45.txt"
+    },
+    {
+      "subject": "Southwest Airlines",
+      "relation": "MENTIONS",
+      "object": "Colleen Barrett",
+      "kind": "edge",
+      "source": "doc_45.txt"
+    },
+    {
+      "subject": "Boeing",
+      "relation": "MENTIONS",
+      "object": "Ted Christie",
+      "kind": "edge",
+      "source": "doc_45.txt"
+    },
+    {
+      "subject": "Alaska Airlines",
+      "relation": "MENTIONS",
+      "object": "Taylor Putnam",
+      "kind": "edge",
+      "source": "doc_45.txt"
+    },
+    {
+      "subject": "Alaska Airlines",
+      "relation": "MENTIONS",
+      "object": "Emilie Harkin",
+      "kind": "edge",
+      "source": "doc_45.txt"
+    },
+    {
+      "subject": "BCD Travel",
+      "relation": "MENTIONS",
+      "object": "Anthony Williams",
+      "kind": "edge",
+      "source": "doc_45.txt"
+    },
+    {
+      "subject": "American Airlines",
+      "relation": "MENTIONS",
+      "object": "ITILITE",
+      "kind": "edge",
+      "source": "doc_45.txt"
+    },
+    {
       "subject": "U.S. Energy Information Administration",
       "relation": "MENTIONS",
       "object": "Monthly Energy Review",
@@ -3258,6 +6452,34 @@
       "source": "doc_47.txt"
     },
     {
+      "subject": "Cox Automotive",
+      "relation": "SUBSIDIARY_OF",
+      "object": "Cox Enterprises",
+      "kind": "edge",
+      "source": "doc_47.txt"
+    },
+    {
+      "subject": "Cox Enterprises",
+      "relation": "HEADQUARTERED_IN",
+      "object": "Atlanta",
+      "kind": "edge",
+      "source": "doc_47.txt"
+    },
+    {
+      "subject": "Cox Automotive Dealer Sentiment Index",
+      "relation": "ANALYZES",
+      "object": "U.S. electric vehicle industry",
+      "kind": "edge",
+      "source": "doc_47.txt"
+    },
+    {
+      "subject": "Cox Automotive Dealer Sentiment Index",
+      "relation": "REPORTED_ON",
+      "object": "U.S. auto dealers",
+      "kind": "edge",
+      "source": "doc_47.txt"
+    },
+    {
       "subject": "PwC",
       "relation": "ANALYZES",
       "object": "US electric vehicle charging market",
@@ -3303,6 +6525,69 @@
       "subject": "Tesla",
       "relation": "COMPETES_WITH",
       "object": "EV charging market",
+      "kind": "edge",
+      "source": "doc_48.txt"
+    },
+    {
+      "subject": "Inflation Reduction Act",
+      "relation": "SUPPORTS",
+      "object": "EV tax credits",
+      "kind": "edge",
+      "source": "doc_48.txt"
+    },
+    {
+      "subject": "Inflation Reduction Act",
+      "relation": "SUBJECT_TO",
+      "object": "EVs assembled in North America",
+      "kind": "edge",
+      "source": "doc_48.txt"
+    },
+    {
+      "subject": "New York",
+      "relation": "SUPPORTS",
+      "object": "Central Hudson EV Make-Ready program",
+      "kind": "edge",
+      "source": "doc_48.txt"
+    },
+    {
+      "subject": "California",
+      "relation": "SUPPORTS",
+      "object": "Bay Area Charge Program",
+      "kind": "edge",
+      "source": "doc_48.txt"
+    },
+    {
+      "subject": "PSE&G",
+      "relation": "SUPPORTS",
+      "object": "EV charging station credits",
+      "kind": "edge",
+      "source": "doc_48.txt"
+    },
+    {
+      "subject": "PwC",
+      "relation": "ANALYZES",
+      "object": "US electric vehicle industry",
+      "kind": "edge",
+      "source": "doc_48.txt"
+    },
+    {
+      "subject": "Akshay Singh",
+      "relation": "CEO_OF",
+      "object": "Strategy&",
+      "kind": "edge",
+      "source": "doc_48.txt"
+    },
+    {
+      "subject": "Anand Manthena",
+      "relation": "CEO_OF",
+      "object": "PwC US",
+      "kind": "edge",
+      "source": "doc_48.txt"
+    },
+    {
+      "subject": "PwC",
+      "relation": "MENTIONS",
+      "object": "US electric vehicle industry",
       "kind": "edge",
       "source": "doc_48.txt"
     },
@@ -3373,6 +6658,160 @@
       "subject": "United Kingdom",
       "relation": "MENTIONS",
       "object": "Inflation",
+      "kind": "edge",
+      "source": "doc_49.txt"
+    },
+    {
+      "subject": "London",
+      "relation": "MENTIONS",
+      "object": "COVID-19",
+      "kind": "edge",
+      "source": "doc_49.txt"
+    },
+    {
+      "subject": "London",
+      "relation": "MENTIONS",
+      "object": "Brexit",
+      "kind": "edge",
+      "source": "doc_49.txt"
+    },
+    {
+      "subject": "Wales",
+      "relation": "MENTIONS",
+      "object": "COVID-19",
+      "kind": "edge",
+      "source": "doc_49.txt"
+    },
+    {
+      "subject": "Wales",
+      "relation": "MENTIONS",
+      "object": "Brexit",
+      "kind": "edge",
+      "source": "doc_49.txt"
+    },
+    {
+      "subject": "West Midlands",
+      "relation": "MENTIONS",
+      "object": "COVID-19",
+      "kind": "edge",
+      "source": "doc_49.txt"
+    },
+    {
+      "subject": "West Midlands",
+      "relation": "MENTIONS",
+      "object": "Brexit",
+      "kind": "edge",
+      "source": "doc_49.txt"
+    },
+    {
+      "subject": "Northeast",
+      "relation": "MENTIONS",
+      "object": "COVID-19",
+      "kind": "edge",
+      "source": "doc_49.txt"
+    },
+    {
+      "subject": "Northeast",
+      "relation": "MENTIONS",
+      "object": "Brexit",
+      "kind": "edge",
+      "source": "doc_49.txt"
+    },
+    {
+      "subject": "Southeast",
+      "relation": "MENTIONS",
+      "object": "COVID-19",
+      "kind": "edge",
+      "source": "doc_49.txt"
+    },
+    {
+      "subject": "Southeast",
+      "relation": "MENTIONS",
+      "object": "Brexit",
+      "kind": "edge",
+      "source": "doc_49.txt"
+    },
+    {
+      "subject": "Brexit",
+      "relation": "REGULATES",
+      "object": "European Union",
+      "kind": "edge",
+      "source": "doc_49.txt"
+    },
+    {
+      "subject": "Brexit",
+      "relation": "MENTIONS",
+      "object": "House of Commons Treasury Committee",
+      "kind": "edge",
+      "source": "doc_49.txt"
+    },
+    {
+      "subject": "Brexit",
+      "relation": "MENTIONS",
+      "object": "HM Treasury",
+      "kind": "edge",
+      "source": "doc_49.txt"
+    },
+    {
+      "subject": "Brexit",
+      "relation": "MENTIONS",
+      "object": "Bank of England",
+      "kind": "edge",
+      "source": "doc_49.txt"
+    },
+    {
+      "subject": "Brexit",
+      "relation": "MENTIONS",
+      "object": "International Monetary Fund",
+      "kind": "edge",
+      "source": "doc_49.txt"
+    },
+    {
+      "subject": "COVID-19",
+      "relation": "MENTIONS",
+      "object": "SARS-CoV-2",
+      "kind": "edge",
+      "source": "doc_49.txt"
+    },
+    {
+      "subject": "United States",
+      "relation": "MENTIONS",
+      "object": "COVID-19",
+      "kind": "edge",
+      "source": "doc_49.txt"
+    },
+    {
+      "subject": "United Kingdom",
+      "relation": "MENTIONS",
+      "object": "COVID-19 vaccination",
+      "kind": "edge",
+      "source": "doc_49.txt"
+    },
+    {
+      "subject": "United States",
+      "relation": "MENTIONS",
+      "object": "COVID-19 vaccination",
+      "kind": "edge",
+      "source": "doc_49.txt"
+    },
+    {
+      "subject": "Malaysia",
+      "relation": "MENTIONS",
+      "object": "COVID-19",
+      "kind": "edge",
+      "source": "doc_49.txt"
+    },
+    {
+      "subject": "Google Trends",
+      "relation": "ANALYZES",
+      "object": "Sterling Pound",
+      "kind": "edge",
+      "source": "doc_49.txt"
+    },
+    {
+      "subject": "Google Trends",
+      "relation": "ANALYZES",
+      "object": "COVID-19 vaccination",
       "kind": "edge",
       "source": "doc_49.txt"
     },
@@ -3489,6 +6928,34 @@
       "source": "doc_52.txt"
     },
     {
+      "subject": "BlackRock",
+      "relation": "MENTIONS",
+      "object": "iBonds ETFs",
+      "kind": "edge",
+      "source": "doc_52.txt"
+    },
+    {
+      "subject": "BlackRock",
+      "relation": "MENTIONS",
+      "object": "IBIT",
+      "kind": "edge",
+      "source": "doc_52.txt"
+    },
+    {
+      "subject": "iShares",
+      "relation": "POWERED_BY",
+      "object": "BlackRock",
+      "kind": "edge",
+      "source": "doc_52.txt"
+    },
+    {
+      "subject": "iShares",
+      "relation": "REPORTED_ON",
+      "object": "Market Insights",
+      "kind": "edge",
+      "source": "doc_52.txt"
+    },
+    {
       "subject": "U.S. Bank Asset Management",
       "relation": "MENTIONS",
       "object": "Rob Haworth",
@@ -3573,6 +7040,62 @@
       "source": "doc_53.txt"
     },
     {
+      "subject": "U.S. Bank",
+      "relation": "MENTIONS",
+      "object": "S&P 500 Energy Index",
+      "kind": "edge",
+      "source": "doc_53.txt"
+    },
+    {
+      "subject": "U.S. Bank",
+      "relation": "MENTIONS",
+      "object": "S&P Dow Jones Indices",
+      "kind": "edge",
+      "source": "doc_53.txt"
+    },
+    {
+      "subject": "U.S. Bank",
+      "relation": "MENTIONS",
+      "object": "Energy Information Administration",
+      "kind": "edge",
+      "source": "doc_53.txt"
+    },
+    {
+      "subject": "U.S. Bank",
+      "relation": "MENTIONS",
+      "object": "U.S. Energy Information Administration",
+      "kind": "edge",
+      "source": "doc_53.txt"
+    },
+    {
+      "subject": "U.S. Bank",
+      "relation": "MENTIONS",
+      "object": "S&P 500",
+      "kind": "edge",
+      "source": "doc_53.txt"
+    },
+    {
+      "subject": "U.S. Bank",
+      "relation": "MENTIONS",
+      "object": "S&P 500 index fund",
+      "kind": "edge",
+      "source": "doc_53.txt"
+    },
+    {
+      "subject": "U.S. Bank",
+      "relation": "MENTIONS",
+      "object": "ETF",
+      "kind": "edge",
+      "source": "doc_53.txt"
+    },
+    {
+      "subject": "U.S. Bank",
+      "relation": "MENTIONS",
+      "object": "Rob Haworth",
+      "kind": "edge",
+      "source": "doc_53.txt"
+    },
+    {
       "subject": "European Commission",
       "relation": "REGULATES",
       "object": "zero-emission vehicles",
@@ -3597,6 +7120,188 @@
       "subject": "EY",
       "relation": "MENTIONS",
       "object": "eMobility ecosystem",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "EY",
+      "relation": "ANALYZES",
+      "object": "Electric vehicle market",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "EY",
+      "relation": "MENTIONS",
+      "object": "Biden Administration",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "Biden Administration",
+      "relation": "SUPPORTS",
+      "object": "Inflation Reduction Act",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "European Commission",
+      "relation": "REGULATES",
+      "object": "CO2 emission standards",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "European Commission",
+      "relation": "REGULATES",
+      "object": "EV sales mandates",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "European Green Deal",
+      "relation": "SUPPORTS",
+      "object": "European EV adoption",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "UK",
+      "relation": "OPERATES_IN",
+      "object": "Europe",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "Norway",
+      "relation": "SUPPORTS",
+      "object": "EV adoption",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "Washington",
+      "relation": "SUBJECT_TO",
+      "object": "ICE vehicle ban",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "California",
+      "relation": "SUBJECT_TO",
+      "object": "ICE vehicle ban",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "Massachusetts",
+      "relation": "SUBJECT_TO",
+      "object": "ICE vehicle ban",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "France",
+      "relation": "SUPPORTS",
+      "object": "bonus-malus scheme",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "European Commission",
+      "relation": "REGULATES",
+      "object": "European competition regulators",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "European Commission",
+      "relation": "SUPPORTS",
+      "object": "technology neutrality",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "Eurelectric",
+      "relation": "MENTIONS",
+      "object": "power distribution grids",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "European Commission",
+      "relation": "SUPPORTS",
+      "object": "charging infrastructure initiatives",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "Romania",
+      "relation": "SUBJECT_TO",
+      "object": "European competition regulators",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "Portland General Electric",
+      "relation": "PARTNERS_WITH",
+      "object": "Daimler Trucks North America",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "Volkswagen",
+      "relation": "PARTNERS_WITH",
+      "object": "Electreon",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "West Coast Clean Transit Corridor initiative",
+      "relation": "PARTNERS_WITH",
+      "object": "utilities",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "Electric Highway Coalition",
+      "relation": "PARTNERS_WITH",
+      "object": "utilities",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "Midwestern coalition",
+      "relation": "PARTNERS_WITH",
+      "object": "utilities",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "Volkswagen",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "EY",
+      "relation": "MENTIONS",
+      "object": "Eurelectric",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "EY",
+      "relation": "PRODUCES",
+      "object": "Accelerating fleet electrification in Europe",
+      "kind": "edge",
+      "source": "doc_54.txt"
+    },
+    {
+      "subject": "Eurovia",
+      "relation": "SUBSIDIARY_OF",
+      "object": "VINCI",
       "kind": "edge",
       "source": "doc_54.txt"
     },
@@ -3639,6 +7344,48 @@
       "subject": "AllianceBernstein",
       "relation": "REPORTED_ON",
       "object": "World Bank",
+      "kind": "edge",
+      "source": "doc_55.txt"
+    },
+    {
+      "subject": "AllianceBernstein",
+      "relation": "MENTIONS",
+      "object": "electric vehicles",
+      "kind": "edge",
+      "source": "doc_55.txt"
+    },
+    {
+      "subject": "AllianceBernstein",
+      "relation": "MENTIONS",
+      "object": "China",
+      "kind": "edge",
+      "source": "doc_55.txt"
+    },
+    {
+      "subject": "AllianceBernstein",
+      "relation": "MENTIONS",
+      "object": "United States",
+      "kind": "edge",
+      "source": "doc_55.txt"
+    },
+    {
+      "subject": "AllianceBernstein",
+      "relation": "MENTIONS",
+      "object": "Europe",
+      "kind": "edge",
+      "source": "doc_55.txt"
+    },
+    {
+      "subject": "AllianceBernstein",
+      "relation": "MENTIONS",
+      "object": "Japan",
+      "kind": "edge",
+      "source": "doc_55.txt"
+    },
+    {
+      "subject": "AllianceBernstein",
+      "relation": "MENTIONS",
+      "object": "Emerging markets",
       "kind": "edge",
       "source": "doc_55.txt"
     },
@@ -3727,6 +7474,69 @@
       "source": "doc_56.txt"
     },
     {
+      "subject": "BNY Investments",
+      "relation": "MENTIONS",
+      "object": "Electric vehicles",
+      "kind": "edge",
+      "source": "doc_56.txt"
+    },
+    {
+      "subject": "BNY Investments",
+      "relation": "MENTIONS",
+      "object": "Beijing",
+      "kind": "edge",
+      "source": "doc_56.txt"
+    },
+    {
+      "subject": "BNY Investments",
+      "relation": "MENTIONS",
+      "object": "Hong Kong",
+      "kind": "edge",
+      "source": "doc_56.txt"
+    },
+    {
+      "subject": "BNY Investments",
+      "relation": "MENTIONS",
+      "object": "Shanghai",
+      "kind": "edge",
+      "source": "doc_56.txt"
+    },
+    {
+      "subject": "BNY Investments",
+      "relation": "MENTIONS",
+      "object": "Guangzhou",
+      "kind": "edge",
+      "source": "doc_56.txt"
+    },
+    {
+      "subject": "BNY Investments",
+      "relation": "MENTIONS",
+      "object": "Shenzhen",
+      "kind": "edge",
+      "source": "doc_56.txt"
+    },
+    {
+      "subject": "BNY Investments",
+      "relation": "SUBSIDIARY_OF",
+      "object": "The Bank of New York Mellon Corporation",
+      "kind": "edge",
+      "source": "doc_56.txt"
+    },
+    {
+      "subject": "Walter Scott",
+      "relation": "SUBSIDIARY_OF",
+      "object": "The Bank of New York Mellon Corporation",
+      "kind": "edge",
+      "source": "doc_56.txt"
+    },
+    {
+      "subject": "Walter Scott",
+      "relation": "REGULATES",
+      "object": "Financial Conduct Authority",
+      "kind": "edge",
+      "source": "doc_56.txt"
+    },
+    {
       "subject": "Allianz Global Investors",
       "relation": "MENTIONS",
       "object": "Bloomberg TV",
@@ -3758,6 +7568,62 @@
       "subject": "MSTA",
       "relation": "MENTIONS",
       "object": "Market Insights",
+      "kind": "edge",
+      "source": "doc_57.txt"
+    },
+    {
+      "subject": "Federal Reserve Board",
+      "relation": "REGULATES",
+      "object": "Interest rates",
+      "kind": "edge",
+      "source": "doc_57.txt"
+    },
+    {
+      "subject": "China",
+      "relation": "OPERATES_IN",
+      "object": "Global markets",
+      "kind": "edge",
+      "source": "doc_57.txt"
+    },
+    {
+      "subject": "United States",
+      "relation": "OPERATES_IN",
+      "object": "Global markets",
+      "kind": "edge",
+      "source": "doc_57.txt"
+    },
+    {
+      "subject": "World Health Organization",
+      "relation": "MENTIONS",
+      "object": "mpox",
+      "kind": "edge",
+      "source": "doc_57.txt"
+    },
+    {
+      "subject": "International Monetary Fund",
+      "relation": "MENTIONS",
+      "object": "Regional Economic Outlook for Asia and Pacific",
+      "kind": "edge",
+      "source": "doc_57.txt"
+    },
+    {
+      "subject": "S&P 500",
+      "relation": "MENTIONS",
+      "object": "Tech stocks",
+      "kind": "edge",
+      "source": "doc_57.txt"
+    },
+    {
+      "subject": "Germany",
+      "relation": "OPERATES_IN",
+      "object": "Europe",
+      "kind": "edge",
+      "source": "doc_57.txt"
+    },
+    {
+      "subject": "Japan",
+      "relation": "OPERATES_IN",
+      "object": "Global markets",
       "kind": "edge",
       "source": "doc_57.txt"
     },
@@ -3916,6 +7782,139 @@
       "source": "doc_61.txt"
     },
     {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "Ford Motor Company",
+      "kind": "edge",
+      "source": "doc_61.txt"
+    },
+    {
+      "subject": "BYD",
+      "relation": "PARTNERS_WITH",
+      "object": "Uber Technologies",
+      "kind": "edge",
+      "source": "doc_61.txt"
+    },
+    {
+      "subject": "Ford Motor Company",
+      "relation": "PRODUCES",
+      "object": "Ford Mustang Mach-E",
+      "kind": "edge",
+      "source": "doc_61.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "Hertz",
+      "kind": "edge",
+      "source": "doc_61.txt"
+    },
+    {
+      "subject": "Biden administration",
+      "relation": "REGULATES",
+      "object": "BYD",
+      "kind": "edge",
+      "source": "doc_61.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "Ford",
+      "kind": "edge",
+      "source": "doc_61.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "General Motors",
+      "kind": "edge",
+      "source": "doc_61.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "NIO",
+      "kind": "edge",
+      "source": "doc_61.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "Volkswagen",
+      "kind": "edge",
+      "source": "doc_61.txt"
+    },
+    {
+      "subject": "General Motors",
+      "relation": "PARTNERS_WITH",
+      "object": "EVgo",
+      "kind": "edge",
+      "source": "doc_61.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "Xiaomi",
+      "kind": "edge",
+      "source": "doc_61.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "SUBJECT_TO",
+      "object": "Inflation Reduction Act",
+      "kind": "edge",
+      "source": "doc_61.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "MENTIONS",
+      "object": "Supercharger network",
+      "kind": "edge",
+      "source": "doc_61.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "MENTIONS",
+      "object": "Model 3",
+      "kind": "edge",
+      "source": "doc_61.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "MENTIONS",
+      "object": "Model Y",
+      "kind": "edge",
+      "source": "doc_61.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "MENTIONS",
+      "object": "Cybertruck",
+      "kind": "edge",
+      "source": "doc_61.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "MENTIONS",
+      "object": "robo-taxi service",
+      "kind": "edge",
+      "source": "doc_61.txt"
+    },
+    {
+      "subject": "Joe Biden",
+      "relation": "MENTIONS",
+      "object": "Inflation Reduction Act",
+      "kind": "edge",
+      "source": "doc_61.txt"
+    },
+    {
+      "subject": "U.S. government",
+      "relation": "MENTIONS",
+      "object": "Supercharger network",
+      "kind": "edge",
+      "source": "doc_61.txt"
+    },
+    {
       "subject": "U.S. Energy Information Administration",
       "relation": "MENTIONS",
       "object": "U.S. electric grid",
@@ -4070,6 +8069,132 @@
       "source": "doc_63.txt"
     },
     {
+      "subject": "BYD",
+      "relation": "PARTNERS_WITH",
+      "object": "Shenzhen",
+      "kind": "edge",
+      "source": "doc_63.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "PARTNERS_WITH",
+      "object": "Shanghai",
+      "kind": "edge",
+      "source": "doc_63.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "MANUFACTURES",
+      "object": "Gigafactory in Shanghai",
+      "kind": "edge",
+      "source": "doc_63.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "SUPPLIES",
+      "object": "Shanghai Gigafactory",
+      "kind": "edge",
+      "source": "doc_63.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "BYD",
+      "kind": "edge",
+      "source": "doc_63.txt"
+    },
+    {
+      "subject": "China",
+      "relation": "REGULATES",
+      "object": "EV Subsidies",
+      "kind": "edge",
+      "source": "doc_63.txt"
+    },
+    {
+      "subject": "China",
+      "relation": "SUPPORTS",
+      "object": "EV Subsidies",
+      "kind": "edge",
+      "source": "doc_63.txt"
+    },
+    {
+      "subject": "Contemporary Amperex Technology",
+      "relation": "PRODUCES",
+      "object": "LFP Batteries",
+      "kind": "edge",
+      "source": "doc_63.txt"
+    },
+    {
+      "subject": "China",
+      "relation": "SUPPLIES",
+      "object": "Battery Materials",
+      "kind": "edge",
+      "source": "doc_63.txt"
+    },
+    {
+      "subject": "Wood Mackenzie",
+      "relation": "ANALYZES",
+      "object": "EVs and Battery Supply Chain",
+      "kind": "edge",
+      "source": "doc_63.txt"
+    },
+    {
+      "subject": "AlixPartners",
+      "relation": "REPORTED_ON",
+      "object": "Chinese EV Demand",
+      "kind": "edge",
+      "source": "doc_63.txt"
+    },
+    {
+      "subject": "BYD",
+      "relation": "PRODUCES",
+      "object": "Battery-electric vehicles",
+      "kind": "edge",
+      "source": "doc_63.txt"
+    },
+    {
+      "subject": "SAIC-GM-Wuling",
+      "relation": "PRODUCES",
+      "object": "Battery-electric vehicles",
+      "kind": "edge",
+      "source": "doc_63.txt"
+    },
+    {
+      "subject": "Geely",
+      "relation": "PRODUCES",
+      "object": "Battery-electric vehicles",
+      "kind": "edge",
+      "source": "doc_63.txt"
+    },
+    {
+      "subject": "Nio",
+      "relation": "PRODUCES",
+      "object": "Battery-electric vehicles",
+      "kind": "edge",
+      "source": "doc_63.txt"
+    },
+    {
+      "subject": "Xpeng",
+      "relation": "PRODUCES",
+      "object": "Battery-electric vehicles",
+      "kind": "edge",
+      "source": "doc_63.txt"
+    },
+    {
+      "subject": "LiAuto",
+      "relation": "PRODUCES",
+      "object": "Battery-electric vehicles",
+      "kind": "edge",
+      "source": "doc_63.txt"
+    },
+    {
+      "subject": "China",
+      "relation": "INVESTED_IN",
+      "object": "Indonesia",
+      "kind": "edge",
+      "source": "doc_63.txt"
+    },
+    {
       "subject": "Tesla",
       "relation": "COMPETES_WITH",
       "object": "BYD",
@@ -4129,6 +8254,125 @@
       "subject": "California",
       "relation": "MENTIONS",
       "object": "UC Berkeley",
+      "kind": "edge",
+      "source": "doc_64.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "NIO",
+      "kind": "edge",
+      "source": "doc_64.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "Hyundai Motor Company",
+      "kind": "edge",
+      "source": "doc_64.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "BMW",
+      "kind": "edge",
+      "source": "doc_64.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "Stellantis N.V.",
+      "kind": "edge",
+      "source": "doc_64.txt"
+    },
+    {
+      "subject": "NIO",
+      "relation": "COMPETES_WITH",
+      "object": "Hozon Auto",
+      "kind": "edge",
+      "source": "doc_64.txt"
+    },
+    {
+      "subject": "NIO",
+      "relation": "COMPETES_WITH",
+      "object": "Chery Automobile",
+      "kind": "edge",
+      "source": "doc_64.txt"
+    },
+    {
+      "subject": "European Union",
+      "relation": "REGULATES",
+      "object": "CO2 emissions targets",
+      "kind": "edge",
+      "source": "doc_64.txt"
+    },
+    {
+      "subject": "China",
+      "relation": "REGULATES",
+      "object": "New Energy Vehicle mandates",
+      "kind": "edge",
+      "source": "doc_64.txt"
+    },
+    {
+      "subject": "United States",
+      "relation": "SUPPORTS",
+      "object": "federal tax credits",
+      "kind": "edge",
+      "source": "doc_64.txt"
+    },
+    {
+      "subject": "European Union",
+      "relation": "REGULATES",
+      "object": "battery recycling regulations",
+      "kind": "edge",
+      "source": "doc_64.txt"
+    },
+    {
+      "subject": "United Nations Economic Commission for Europe",
+      "relation": "SUPPORTS",
+      "object": "international harmonization",
+      "kind": "edge",
+      "source": "doc_64.txt"
+    },
+    {
+      "subject": "BYD",
+      "relation": "MANUFACTURES",
+      "object": "BYD batteries",
+      "kind": "edge",
+      "source": "doc_64.txt"
+    },
+    {
+      "subject": "BYD",
+      "relation": "PRODUCES",
+      "object": "BYD batteries",
+      "kind": "edge",
+      "source": "doc_64.txt"
+    },
+    {
+      "subject": "CATL",
+      "relation": "PRODUCES",
+      "object": "CATL batteries",
+      "kind": "edge",
+      "source": "doc_64.txt"
+    },
+    {
+      "subject": "China",
+      "relation": "REGULATES",
+      "object": "Emissions regulations",
+      "kind": "edge",
+      "source": "doc_64.txt"
+    },
+    {
+      "subject": "China",
+      "relation": "SUPPORTS",
+      "object": "EV subsidies",
+      "kind": "edge",
+      "source": "doc_64.txt"
+    },
+    {
+      "subject": "China",
+      "relation": "REGULATES",
+      "object": "EV production targets",
       "kind": "edge",
       "source": "doc_64.txt"
     },
@@ -4217,6 +8461,146 @@
       "source": "doc_65.txt"
     },
     {
+      "subject": "Tesla",
+      "relation": "PARTNERS_WITH",
+      "object": "Shanghai government",
+      "kind": "edge",
+      "source": "doc_65.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "BYD",
+      "kind": "edge",
+      "source": "doc_65.txt"
+    },
+    {
+      "subject": "BYD",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_65.txt"
+    },
+    {
+      "subject": "BYD",
+      "relation": "PRODUCES",
+      "object": "Seagull",
+      "kind": "edge",
+      "source": "doc_65.txt"
+    },
+    {
+      "subject": "BMW",
+      "relation": "OPERATES_IN",
+      "object": "China",
+      "kind": "edge",
+      "source": "doc_65.txt"
+    },
+    {
+      "subject": "Renault",
+      "relation": "OPERATES_IN",
+      "object": "China",
+      "kind": "edge",
+      "source": "doc_65.txt"
+    },
+    {
+      "subject": "Volkswagen",
+      "relation": "OPERATES_IN",
+      "object": "China",
+      "kind": "edge",
+      "source": "doc_65.txt"
+    },
+    {
+      "subject": "Volvo",
+      "relation": "SUBSIDIARY_OF",
+      "object": "Chinese firms",
+      "kind": "edge",
+      "source": "doc_65.txt"
+    },
+    {
+      "subject": "Polestar",
+      "relation": "SUBSIDIARY_OF",
+      "object": "Chinese firms",
+      "kind": "edge",
+      "source": "doc_65.txt"
+    },
+    {
+      "subject": "Smart",
+      "relation": "SUBSIDIARY_OF",
+      "object": "Chinese firms",
+      "kind": "edge",
+      "source": "doc_65.txt"
+    },
+    {
+      "subject": "MG",
+      "relation": "SUBSIDIARY_OF",
+      "object": "Chinese firms",
+      "kind": "edge",
+      "source": "doc_65.txt"
+    },
+    {
+      "subject": "Thailand",
+      "relation": "LOCATED_IN",
+      "object": "Southeast Asia",
+      "kind": "edge",
+      "source": "doc_65.txt"
+    },
+    {
+      "subject": "CATL",
+      "relation": "OPERATES_IN",
+      "object": "Germany",
+      "kind": "edge",
+      "source": "doc_65.txt"
+    },
+    {
+      "subject": "CATL",
+      "relation": "PARTNERS_WITH",
+      "object": "Ford",
+      "kind": "edge",
+      "source": "doc_65.txt"
+    },
+    {
+      "subject": "BYD",
+      "relation": "ACQUIRED",
+      "object": "Ford plant",
+      "kind": "edge",
+      "source": "doc_65.txt"
+    },
+    {
+      "subject": "Great Wall Motors",
+      "relation": "OPERATES_IN",
+      "object": "Brazil",
+      "kind": "edge",
+      "source": "doc_65.txt"
+    },
+    {
+      "subject": "NIO",
+      "relation": "INVESTED_IN",
+      "object": "critical minerals",
+      "kind": "edge",
+      "source": "doc_65.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "INVESTED_IN",
+      "object": "lithium refining",
+      "kind": "edge",
+      "source": "doc_65.txt"
+    },
+    {
+      "subject": "Inflation Reduction Act",
+      "relation": "SUPPORTS",
+      "object": "United States",
+      "kind": "edge",
+      "source": "doc_65.txt"
+    },
+    {
+      "subject": "Center for Strategic and International Studies",
+      "relation": "MENTIONS",
+      "object": "CATL",
+      "kind": "edge",
+      "source": "doc_65.txt"
+    },
+    {
       "subject": "China",
       "relation": "PRODUCES",
       "object": "EVs",
@@ -4269,6 +8653,209 @@
       "subject": "China",
       "relation": "SUPPORTS",
       "object": "EV sector policies",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "Xiaomi",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "Xiaomi",
+      "relation": "COMPETES_WITH",
+      "object": "BMW",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "BYD",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "Li Auto",
+      "relation": "COMPETES_WITH",
+      "object": "BMW",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "Chinese Academy of Sciences",
+      "relation": "MENTIONS",
+      "object": "Critical Technology Tracker",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "United States",
+      "relation": "REGULATES",
+      "object": "Tariffs on Chinese EVs",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "European Union",
+      "relation": "REGULATES",
+      "object": "Tariffs on Chinese EVs",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "Information Technology and Innovation Foundation",
+      "relation": "ANALYZES",
+      "object": "Chinese EV innovation",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "Smith Richardson Foundation",
+      "relation": "SUPPORTS",
+      "object": "Information Technology and Innovation Foundation",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "U.S. Congress",
+      "relation": "SUPPORTS",
+      "object": "Inflation Reduction Act",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "U.S. Congress",
+      "relation": "SUPPORTS",
+      "object": "Infrastructure Investment and Jobs Act",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "William Morrison",
+      "relation": "FOUNDED",
+      "object": "First operational EV",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "PRODUCES",
+      "object": "EVs",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "Rivian",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "Lucid Technology",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "Ford",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "General Motors",
+      "relation": "COMPETES_WITH",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "QuantumScape",
+      "relation": "DEVELOPS",
+      "object": "all-solid-state batteries",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "Factorial Energy",
+      "relation": "DEVELOPS",
+      "object": "all-solid-state batteries",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "Solid Power",
+      "relation": "DEVELOPS",
+      "object": "all-solid-state batteries",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "LG",
+      "relation": "SUPPLIES",
+      "object": "EV battery manufacturing operations",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "SK",
+      "relation": "SUPPLIES",
+      "object": "EV battery manufacturing operations",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "CATL",
+      "relation": "COMPETES_WITH",
+      "object": "LG Energy",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "CATL",
+      "relation": "COMPETES_WITH",
+      "object": "Panasonic",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "BYD",
+      "relation": "PARTNERS_WITH",
+      "object": "Jinling shipyard",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "BYD",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "Elon Musk",
+      "relation": "CEO_OF",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "United Nations",
+      "relation": "ANALYZES",
+      "object": "UN Comtrade data",
+      "kind": "edge",
+      "source": "doc_66.txt"
+    },
+    {
+      "subject": "Morgan Stanley",
+      "relation": "ANALYZES",
+      "object": "CATL",
       "kind": "edge",
       "source": "doc_66.txt"
     },
@@ -4343,6 +8930,90 @@
       "source": "doc_68.txt"
     },
     {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "Ford",
+      "kind": "edge",
+      "source": "doc_68.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "General Motors",
+      "kind": "edge",
+      "source": "doc_68.txt"
+    },
+    {
+      "subject": "Ford",
+      "relation": "COMPETES_WITH",
+      "object": "General Motors",
+      "kind": "edge",
+      "source": "doc_68.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "MENTIONS",
+      "object": "The Motley Fool",
+      "kind": "edge",
+      "source": "doc_68.txt"
+    },
+    {
+      "subject": "Ford",
+      "relation": "MENTIONS",
+      "object": "The Motley Fool",
+      "kind": "edge",
+      "source": "doc_68.txt"
+    },
+    {
+      "subject": "General Motors",
+      "relation": "MENTIONS",
+      "object": "The Motley Fool",
+      "kind": "edge",
+      "source": "doc_68.txt"
+    },
+    {
+      "subject": "Rivian",
+      "relation": "MENTIONS",
+      "object": "The Motley Fool",
+      "kind": "edge",
+      "source": "doc_68.txt"
+    },
+    {
+      "subject": "Lucid",
+      "relation": "MENTIONS",
+      "object": "The Motley Fool",
+      "kind": "edge",
+      "source": "doc_68.txt"
+    },
+    {
+      "subject": "Nio",
+      "relation": "MENTIONS",
+      "object": "The Motley Fool",
+      "kind": "edge",
+      "source": "doc_68.txt"
+    },
+    {
+      "subject": "VinFast",
+      "relation": "MENTIONS",
+      "object": "The Motley Fool",
+      "kind": "edge",
+      "source": "doc_68.txt"
+    },
+    {
+      "subject": "XPeng",
+      "relation": "MENTIONS",
+      "object": "The Motley Fool",
+      "kind": "edge",
+      "source": "doc_68.txt"
+    },
+    {
+      "subject": "Polestar",
+      "relation": "MENTIONS",
+      "object": "The Motley Fool",
+      "kind": "edge",
+      "source": "doc_68.txt"
+    },
+    {
       "subject": "Deloitte Insights",
       "relation": "MENTIONS",
       "object": "Electric vehicle",
@@ -4413,6 +9084,230 @@
       "source": "doc_69.txt"
     },
     {
+      "subject": "Tesla",
+      "relation": "PRODUCES",
+      "object": "Model 3",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "SELLS",
+      "object": "Model 3",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Tesla",
+      "relation": "COMPETES_WITH",
+      "object": "European EV manufacturers",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "ANALYZES",
+      "object": "Electric vehicle trends",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "Tesla Model 3",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "China",
+      "relation": "OPERATES_IN",
+      "object": "EV market",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "United States",
+      "relation": "OPERATES_IN",
+      "object": "EV market",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Europe",
+      "relation": "OPERATES_IN",
+      "object": "EV market",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Deloitte Insights",
+      "relation": "MENTIONS",
+      "object": "Electric vehicle trends",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Germany",
+      "relation": "REGULATES",
+      "object": "EV charging infrastructure",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Germany",
+      "relation": "SUPPORTS",
+      "object": "EV charging infrastructure",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Germany",
+      "relation": "REGULATES",
+      "object": "Fuel stations EV charging point",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "China",
+      "relation": "SUPPORTS",
+      "object": "EV charging infrastructure",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Norway",
+      "relation": "SUPPORTS",
+      "object": "EV adoption",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Netherlands",
+      "relation": "SUPPORTS",
+      "object": "EV adoption",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Paris Agreement",
+      "relation": "SUPPORTS",
+      "object": "EV adoption",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "European CO2 emission targets",
+      "relation": "REGULATES",
+      "object": "Car manufacturers",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "City access restrictions",
+      "relation": "REGULATES",
+      "object": "ICE vehicles",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Seattle",
+      "relation": "REGULATES",
+      "object": "ICE vehicles",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Mexico City",
+      "relation": "REGULATES",
+      "object": "ICE vehicles",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "Electric vehicle trends",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "IHS Markit",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "European Federation for Transport and Environment",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "European Federation for Transport and Environment",
+      "relation": "MENTIONS",
+      "object": "BEV",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "COVID-19",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "Inflation Reduction Act",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "Tesla",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "Volkswagen",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "China",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "Netherlands",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "Germany",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
+      "subject": "Deloitte",
+      "relation": "MENTIONS",
+      "object": "France",
+      "kind": "edge",
+      "source": "doc_69.txt"
+    },
+    {
       "subject": "McKinsey",
       "relation": "ANALYZES",
       "object": "electric-vehicle charging",
@@ -4439,28 +9334,91 @@
       "object": "McKinsey Mobility Consumer Pulse Survey",
       "kind": "edge",
       "source": "doc_70.txt"
+    },
+    {
+      "subject": "McKinsey",
+      "relation": "MENTIONS",
+      "object": "Lauritz Fischer",
+      "kind": "edge",
+      "source": "doc_70.txt"
+    },
+    {
+      "subject": "McKinsey",
+      "relation": "MENTIONS",
+      "object": "Felix Rupalla",
+      "kind": "edge",
+      "source": "doc_70.txt"
+    },
+    {
+      "subject": "McKinsey",
+      "relation": "MENTIONS",
+      "object": "Shivika Sahdev",
+      "kind": "edge",
+      "source": "doc_70.txt"
+    },
+    {
+      "subject": "McKinsey",
+      "relation": "MENTIONS",
+      "object": "Ali Tanweer",
+      "kind": "edge",
+      "source": "doc_70.txt"
+    },
+    {
+      "subject": "McKinsey",
+      "relation": "MENTIONS",
+      "object": "Morgan Lee",
+      "kind": "edge",
+      "source": "doc_70.txt"
+    },
+    {
+      "subject": "McKinsey",
+      "relation": "MENTIONS",
+      "object": "Anna-Sophie Smith",
+      "kind": "edge",
+      "source": "doc_70.txt"
+    },
+    {
+      "subject": "McKinsey",
+      "relation": "MENTIONS",
+      "object": "Stuttgart",
+      "kind": "edge",
+      "source": "doc_70.txt"
+    },
+    {
+      "subject": "McKinsey",
+      "relation": "MENTIONS",
+      "object": "New York",
+      "kind": "edge",
+      "source": "doc_70.txt"
+    },
+    {
+      "subject": "McKinsey",
+      "relation": "MENTIONS",
+      "object": "Boston",
+      "kind": "edge",
+      "source": "doc_70.txt"
     }
   ],
   "counts": {
     "docs": 70,
-    "triples": 565,
-    "entities": 482
+    "triples": 1212,
+    "entities": 911
   },
   "usage": {
-    "calls": 70,
-    "cache_hits": 6,
-    "prompt_tokens": 109195,
-    "completion_tokens": 13706,
-    "seconds": 301.4128894805908,
+    "calls": 176,
+    "cache_hits": 71,
+    "prompt_tokens": 264230,
+    "completion_tokens": 29631,
+    "seconds": 219.83454084396362,
     "by_stage": {
       "extract_text": {
-        "calls": 70,
-        "prompt_tokens": 109195,
-        "completion_tokens": 13706,
-        "seconds": 301.4128894805908
+        "calls": 176,
+        "prompt_tokens": 264230,
+        "completion_tokens": 29631,
+        "seconds": 219.83454084396362
       }
     },
-    "total_tokens": 122901,
-    "est_cost_usd": 0.024603
+    "total_tokens": 293861,
+    "est_cost_usd": 0.057413
   }
 }

@@ -22,7 +22,9 @@ OUTPUT_DIR = os.path.join(ROOT_DIR, "outputs")
 CACHE_DIR = os.path.join(ROOT_DIR, ".cache")
 
 # Giới hạn ký tự content mỗi doc khi đưa vào LLM trích triples (kiểm soát token)
-MAX_DOC_CHARS = 6000
+MAX_DOC_CHARS = 6000          # kích thước 1 chunk extraction (và cap cho flat_rag)
+FULL_DOC_CHARS = 24000        # cap tổng content dùng cho extraction (doc dài sẽ chunk)
+MAX_EXTRACT_CHUNKS = 4        # số chunk tối đa LLM trích / doc (kiểm soát chi phí)
 
 # File trung gian / kết quả
 TRIPLES_PATH = os.path.join(OUTPUT_DIR, "triples.json")

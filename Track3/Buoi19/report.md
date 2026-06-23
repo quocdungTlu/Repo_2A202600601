@@ -1,6 +1,7 @@
-# Lab Day 19 — GraphRAG với AI Company Corpus
+# Lab Day 19 — GraphRAG với US EV Industry Corpus
 **Sinh viên:** Lương Quốc Dũng — 2A202600601
 **Ngày:** 2026-06-23
+**Corpus:** 70 văn bản web (giáo viên cấp) về ngành xe điện (EV) Mỹ — sentiment, tài chính, đầu tư, chính sách.
 
 ---
 
@@ -8,150 +9,134 @@
 
 ### 1.1 Entity vs Attribute — LLM phân biệt như thế nào?
 
-Nguyên tắc cốt lõi: **một giá trị là Node (thực thể) khi nó có thể tham gia vào nhiều quan hệ độc lập;
+Nguyên tắc: **một giá trị là Node (thực thể) khi nó có thể tham gia nhiều quan hệ độc lập;
 là Attribute khi nó chỉ mô tả đặc tính của một node cụ thể**.
 
-**Ví dụ từ corpus:**
-- `"OpenAI"` → **Node** vì nó FOUNDED_BY Sam Altman, INVESTED_IN bởi Microsoft, HAS_PRODUCT ChatGPT
-- `"2015"` → **Attribute** (`FOUNDED_IN: 2015`) vì năm thành lập chỉ mô tả OpenAI, không là trung tâm kết nối
-- `"Language"` → **Node** (domain) vì 7 công ty khác nhau cùng WORKS_ON → Language (có thể bridge multi-hop)
-- `"$25B"` → **Attribute** (`ANNUAL_REVENUE`) vì chỉ gắn với OpenAI, không cần traverse qua
+**Ví dụ từ corpus EV:**
+- `"Tesla"` → **Node** vì PRODUCES Model Y, COMPETES_WITH BYD, PARTNERS_WITH LG, CEO_OF Elon Musk
+- `"Elon Musk"` → **Node** vì là CEO_OF Tesla (thực thể người, có thể nối nhiều quan hệ)
+- `"$7,500 tax credit"` → **Attribute/skip** vì chỉ là con số, không là trung tâm kết nối
+- `"Inflation Reduction Act"` → **Node** (chính sách) vì SUPPORTS nhiều công ty, được Biden admin SUPPORTS
 
-**Heuristic thực tế áp dụng trong bài:**
-1. Named org/person/product → Node
-2. Số, ngày, % → Attribute (gắn vào node_data)
-3. Domain/category được nhiều entity chia sẻ → Node (tạo "hub" để bridge)
+**Heuristic áp dụng trong `extract_text.py`:** prompt yêu cầu LLM chỉ trích quan hệ mà **cả subject
+lẫn object đều là named entity** (công ty/người/tổ chức/sản phẩm/nơi/chính sách), KHÔNG tạo node cho
+số liệu thô. Điều này giữ đồ thị sạch và kết nối tốt cho multi-hop.
 
-### 1.2 Tại sao Deduplication quan trọng trong đồ thị?
+### 1.2 Tại sao Deduplication quan trọng?
 
-Nếu không dedup, cùng một thực thể xuất hiện dưới nhiều dạng tạo ra **nhiều node rời rạc thay vì 1 node kết nối**:
+Cùng một thực thể xuất hiện nhiều dạng tạo các node rời rạc, làm vỡ traversal:
 
 ```
-"Nvidia" ──INVESTED_IN──> OpenAI
-"NVIDIA" ──INVESTED_IN──> Anthropic    ← node KHÁC trong graph!
-"Nvidia Corp" ──INVESTED_IN──> xAI
+"Tesla"      ──PRODUCES──> Model Y
+"Tesla Inc"  ──COMPETES_WITH──> BYD     ← node KHÁC nếu không dedup!
+"Tesla, Inc."──PARTNERS_WITH──> LG
 ```
 
-Khi query 2-hop từ `OpenAI`, traversal không tìm được đường đến `Anthropic` vì "NVIDIA" ≠ "Nvidia".
-→ Multi-hop bị vỡ → mất chính xác → tệ hơn Flat RAG.
+Khi query 2-hop từ `Tesla`, nếu 3 biến thể là 3 node riêng thì không gom được đủ thông tin.
 
-**Giải pháp trong bài:** `ALIAS_MAP` chuẩn hóa 30+ variant → canonical form trước khi `add_node()`.
-Ví dụ: "NVIDIA Corporation", "nvidia", "Nvidea" → `"Nvidia"`.
+**Giải pháp generic trong `graph_build.py`:** hàm `_norm_key()` lột hậu tố pháp nhân
+(Inc/Corp/Motors/Ltd...), bỏ dấu câu, gộp hoa/thường → khóa chuẩn hóa. Với mỗi khóa, chọn
+surface form xuất hiện nhiều nhất làm canonical. Dedup giảm 482 → 472 entity.
 
-### 1.3 BFS Traversal vs Vector Search — Khác biệt cơ bản
+### 1.3 BFS Traversal vs Vector Search
 
 | Tiêu chí | BFS/Traversal (GraphRAG) | Vector Search (Flat RAG) |
 |----------|--------------------------|--------------------------|
-| **Nguyên lý** | Duyệt theo quan hệ logic đã biết rõ | Tìm theo độ tương đồng ngữ nghĩa |
-| **Multi-hop** | Tự nhiên: hop 1→2→3 theo cạnh | Không: top-k chunks độc lập |
-| **Chính xác** | Cao cho câu hỏi có chuỗi quan hệ | Tốt cho câu hỏi "gần" về ngữ nghĩa |
-| **Điểm yếu** | Cần đồ thị đúng; không giỏi ngữ nghĩa mờ | Ảo giác khi thông tin nằm rải ở nhiều chunk |
-| **Ví dụ** | "A đầu tư vào B, B liên kết C → A-C?" | "Tìm văn bản nói về khoản đầu tư AI" |
+| **Nguyên lý** | Duyệt theo quan hệ logic | Tìm theo độ tương đồng ngữ nghĩa |
+| **Multi-hop** | Tự nhiên (ego_graph radius=2) | Không — top-k chunks độc lập |
+| **Điểm mạnh** | Câu hỏi cross-entity có chuỗi quan hệ | Câu hỏi tóm tắt/ngữ nghĩa mờ |
+| **Điểm yếu** | Cần đồ thị đúng | Ảo giác khi info nằm rải nhiều chunk |
 
-`ego_graph(G, node, radius=2)` lấy tất cả node và cạnh trong bán kính 2 bước — tương đương BFS depth=2.
+`ego_graph(G, node, radius=2)` ≈ BFS depth=2 — lấy mọi node/cạnh trong 2 bước quanh thực thể truy vấn.
 
 ---
 
 ## Phần 2: Hệ thống xây dựng
 
-### Pipeline tổng quát
-
 ```
-CSV Corpus (6 bảng)
+70 file .txt (EV corpus)
        │
-       ▼
-  ┌─────────────────────────────────────┐
-  │  INDEXING (extract.py)              │
-  │  (A) Structured → 71 triples        │
-  │  (B) LLM (Fireworks gpt-oss-120b)   │
-  │      → 59 investor triples          │
-  └──────────────┬──────────────────────┘
-                 │ 130 triples
-                 ▼
-  ┌─────────────────────────────────────┐
-  │  CONSTRUCTION (graph_build.py)      │
-  │  NetworkX DiGraph                   │
-  │  64 nodes, 72 edges                 │
-  │  Dedup: 30+ entity aliases          │
-  └──────────┬──────────────┬───────────┘
-             │              │
-             ▼              ▼
-  ┌──────────────┐  ┌────────────────────┐
-  │  Flat RAG    │  │  GraphRAG          │
-  │  ChromaDB    │  │  ego_graph(r=2)    │
-  │  184 docs    │  │  + Textualization  │
-  │  MiniLM-L6   │  │                    │
-  └──────┬───────┘  └─────────┬──────────┘
-         │                    │
-         └──────────┬─────────┘
-                    │
-                    ▼
-         ┌──────────────────────┐
-         │  gpt-5.4-nano LLM   │
-         │  Generate Answer     │
-         └──────────────────────┘
+       ▼  extract_text.py — LLM trích triples từ VĂN BẢN THÔ
+  ┌──────────────────────────────────┐
+  │  gpt-5.4-nano                    │
+  │  → 565 triples, 482 entities     │
+  │  (clean boilerplate, cap 6k char)│
+  └──────────────┬───────────────────┘
+                 ▼  graph_build.py — dedup generic + NetworkX
+  ┌──────────────────────────────────┐
+  │  DiGraph: 472 nodes, 496 edges   │
+  │  Hubs: China, Tesla, IRA, NVIDIA │
+  └──────┬──────────────┬────────────┘
+         ▼              ▼
+  ┌────────────┐  ┌────────────────────┐
+  │  Flat RAG  │  │  GraphRAG          │
+  │  ChromaDB  │  │  ego_graph(r=2)    │
+  │  323 chunks│  │  + textualization  │
+  │  MiniLM-L6 │  │  (cap 120 edges)   │
+  └─────┬──────┘  └─────────┬──────────┘
+        └─────────┬─────────┘
+                  ▼  gpt-5.4-nano sinh câu trả lời
 ```
 
 ### Lựa chọn công cụ: NetworkX (offline)
-
-Sử dụng **NetworkX** thay vì Neo4j vì:
-1. Chạy hoàn toàn offline trong Python — không cần Docker/DB setup
-2. `ego_graph(G, node, radius=2)` built-in, đúng logic 2-hop BFS
-3. `nx.draw()` + Matplotlib → PNG trực tiếp cho deliverable
-4. Tốc độ build graph: <1s cho 64 nodes
+- `ego_graph(radius=2)` built-in cho 2-hop BFS
+- Dedup + coloring theo degree, domain-agnostic
+- `nx.draw()` + Matplotlib → PNG (Deliverable #2)
 
 ---
 
-## Phần 3: Kết quả Benchmark
+## Phần 3: Kết quả Benchmark (20 câu)
 
-### Bảng so sánh 20 câu hỏi
+| Metric | Flat RAG | GraphRAG |
+|--------|----------|----------|
+| Accuracy (20 câu) | **55%** (11/20) | **80%** (16/20) |
+| Multi-hop accuracy (10 câu) | 70% | 70% |
+| **Hallucination bắt được** | — | **7 cases** |
 
-*Xem file `outputs/benchmark_results.csv` để đầy đủ chi tiết.*
+> GraphRAG vượt Flat RAG **25 điểm %** trên dataset EV. Khác biệt lớn nhất ở các câu single-hop
+> lookup quan hệ rõ ràng (CEO, supplies, partners) — Flat RAG thường trả "I don't know" vì
+> thông tin nằm rải rác/bị chunk cắt, trong khi GraphRAG có cạnh trực tiếp.
 
-**Tóm tắt:**
-- **Flat RAG:** 12/20 đúng (60%)
-- **GraphRAG:** 10/20 đúng (50%)
-- **Hallucination bắt được:** 2 cases (Q06, Q18) — GraphRAG đúng, Flat RAG sai
+### 7 Hallucination cases (Flat sai → Graph đúng)
 
-> **Ghi chú quan trọng:** Q01 bị judge chấm sai — GraphRAG thực sự trả lời đúng
-> (Microsoft/Amazon/Nvidia/Fidelity là investors chung) trong khi Flat RAG nói "I don't know".
-> Adjusted: Flat≈11, Graph≈11, hallucination cases≈3.
+| ID | Câu hỏi | Flat RAG | GraphRAG |
+|----|---------|----------|----------|
+| Q08 | What does Nikola Corporation supply? | "I don't know" | HYLA Stations, Bosch Fuel Cell ✅ |
+| Q09 | Which company partnered with Honda? | "I don't know" | General Motors ✅ |
+| Q11 | Which investors invested in Tesla? | "I don't know" | China, Krane Funds ✅ |
+| Q14 | What does CATL supply and to which country? | "I don't know" | CATL → China ✅ |
+| Q15 | Which company produces the Lyriq? | "I don't know" | Cadillac ✅ |
+| Q17 | Which company does Geely Group relate to? | "I don't know" | ZEEKR (PARTNERS_WITH) ✅ |
+| Q20 | Who leads Tesla + models/partners? | Thiếu liên kết | Elon Musk + models + partners ✅ |
 
-### Phân tích hallucination cases
-
-**Case Q06** — "Which AI companies did Amazon invest in?"
-- **Flat RAG:** Chỉ tìm được Anthropic trong top-5 chunks (OpenAI ở chunk khác → bị bỏ) → **INCOMPLETE/INCORRECT**
-- **GraphRAG:** Duyệt Amazon → INVESTED_IN edges → tìm đủ cả Anthropic AND OpenAI → **CORRECT**
-
-**Case Q18** — "What is the total equity funding raised by Mistral AI?"
-- **Flat RAG:** Cộng sai các con số, kết quả garbled ("$2,?") → **INCORRECT**
-- **GraphRAG:** Context graph chính xác hơn → **CORRECT**
-
-### Tại sao một số câu GraphRAG kém hơn?
-
-1. **Q10, Q11** (multi-hop qua domain-investor): Context ego_graph đủ rộng nhưng gpt-5.4-nano không trace được chain phức tạp trong một lượt.
-2. **Q15** (sort by date trong graph): NetworkX không hỗ trợ sorting — cần LLM tự sort từ attributes.
-3. **Q17** (intersection pattern): "investor funded >1 company" đòi hỏi đếm degree của node — textualization không expose rõ.
+### Các câu GraphRAG kém hơn (4 câu)
+- **Q03** (CEO Ola Källenius supplies?): cả 2 sai — chuỗi 2-hop qua node CEO bị nhiễu.
+- **Q05** (Tesla competitors): Graph liệt kê quá nhiều entity (27 cạnh COMPETES_WITH) → judge chấm thiếu chính xác.
+- **Q13** (CEO of R1S maker): graph có Rivian PRODUCES R1S nhưng thiếu cạnh CEO_OF Rivian.
+- **Q18** (EV companies in China): China là hub degree=42, ego_graph quá rộng làm loãng câu trả lời.
 
 ---
 
 ## Phần 4: Chi phí
 
-| Phase | Tokens | Chi phí ước tính |
-|-------|--------|-----------------|
-| Graph construction (LLM extraction) | 20,137 | ~$0.006 |
-| Benchmark 20 câu (answer + judge) | 38,744 | ~$0.007 |
-| **Tổng** | **58,881** | **~$0.013** |
+| Phase | Tokens | Chi phí |
+|-------|--------|---------|
+| Indexing — trích triples từ 70 docs (gpt-5.4-nano) | 122,901 | $0.0246 |
+| Benchmark 20 câu (answer + judge) | 57,300 | $0.0094 |
+| **Tổng** | **180,201** | **~$0.034** |
 
-- Embedding (Flat RAG): `all-MiniLM-L6-v2` chạy local → **$0**
-- Graph build (NetworkX): CPU <1s → **$0**
-- Tổng thời gian: extraction ~121s + benchmark ~152s = **~4.5 phút**
+- Embedding Flat RAG (`all-MiniLM-L6-v2`): chạy local → **$0**
+- Graph build (NetworkX): CPU → **$0**
+- Thời gian: extraction ~301s + benchmark ~252s = **~9 phút**
 
 ---
 
 ## Kết luận
 
-GraphRAG vượt trội trong các câu hỏi cần **kết nối thông tin từ nhiều entity** qua chuỗi quan hệ rõ ràng
-(ví dụ: "investor → company → domain"). Flat RAG phù hợp hơn với câu hỏi single-entity lookup.
+Trên corpus **văn bản thô** thật của giáo viên (đúng kịch bản entity extraction mà đề mô tả),
+GraphRAG **vượt trội rõ rệt** (80% vs 55%, bắt 7 hallucination). Đồ thị tri thức biến văn bản
+phi cấu trúc thành mạng quan hệ truy vấn được, giúp trả lời chính xác các câu hỏi cross-entity
+mà Flat RAG bỏ sót do giới hạn chunk-retrieval.
 
-Trong thực tế, hệ thống hybrid (GraphRAG + Flat RAG reranking) sẽ cho kết quả tốt nhất.
+**Hạn chế:** GraphRAG phụ thuộc chất lượng trích triples; với hub bậc cao (China degree=42)
+ego_graph dễ loãng — cần lọc cạnh theo độ liên quan (đã cap 120 cạnh/câu).

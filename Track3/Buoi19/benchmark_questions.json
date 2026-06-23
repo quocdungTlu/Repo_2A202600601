@@ -1,142 +1,142 @@
 [
   {
     "id": "Q01",
-    "question": "Who invested in both OpenAI and Anthropic?",
-    "expected_entities": ["Microsoft", "Amazon", "Nvidia"],
+    "question": "Who is the CEO of the company that produces the Model Y?",
+    "expected_entities": ["Elon Musk", "Tesla"],
     "hop": 2,
-    "note": "Cần duyệt investor→company cho cả hai công ty rồi lấy giao"
+    "note": "Model Y <-PRODUCES- Tesla -CEO_OF-> Elon Musk"
   },
   {
     "id": "Q02",
-    "question": "Which AI companies work on both Language and Video domains?",
-    "expected_entities": ["OpenAI"],
-    "hop": 2,
-    "note": "Intersection qua domain node"
+    "question": "Which battery or electronics companies does Tesla partner with?",
+    "expected_entities": ["LG", "SK"],
+    "hop": 1,
+    "note": "Tesla -PARTNERS_WITH-> LG, SK"
   },
   {
     "id": "Q03",
-    "question": "What product does OpenAI have and how many users does it have?",
-    "expected_entities": ["ChatGPT"],
+    "question": "What products does the company led by Ola Kallenius supply?",
+    "expected_entities": ["eSprinter", "E-Class", "MB.OS"],
     "hop": 2,
-    "note": "OpenAI→HAS_PRODUCT→ChatGPT→ACTIVE_USERS"
+    "note": "Ola Kallenius -CEO_OF-> Mercedes-Benz -SUPPLIES-> products"
   },
   {
     "id": "Q04",
-    "question": "Which company founded in 2015 has the highest compute spend?",
-    "expected_entities": ["OpenAI"],
+    "question": "Berkshire Hathaway invested in which EV company, and what does that company produce?",
+    "expected_entities": ["BYD", "EVs"],
     "hop": 2,
-    "note": "FOUNDED_IN→2015 + COMPUTE_SPEND"
+    "note": "Berkshire -INVESTED_IN-> BYD -PRODUCES-> EVs"
   },
   {
     "id": "Q05",
-    "question": "Name investors that funded xAI.",
-    "expected_entities": ["Sequoia Capital", "Fidelity", "BlackRock"],
+    "question": "Who are Tesla's main competitors?",
+    "expected_entities": ["Rivian", "Ford", "BYD", "General Motors"],
     "hop": 1,
-    "note": "investor→INVESTED_IN→xAI"
+    "note": "Tesla -COMPETES_WITH-> many"
   },
   {
     "id": "Q06",
-    "question": "Which AI companies did Amazon invest in?",
-    "expected_entities": ["OpenAI", "Anthropic"],
-    "hop": 1,
-    "note": "Amazon→INVESTED_IN→?"
+    "question": "Which policy supports Tesla, and who supports that policy?",
+    "expected_entities": ["Inflation Reduction Act", "Biden administration"],
+    "hop": 2,
+    "note": "IRA -SUPPORTS-> Tesla; Biden admin -SUPPORTS-> IRA"
   },
   {
     "id": "Q07",
-    "question": "Which company has a division called DeepMind?",
-    "expected_entities": ["Google"],
-    "hop": 1,
-    "note": "HAS_DIVISION edge"
+    "question": "Who is the CEO of VinFast and what does VinFast produce?",
+    "expected_entities": ["Thuy Le", "Electric vehicles"],
+    "hop": 2,
+    "note": "VinFast -CEO_OF-> Thuy Le; VinFast -PRODUCES-> EVs"
   },
   {
     "id": "Q08",
-    "question": "What is the most recent annualized revenue of Anthropic?",
-    "expected_entities": ["47B"],
+    "question": "What does Nikola Corporation supply?",
+    "expected_entities": ["HYLA Hydrogen Refueling Stations", "Bosch Fuel Cell"],
     "hop": 1,
-    "note": "ANNUAL_REVENUE attribute"
+    "note": "Nikola -SUPPLIES-> products"
   },
   {
     "id": "Q09",
-    "question": "Which companies did SoftBank invest in?",
-    "expected_entities": ["OpenAI"],
+    "question": "Which company partnered with Honda?",
+    "expected_entities": ["General Motors"],
     "hop": 1,
-    "note": "SoftBank→INVESTED_IN→?"
+    "note": "General Motors -PARTNERS_WITH-> Honda"
   },
   {
     "id": "Q10",
-    "question": "Who are the investors that backed the company with the highest valuation?",
-    "expected_entities": ["OpenAI", "Microsoft", "Nvidia", "SoftBank"],
+    "question": "Who is the CEO of ZEEKR, and which corporate group does ZEEKR partner with?",
+    "expected_entities": ["Andy An", "Geely Group"],
     "hop": 2,
-    "note": "Highest VALUATION → OpenAI → investors (2-hop)"
+    "note": "ZEEKR -CEO_OF-> Andy An; ZEEKR -PARTNERS_WITH-> Geely"
   },
   {
     "id": "Q11",
-    "question": "Which investors funded companies that work on Video AI?",
-    "expected_entities": ["Microsoft", "Nvidia", "SoftBank"],
-    "hop": 2,
-    "note": "investor→company→WORKS_ON→Video (2-hop)"
+    "question": "Which investors invested in Tesla?",
+    "expected_entities": ["China", "Krane Funds Advisors"],
+    "hop": 1,
+    "note": "investor -INVESTED_IN-> Tesla"
   },
   {
     "id": "Q12",
-    "question": "What is the valuation of the company Elon Musk founded after leaving OpenAI?",
-    "expected_entities": ["xAI", "$230B"],
-    "hop": 2,
-    "note": "Cần biết xAI do Musk thành lập + VALUATION"
+    "question": "What vehicle models does Tesla produce?",
+    "expected_entities": ["Model Y", "Model 3", "Model X"],
+    "hop": 1,
+    "note": "Tesla -PRODUCES-> models"
   },
   {
     "id": "Q13",
-    "question": "Which company has both the highest staff count and works on Language models?",
-    "expected_entities": ["Google", "OpenAI"],
+    "question": "Who is the CEO of the company that produces the R1S?",
+    "expected_entities": ["Rivian"],
     "hop": 2,
-    "note": "STAFF_COUNT + WORKS_ON→Language"
+    "note": "R1S <-PRODUCES- Rivian (CEO có thể không có trong graph)"
   },
   {
     "id": "Q14",
-    "question": "What are all the products offered by companies that received investment from Microsoft?",
-    "expected_entities": ["ChatGPT", "API"],
-    "hop": 3,
-    "note": "Microsoft→INVESTED_IN→company→HAS_PRODUCT (3-hop)"
+    "question": "What does CATL supply and to which country?",
+    "expected_entities": ["China"],
+    "hop": 1,
+    "note": "CATL -SUPPLIES-> China"
   },
   {
     "id": "Q15",
-    "question": "Which company was founded most recently among those that work on Language models?",
-    "expected_entities": ["DeepSeek"],
-    "hop": 2,
-    "note": "WORKS_ON→Language + FOUNDED_IN sort"
+    "question": "Which company produces the Lyriq?",
+    "expected_entities": ["Cadillac"],
+    "hop": 1,
+    "note": "Cadillac -PRODUCES-> Lyriq"
   },
   {
     "id": "Q16",
-    "question": "How much did OpenAI spend on compute in total?",
-    "expected_entities": ["$16B"],
-    "hop": 1,
-    "note": "COMPUTE_SPEND attribute"
+    "question": "Tesla competes with which Chinese EV maker that Berkshire Hathaway also invested in?",
+    "expected_entities": ["BYD"],
+    "hop": 2,
+    "note": "Tesla -COMPETES_WITH-> BYD <-INVESTED_IN- Berkshire (intersection)"
   },
   {
     "id": "Q17",
-    "question": "Which investors funded more than one AI company in this dataset?",
-    "expected_entities": ["Microsoft", "Amazon", "Nvidia", "Google"],
-    "hop": 2,
-    "note": "investor→INVESTED_IN nhiều công ty (multi-target 2-hop)"
+    "question": "Which company does Geely Group relate to in the EV sector?",
+    "expected_entities": ["ZEEKR"],
+    "hop": 1,
+    "note": "ZEEKR -PARTNERS_WITH-> Geely Group"
   },
   {
     "id": "Q18",
-    "question": "What is the total equity funding raised by Mistral AI?",
-    "expected_entities": ["$1B"],
-    "hop": 1,
-    "note": "Tổng từ nhiều round funding"
+    "question": "Name the EV companies headquartered in or strongly associated with China.",
+    "expected_entities": ["BYD", "NIO", "Li Auto"],
+    "hop": 2,
+    "note": "China hub -> BYD, Li Auto, NIO"
   },
   {
     "id": "Q19",
-    "question": "Which company has the smallest staff count but received the most funding rounds?",
-    "expected_entities": ["Mistral AI", "DeepSeek"],
-    "hop": 2,
-    "note": "STAFF_COUNT min + count funding rounds"
+    "question": "What does the Inflation Reduction Act do for the US EV market?",
+    "expected_entities": ["Tesla", "supports"],
+    "hop": 1,
+    "note": "IRA -SUPPORTS-> Tesla / EV market"
   },
   {
     "id": "Q20",
-    "question": "Name all companies and their investors that work on the Language domain.",
-    "expected_entities": ["OpenAI", "Anthropic", "Mistral AI", "xAI", "DeepSeek", "MiniMax", "Z.ai"],
+    "question": "Who leads Tesla and what models and partners are connected to that company?",
+    "expected_entities": ["Elon Musk", "Model 3", "LG"],
     "hop": 2,
-    "note": "WORKS_ON→Language + investor (multi-company 2-hop)"
+    "note": "Tesla -> Elon Musk (CEO), models, partners (multi-relation 2-hop)"
   }
 ]

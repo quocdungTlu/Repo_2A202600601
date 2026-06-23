@@ -17,8 +17,12 @@ OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-5.4-nano")
 # --- Đường dẫn ---
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(ROOT_DIR, "data")
+DATASET_DIR = os.path.join(ROOT_DIR, "dataset", "dataset")  # 70 file .txt giáo viên cấp
 OUTPUT_DIR = os.path.join(ROOT_DIR, "outputs")
 CACHE_DIR = os.path.join(ROOT_DIR, ".cache")
+
+# Giới hạn ký tự content mỗi doc khi đưa vào LLM trích triples (kiểm soát token)
+MAX_DOC_CHARS = 6000
 
 # File trung gian / kết quả
 TRIPLES_PATH = os.path.join(OUTPUT_DIR, "triples.json")

@@ -13,7 +13,7 @@ import re
 import networkx as nx
 
 import config
-from graph_build import load_graph, canonicalize, COMPANY_NAMES
+from graph_build import load_graph, canonicalize, hub_nodes
 from llm import LLM, UsageTracker
 
 # ----------------------------- entity linking -----------------------------
@@ -47,26 +47,47 @@ def _node_summary(G: nx.DiGraph, node: str) -> str:
     return " | ".join(parts)
 
 
+MAX_CONTEXT_EDGES = 120  # trần số cạnh đưa vào context (đồ thị lớn → tránh nổ token)
+
+
 def _textualize_subgraph(G: nx.DiGraph, seed_nodes: list[str]) -> str:
-    """Duyệt ego_graph radius=GRAPH_HOPS quanh seed_nodes, chuyển thành text."""
+    """Duyệt ego_graph radius=GRAPH_HOPS quanh seed_nodes, chuyển thành text.
+
+    Với đồ thị lớn, ego 2-hop từ một hub có thể gồm hàng trăm node. Ta ưu tiên các
+    cạnh gần seed (theo khoảng cách BFS) và cắt còn MAX_CONTEXT_EDGES cạnh.
+    """
     subgraph_nodes = set(seed_nodes)
+    # khoảng cách ngắn nhất tới seed gần nhất (để xếp ưu tiên)
+    dist: dict = {}
     for seed in seed_nodes:
         if seed in G:
             ego = nx.ego_graph(G, seed, radius=config.GRAPH_HOPS, undirected=True)
             subgraph_nodes.update(ego.nodes())
+            lengths = nx.single_source_shortest_path_length(
+                G.to_undirected(as_view=True), seed, cutoff=config.GRAPH_HOPS
+            )
+            for n, d in lengths.items():
+                dist[n] = min(dist.get(n, 99), d)
 
     if not subgraph_nodes:
         return ""
 
     H = G.subgraph(subgraph_nodes)
 
+    # xếp cạnh theo độ gần seed rồi cắt
+    edges = list(H.edges(data=True))
+    edges.sort(key=lambda e: dist.get(e[0], 99) + dist.get(e[1], 99))
+    edges = edges[:MAX_CONTEXT_EDGES]
+
     lines = []
-    # Thuộc tính node
-    for n in sorted(H.nodes()):
-        lines.append(_node_summary(H, n))
-    lines.append("")  # blank separator
-    # Quan hệ (cạnh)
-    for u, v, d in H.edges(data=True):
+    # Thuộc tính node của seed (nếu có)
+    for n in seed_nodes:
+        if n in H and H.nodes[n]:
+            lines.append(_node_summary(H, n))
+    if lines:
+        lines.append("")
+    # Quan hệ (cạnh) — đã xếp ưu tiên
+    for u, v, d in edges:
         rel = d.get("rel", "RELATED_TO")
         lines.append(f"{u} --[{rel}]--> {v}")
 
@@ -75,9 +96,10 @@ def _textualize_subgraph(G: nx.DiGraph, seed_nodes: list[str]) -> str:
 
 # ----------------------------- GraphRAG query -----------------------------
 SYSTEM_PROMPT = (
-    "You are a precise AI industry analyst with access to a structured knowledge graph. "
-    "The context below contains entity attributes and relationship triples extracted from "
-    "real data about AI companies. Answer the question using ONLY this context. "
+    "You are a precise analyst of the US electric vehicle (EV) industry with access to a "
+    "structured knowledge graph. "
+    "The context below contains relationship triples (entity --[RELATION]--> entity) extracted "
+    "from a corpus of EV-industry documents. Answer the question using ONLY this context. "
     "Trace multi-hop connections explicitly when needed. "
     "If the context does not contain enough information, say 'I don't know based on the graph data.' "
     "Be concise (1-4 sentences)."
@@ -93,9 +115,9 @@ class GraphRAG:
     def query(self, question: str) -> dict:
         seed_nodes = _best_match(question, self.G)
 
-        # fallback: nếu không match được node nào, lấy toàn bộ AI company nodes
+        # fallback: nếu không match được node nào, lấy các hub bậc cao nhất
         if not seed_nodes:
-            seed_nodes = [n for n in self.G.nodes() if n in COMPANY_NAMES]
+            seed_nodes = hub_nodes(self.G, top_n=10)
 
         context = _textualize_subgraph(self.G, seed_nodes)
         user = f"Knowledge graph context:\n{context}\n\nQuestion: {question}"

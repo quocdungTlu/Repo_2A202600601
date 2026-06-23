@@ -1,129 +1,59 @@
 """Flat RAG baseline — ChromaDB + sentence-transformers embedding.
 
-Pipeline:
-  1. Textualize mỗi row CSV thành một "document" ngắn.
+Pipeline (dataset văn bản thô EV):
+  1. Đọc 70 file .txt, làm sạch boilerplate, chunk thành đoạn ~800 từ.
   2. Embed bằng all-MiniLM-L6-v2 (chạy offline, không tốn token LLM).
   3. Query: embed câu hỏi -> top-k cosine -> ghép context -> LLM trả lời.
 """
 
 import os
-import csv
-import json
+import glob
+import re
 
 import chromadb
 from chromadb.utils import embedding_functions
 
 import config
 from llm import LLM, UsageTracker
+from extract_text import parse_doc
 
-COLLECTION = "lab19_flat_rag"
+COLLECTION = "lab19_flat_rag_ev"
 DB_DIR = os.path.join(config.ROOT_DIR, ".chroma_flat")
-csv.field_size_limit(10_000_000)
+
+CHUNK_WORDS = 250       # số từ mỗi chunk
+CHUNK_OVERLAP = 40      # số từ overlap giữa các chunk
 
 
-def _rows(fname):
-    with open(os.path.join(config.DATA_DIR, fname), encoding="utf-8") as f:
-        return list(csv.DictReader(f))
+def _chunk(text: str, size=CHUNK_WORDS, overlap=CHUNK_OVERLAP):
+    words = text.split()
+    chunks = []
+    i = 0
+    while i < len(words):
+        chunks.append(" ".join(words[i : i + size]))
+        i += size - overlap
+    return chunks
 
 
 # ----------------------------- document builder -----------------------------
 def _build_docs() -> list[dict]:
-    """Chuyển mỗi row CSV thành chuỗi text + metadata."""
+    """Đọc 70 file .txt, chunk mỗi doc thành nhiều đoạn embed."""
     docs = []
-
-    def add(text, meta):
-        text = text.strip()
-        if text:
-            docs.append({"text": text, "meta": meta})
-
-    for r in _rows("ai_companies.csv"):
-        name = r.get("Name", "").strip()
-        parts = [f"{name} is an AI company."]
-        if r.get("Founding date"):
-            parts.append(f"Founded: {r['Founding date'][:4]}.")
-        if r.get("Company type"):
-            parts.append(f"Type: {r['Company type']}.")
-        if r.get("Product Domain(s)"):
-            parts.append(f"Domains: {r['Product Domain(s)']}.")
-        add(" ".join(parts), {"company": name, "source": "companies"})
-
-    for r in _rows("ai_companies_funding_rounds.csv"):
-        if (r.get("Status") or "").strip() != "Closed":
-            continue
-        comp = r.get("Company", "").strip()
-        rid = r.get("Id", "").strip()
-        eq = r.get("Funding (equity)", "").strip()
-        val = r.get("Valuation (post-money)", "").strip()
-        note = (r.get("Graph note") or r.get("Notes") or "")[:300].strip()
-        parts = [f"{comp} received funding in round '{rid}'."]
-        if eq:
-            parts.append(f"Equity: ${float(eq)/1e6:.0f}M." if eq else "")
-        if val:
-            parts.append(f"Post-money valuation: ${float(val)/1e9:.1f}B.")
-        if note:
-            parts.append(note)
-        add(" ".join(p for p in parts if p), {"company": comp, "source": "funding"})
-
-    for r in _rows("ai_companies_revenue_reports.csv"):
-        comp = r.get("Company", "").strip()
-        rev = r.get("Annualized revenue (USD)", "").strip()
-        date = r.get("Date", "").strip()
-        if not rev:
-            continue
-        try:
-            rev_str = f"${float(rev)/1e9:.1f}B"
-        except ValueError:
-            rev_str = rev
-        add(f"{comp} had annualized revenue of {rev_str} as of {date}.",
-            {"company": comp, "source": "revenue"})
-
-    for r in _rows("ai_companies_staff_reports.csv"):
-        comp = r.get("Company", "").strip()
-        staff = r.get("Staff count", "").strip()
-        date = r.get("Date", "").strip()
-        div = r.get("Division name", "").strip()
-        if not staff:
-            continue
-        scope = f" (division: {div})" if div else ""
-        add(f"{comp}{scope} had {staff} staff as of {date}.",
-            {"company": comp, "source": "staff"})
-
-    for r in _rows("ai_companies_usage_reports.csv"):
-        comp = r.get("Company", "").strip()
-        prod = r.get("Product", "").strip()
-        users = r.get("Active users", "").strip()
-        period = r.get("Active users time period", "").strip()
-        date = r.get("Date", "").strip()
-        note = (r.get("Notes") or "")[:200].strip()
-        if not users:
-            continue
-        try:
-            u = float(users)
-            u_str = f"{u/1e6:.0f}M {period}" if period else f"{u/1e6:.0f}M"
-        except ValueError:
-            u_str = users
-        parts = [f"{comp}'s product {prod} had {u_str} active users as of {date}."]
-        if note:
-            parts.append(note[:100])
-        add(" ".join(parts), {"company": comp, "source": "usage"})
-
-    for r in _rows("ai_companies_compute_spend.csv"):
-        comp = r.get("Company", "").strip()
-        amt = r.get("Total compute spend", "").strip() or r.get("Amount", "").strip()
-        date = r.get("Date", "").strip()
-        cat = r.get("Category", "").strip()
-        note = (r.get("Notes") or "")[:200].strip()
-        if not amt:
-            continue
-        try:
-            amt_str = f"${float(amt)/1e9:.1f}B"
-        except ValueError:
-            amt_str = amt
-        parts = [f"{comp} spent {amt_str} on compute ({cat}) as of {date}."]
-        if note:
-            parts.append(note[:100])
-        add(" ".join(parts), {"company": comp, "source": "compute"})
-
+    paths = sorted(
+        glob.glob(os.path.join(config.DATASET_DIR, "*.txt")),
+        key=lambda p: int(re.search(r"(\d+)", os.path.basename(p)).group(1)),
+    )
+    for path in paths:
+        doc_id = os.path.basename(path)
+        parsed = parse_doc(path)
+        # ghép title + snippet + content để chunk có ngữ cảnh
+        header = f"{parsed['title']}. {parsed['snippet']} ".strip()
+        full = (header + " " + parsed["content"]).strip()
+        for j, ch in enumerate(_chunk(full)):
+            if ch.strip():
+                docs.append({
+                    "text": ch,
+                    "meta": {"source": doc_id, "chunk": j, "title": parsed["title"][:120]},
+                })
     return docs
 
 
@@ -159,7 +89,7 @@ class FlatRAG:
         chunks = results["documents"][0]
         context = "\n".join(f"- {c}" for c in chunks)
         system = (
-            "You are a precise AI industry analyst. "
+            "You are a precise analyst of the US electric vehicle (EV) industry. "
             "Answer the question using ONLY the provided context snippets. "
             "If the context does not contain enough information, say 'I don't know based on the given data.' "
             "Be concise (1-3 sentences)."
@@ -176,7 +106,8 @@ class FlatRAG:
 if __name__ == "__main__":
     rag = FlatRAG()
     n = rag.index()
-    print(f"Indexed {n} documents.")
-    r = rag.query("Who invested in both OpenAI and Anthropic?")
-    print("Q: Who invested in both OpenAI and Anthropic?")
+    print(f"Indexed {n} chunks.")
+    q = "Which companies does Tesla compete with?"
+    r = rag.query(q)
+    print("Q:", q)
     print("A:", r["answer"])

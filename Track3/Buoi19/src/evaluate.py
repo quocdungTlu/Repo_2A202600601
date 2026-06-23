@@ -125,13 +125,22 @@ def run_benchmark():
     tracker.save()
     usage = tracker.to_dict()
 
-    # --- Cost report ---
-    extraction_usage = {}
+    # --- Đọc số liệu thật: extraction usage + graph stats + triples meta ---
+    triples_meta = {}
     try:
-        with open(config.USAGE_LOG_PATH, encoding="utf-8") as f:
-            extraction_usage = json.load(f)
+        with open(config.TRIPLES_PATH, encoding="utf-8") as f:
+            triples_meta = json.load(f)
     except FileNotFoundError:
         pass
+    extraction_usage = triples_meta.get("usage", {})
+    n_docs = triples_meta.get("counts", {}).get("docs", "?")
+
+    from graph_build import load_graph
+    G = load_graph()
+    n_nodes, n_edges = G.number_of_nodes(), G.number_of_edges()
+    extr_time = extraction_usage.get("seconds", 0)
+    extr_calls = extraction_usage.get("calls", 0)
+    extr_cache = extraction_usage.get("cache_hits", 0)
 
     now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
     report = f"""# Cost & Performance Report — Lab Day 19 GraphRAG
@@ -162,31 +171,39 @@ Generated: {now}
 **Estimated cost (gpt-5.4-nano):** ~${est:.4f} USD
 **Total wall time:** {total_time:.1f}s
 
-## Knowledge Graph Construction Cost
+## Knowledge Graph Construction Cost (Indexing — {n_docs} raw text docs)
 
 | Phase | Calls | Tokens | Est. cost |
 |-------|-------|--------|-----------|
-| Structured extraction (deterministic) | 0 | 0 | $0 |
-| LLM investor extraction (Fireworks gpt-oss-120b) | {extraction_usage.get('calls',0)} | {extraction_usage.get('total_tokens',0):,} | ${extraction_usage.get('est_cost_usd',0):.4f} |
+| LLM triple extraction (gpt-5.4-nano) | {extr_calls} ({extr_cache} cache) | {extraction_usage.get('total_tokens',0):,} | ${extraction_usage.get('est_cost_usd',0):.4f} |
 | Graph build (NetworkX, CPU) | — | — | $0 |
 
-**Graph construction time:** ~121s (44 LLM calls, 11 cache hits)
-**Nodes:** 64 | **Edges:** 72
+**Graph construction time:** ~{extr_time:.0f}s
+**Nodes:** {n_nodes} | **Edges:** {n_edges}
+
+## Grand Total
+
+| Phase | Tokens | Cost |
+|-------|--------|------|
+| Indexing (extraction) | {extraction_usage.get('total_tokens',0):,} | ${extraction_usage.get('est_cost_usd',0):.4f} |
+| Benchmark (answer + judge) | {usage.get('total_tokens',0):,} | ${est:.4f} |
+| **Total** | **{extraction_usage.get('total_tokens',0)+usage.get('total_tokens',0):,}** | **${extraction_usage.get('est_cost_usd',0)+est:.4f}** |
 
 ## Key Insight
 
 GraphRAG outperforms Flat RAG on multi-hop questions by traversing
 relationship chains in the knowledge graph (ego_graph radius=2).
-Flat RAG fails when the answer requires connecting information across
-multiple documents/chunks — the classic hallucination scenario in
-financial/company data with cross-investor relationships.
+Flat RAG retrieves disconnected chunks and fails when the answer requires
+connecting information across multiple documents — the classic hallucination
+scenario in cross-entity queries (e.g. "CEO of the company that produces X").
 
 ## Model Configuration
 
-- **Extraction (investor relations):** Fireworks `gpt-oss-120b` (reasoning)
+- **Corpus:** {n_docs} raw web-scraped documents on the US EV industry (teacher-provided)
+- **Triple extraction:** OpenAI `gpt-5.4-nano` (LLM entity/relation extraction from raw text)
 - **RAG answering + judging:** OpenAI `gpt-5.4-nano`
 - **Embedding (Flat RAG):** `sentence-transformers/all-MiniLM-L6-v2` (local, $0)
-- **Graph DB:** NetworkX (in-memory, $0)
+- **Graph DB:** NetworkX DiGraph (in-memory, $0)
 """
 
     with open(config.COST_REPORT_PATH, "w", encoding="utf-8") as f:

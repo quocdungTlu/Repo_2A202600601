@@ -1,29 +1,29 @@
 {
   "calls": 80,
-  "cache_hits": 2,
-  "prompt_tokens": 35961,
-  "completion_tokens": 2783,
-  "seconds": 120.37809300422668,
+  "cache_hits": 0,
+  "prompt_tokens": 55459,
+  "completion_tokens": 1841,
+  "seconds": 220.6458740234375,
   "by_stage": {
     "flat_rag_answer": {
       "calls": 20,
-      "prompt_tokens": 6638,
-      "completion_tokens": 960,
-      "seconds": 28.396007776260376
+      "prompt_tokens": 30220,
+      "completion_tokens": 798,
+      "seconds": 85.36533451080322
     },
     "graph_rag_answer": {
       "calls": 20,
-      "prompt_tokens": 22164,
-      "completion_tokens": 1605,
-      "seconds": 43.92713475227356
+      "prompt_tokens": 19037,
+      "completion_tokens": 830,
+      "seconds": 67.85105681419373
     },
     "judge": {
       "calls": 40,
-      "prompt_tokens": 7159,
-      "completion_tokens": 218,
-      "seconds": 48.05495047569275
+      "prompt_tokens": 6202,
+      "completion_tokens": 213,
+      "seconds": 67.42948269844055
     }
   },
-  "total_tokens": 38744,
-  "est_cost_usd": 0.007064
+  "total_tokens": 57300,
+  "est_cost_usd": 0.009423
 }

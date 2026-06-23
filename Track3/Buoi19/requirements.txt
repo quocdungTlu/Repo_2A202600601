@@ -1,0 +1,13 @@
+# Lab Day 19 — GraphRAG với Tech/AI Company Corpus
+# Đồ thị & trực quan hóa
+networkx>=3.2
+matplotlib>=3.8
+# Xử lý dữ liệu
+pandas>=2.1
+# LLM (OpenAI-compatible — antco gateway)
+openai>=1.40
+httpx>=0.27
+python-dotenv>=1.0
+# Flat RAG baseline (vector store + embedding)
+chromadb>=0.5
+sentence-transformers>=3.0

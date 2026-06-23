@@ -1,0 +1,947 @@
+{
+  "companies": [
+    "OpenAI",
+    "Anthropic",
+    "Google",
+    "Mistral AI",
+    "xAI",
+    "DeepSeek",
+    "Meta",
+    "Z.ai",
+    "MiniMax"
+  ],
+  "triples": [
+    {
+      "subject": "OpenAI",
+      "relation": "FOUNDED_IN",
+      "object": "2015",
+      "kind": "attr",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "OpenAI",
+      "relation": "COMPANY_TYPE",
+      "object": "Foundation",
+      "kind": "attr",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "OpenAI",
+      "relation": "WORKS_ON",
+      "object": "Language",
+      "kind": "edge",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "OpenAI",
+      "relation": "WORKS_ON",
+      "object": "Video",
+      "kind": "edge",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "Anthropic",
+      "relation": "FOUNDED_IN",
+      "object": "2021",
+      "kind": "attr",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "Anthropic",
+      "relation": "COMPANY_TYPE",
+      "object": "Foundation",
+      "kind": "attr",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "Anthropic",
+      "relation": "WORKS_ON",
+      "object": "Language",
+      "kind": "edge",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "Google",
+      "relation": "FOUNDED_IN",
+      "object": "1998",
+      "kind": "attr",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "Google",
+      "relation": "COMPANY_TYPE",
+      "object": "Foundation",
+      "kind": "attr",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "Google",
+      "relation": "WORKS_ON",
+      "object": "Language",
+      "kind": "edge",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "Google",
+      "relation": "WORKS_ON",
+      "object": "Video",
+      "kind": "edge",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "Mistral AI",
+      "relation": "FOUNDED_IN",
+      "object": "2023",
+      "kind": "attr",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "Mistral AI",
+      "relation": "COMPANY_TYPE",
+      "object": "Foundation",
+      "kind": "attr",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "Mistral AI",
+      "relation": "WORKS_ON",
+      "object": "Language",
+      "kind": "edge",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "xAI",
+      "relation": "FOUNDED_IN",
+      "object": "2023",
+      "kind": "attr",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "xAI",
+      "relation": "COMPANY_TYPE",
+      "object": "Foundation",
+      "kind": "attr",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "xAI",
+      "relation": "WORKS_ON",
+      "object": "Language",
+      "kind": "edge",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "xAI",
+      "relation": "WORKS_ON",
+      "object": "Video",
+      "kind": "edge",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "DeepSeek",
+      "relation": "FOUNDED_IN",
+      "object": "2023",
+      "kind": "attr",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "DeepSeek",
+      "relation": "COMPANY_TYPE",
+      "object": "Foundation",
+      "kind": "attr",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "DeepSeek",
+      "relation": "WORKS_ON",
+      "object": "Language",
+      "kind": "edge",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "Meta",
+      "relation": "FOUNDED_IN",
+      "object": "2004",
+      "kind": "attr",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "Meta",
+      "relation": "COMPANY_TYPE",
+      "object": "Foundation",
+      "kind": "attr",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "Meta",
+      "relation": "WORKS_ON",
+      "object": "Language",
+      "kind": "edge",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "Z.ai",
+      "relation": "COMPANY_TYPE",
+      "object": "Foundation",
+      "kind": "attr",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "Z.ai",
+      "relation": "WORKS_ON",
+      "object": "Language",
+      "kind": "edge",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "MiniMax",
+      "relation": "COMPANY_TYPE",
+      "object": "Foundation",
+      "kind": "attr",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "MiniMax",
+      "relation": "WORKS_ON",
+      "object": "Language",
+      "kind": "edge",
+      "source": "ai_companies.csv"
+    },
+    {
+      "subject": "OpenAI",
+      "relation": "ANNUAL_REVENUE",
+      "object": "$25.0B",
+      "kind": "attr",
+      "source": "ai_companies_revenue_reports.csv"
+    },
+    {
+      "subject": "Anthropic",
+      "relation": "ANNUAL_REVENUE",
+      "object": "$47.0B",
+      "kind": "attr",
+      "source": "ai_companies_revenue_reports.csv"
+    },
+    {
+      "subject": "Mistral AI",
+      "relation": "ANNUAL_REVENUE",
+      "object": "$400M",
+      "kind": "attr",
+      "source": "ai_companies_revenue_reports.csv"
+    },
+    {
+      "subject": "xAI",
+      "relation": "ANNUAL_REVENUE",
+      "object": "$428M",
+      "kind": "attr",
+      "source": "ai_companies_revenue_reports.csv"
+    },
+    {
+      "subject": "Z.ai",
+      "relation": "ANNUAL_REVENUE",
+      "object": "$53M",
+      "kind": "attr",
+      "source": "ai_companies_revenue_reports.csv"
+    },
+    {
+      "subject": "OpenAI",
+      "relation": "STAFF_COUNT",
+      "object": "4000",
+      "kind": "attr",
+      "source": "ai_companies_staff_reports.csv"
+    },
+    {
+      "subject": "Anthropic",
+      "relation": "STAFF_COUNT",
+      "object": "2300",
+      "kind": "attr",
+      "source": "ai_companies_staff_reports.csv"
+    },
+    {
+      "subject": "Anthropic",
+      "relation": "HAS_DIVISION",
+      "object": "Research and development",
+      "kind": "edge",
+      "source": "ai_companies_staff_reports.csv"
+    },
+    {
+      "subject": "Google",
+      "relation": "STAFF_COUNT",
+      "object": "6000",
+      "kind": "attr",
+      "source": "ai_companies_staff_reports.csv"
+    },
+    {
+      "subject": "Google",
+      "relation": "HAS_DIVISION",
+      "object": "DeepMind",
+      "kind": "edge",
+      "source": "ai_companies_staff_reports.csv"
+    },
+    {
+      "subject": "Google",
+      "relation": "HAS_DIVISION",
+      "object": "Google DeepMind",
+      "kind": "edge",
+      "source": "ai_companies_staff_reports.csv"
+    },
+    {
+      "subject": "Mistral AI",
+      "relation": "STAFF_COUNT",
+      "object": "350",
+      "kind": "attr",
+      "source": "ai_companies_staff_reports.csv"
+    },
+    {
+      "subject": "xAI",
+      "relation": "STAFF_COUNT",
+      "object": "300",
+      "kind": "attr",
+      "source": "ai_companies_staff_reports.csv"
+    },
+    {
+      "subject": "xAI",
+      "relation": "HAS_DIVISION",
+      "object": "AI tutors (data contractors)",
+      "kind": "edge",
+      "source": "ai_companies_staff_reports.csv"
+    },
+    {
+      "subject": "DeepSeek",
+      "relation": "STAFF_COUNT",
+      "object": "160",
+      "kind": "attr",
+      "source": "ai_companies_staff_reports.csv"
+    },
+    {
+      "subject": "Meta",
+      "relation": "STAFF_COUNT",
+      "object": "3400",
+      "kind": "attr",
+      "source": "ai_companies_staff_reports.csv"
+    },
+    {
+      "subject": "Meta",
+      "relation": "HAS_DIVISION",
+      "object": "FAIR",
+      "kind": "edge",
+      "source": "ai_companies_staff_reports.csv"
+    },
+    {
+      "subject": "Z.ai",
+      "relation": "STAFF_COUNT",
+      "object": "883",
+      "kind": "attr",
+      "source": "ai_companies_staff_reports.csv"
+    },
+    {
+      "subject": "MiniMax",
+      "relation": "STAFF_COUNT",
+      "object": "385",
+      "kind": "attr",
+      "source": "ai_companies_staff_reports.csv"
+    },
+    {
+      "subject": "OpenAI",
+      "relation": "VALUATION",
+      "object": "$852.0B",
+      "kind": "attr",
+      "source": "ai_companies_funding_rounds.csv"
+    },
+    {
+      "subject": "Anthropic",
+      "relation": "VALUATION",
+      "object": "$965.0B",
+      "kind": "attr",
+      "source": "ai_companies_funding_rounds.csv"
+    },
+    {
+      "subject": "Mistral AI",
+      "relation": "VALUATION",
+      "object": "$13.7B",
+      "kind": "attr",
+      "source": "ai_companies_funding_rounds.csv"
+    },
+    {
+      "subject": "xAI",
+      "relation": "VALUATION",
+      "object": "$230.0B",
+      "kind": "attr",
+      "source": "ai_companies_funding_rounds.csv"
+    },
+    {
+      "subject": "DeepSeek",
+      "relation": "VALUATION",
+      "object": "$50.0B",
+      "kind": "attr",
+      "source": "ai_companies_funding_rounds.csv"
+    },
+    {
+      "subject": "Z.ai",
+      "relation": "VALUATION",
+      "object": "$39.4B",
+      "kind": "attr",
+      "source": "ai_companies_funding_rounds.csv"
+    },
+    {
+      "subject": "MiniMax",
+      "relation": "VALUATION",
+      "object": "$37.2B",
+      "kind": "attr",
+      "source": "ai_companies_funding_rounds.csv"
+    },
+    {
+      "subject": "OpenAI",
+      "relation": "COMPUTE_SPEND",
+      "object": "$16.0B",
+      "kind": "attr",
+      "source": "ai_companies_compute_spend.csv"
+    },
+    {
+      "subject": "Anthropic",
+      "relation": "COMPUTE_SPEND",
+      "object": "$2.5B",
+      "kind": "attr",
+      "source": "ai_companies_compute_spend.csv"
+    },
+    {
+      "subject": "OpenAI",
+      "relation": "HAS_PRODUCT",
+      "object": "ChatGPT",
+      "kind": "edge",
+      "source": "ai_companies_usage_reports.csv"
+    },
+    {
+      "subject": "Z.ai",
+      "relation": "HAS_PRODUCT",
+      "object": "Full company",
+      "kind": "edge",
+      "source": "ai_companies_usage_reports.csv"
+    },
+    {
+      "subject": "OpenAI",
+      "relation": "HAS_PRODUCT",
+      "object": "All products",
+      "kind": "edge",
+      "source": "ai_companies_usage_reports.csv"
+    },
+    {
+      "subject": "Google",
+      "relation": "HAS_PRODUCT",
+      "object": "Google (all AI products)",
+      "kind": "edge",
+      "source": "ai_companies_usage_reports.csv"
+    },
+    {
+      "subject": "Meta",
+      "relation": "HAS_PRODUCT",
+      "object": "Meta AI assistant",
+      "kind": "edge",
+      "source": "ai_companies_usage_reports.csv"
+    },
+    {
+      "subject": "DeepSeek",
+      "relation": "HAS_PRODUCT",
+      "object": "Chat and API for V3 and R1",
+      "kind": "edge",
+      "source": "ai_companies_usage_reports.csv"
+    },
+    {
+      "subject": "Google",
+      "relation": "HAS_PRODUCT",
+      "object": "Gemini",
+      "kind": "edge",
+      "source": "ai_companies_usage_reports.csv"
+    },
+    {
+      "subject": "xAI",
+      "relation": "HAS_PRODUCT",
+      "object": "Grok",
+      "kind": "edge",
+      "source": "ai_companies_usage_reports.csv"
+    },
+    {
+      "subject": "DeepSeek",
+      "relation": "HAS_PRODUCT",
+      "object": "DeepSeek",
+      "kind": "edge",
+      "source": "ai_companies_usage_reports.csv"
+    },
+    {
+      "subject": "Google",
+      "relation": "HAS_PRODUCT",
+      "object": "AI Overviews",
+      "kind": "edge",
+      "source": "ai_companies_usage_reports.csv"
+    },
+    {
+      "subject": "Anthropic",
+      "relation": "HAS_PRODUCT",
+      "object": "Claude API",
+      "kind": "edge",
+      "source": "ai_companies_usage_reports.csv"
+    },
+    {
+      "subject": "OpenAI",
+      "relation": "HAS_PRODUCT",
+      "object": "API",
+      "kind": "edge",
+      "source": "ai_companies_usage_reports.csv"
+    },
+    {
+      "subject": "OpenAI",
+      "relation": "HAS_PRODUCT",
+      "object": "GPT-5-Codex",
+      "kind": "edge",
+      "source": "ai_companies_usage_reports.csv"
+    },
+    {
+      "subject": "Google",
+      "relation": "HAS_PRODUCT",
+      "object": "Gemini API",
+      "kind": "edge",
+      "source": "ai_companies_usage_reports.csv"
+    },
+    {
+      "subject": "Meta",
+      "relation": "HAS_PRODUCT",
+      "object": "Meta AI App",
+      "kind": "edge",
+      "source": "ai_companies_usage_reports.csv"
+    },
+    {
+      "subject": "Reid Hoffman Foundation",
+      "relation": "INVESTED_IN",
+      "object": "OpenAI",
+      "kind": "edge",
+      "source": "funding_rounds:2019 LP seed (Khosla)"
+    },
+    {
+      "subject": "Khosla Ventures",
+      "relation": "INVESTED_IN",
+      "object": "OpenAI",
+      "kind": "edge",
+      "source": "funding_rounds:2019 LP seed (Khosla)"
+    },
+    {
+      "subject": "Reid Hoffman Foundation",
+      "relation": "INVESTED_IN",
+      "object": "OpenAI",
+      "kind": "edge",
+      "source": "funding_rounds:2019 LP seed (Other)"
+    },
+    {
+      "subject": "Khosla Ventures",
+      "relation": "INVESTED_IN",
+      "object": "OpenAI",
+      "kind": "edge",
+      "source": "funding_rounds:2019 LP seed (Other)"
+    },
+    {
+      "subject": "Microsoft",
+      "relation": "INVESTED_IN",
+      "object": "OpenAI",
+      "kind": "edge",
+      "source": "funding_rounds:2019 Microsoft 1B"
+    },
+    {
+      "subject": "Microsoft",
+      "relation": "INVESTED_IN",
+      "object": "OpenAI",
+      "kind": "edge",
+      "source": "funding_rounds:March 2021 Microsoft 2B"
+    },
+    {
+      "subject": "Jaan Tallinn",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:May 2021 Series A"
+    },
+    {
+      "subject": "James McClave",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:May 2021 Series A"
+    },
+    {
+      "subject": "Dustin Moskovitz",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:May 2021 Series A"
+    },
+    {
+      "subject": "Center for Emerging Risk Research",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:May 2021 Series A"
+    },
+    {
+      "subject": "Eric Schmidt",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:May 2021 Series A"
+    },
+    {
+      "subject": "Microsoft",
+      "relation": "INVESTED_IN",
+      "object": "OpenAI",
+      "kind": "edge",
+      "source": "funding_rounds:Jan 2023 Microsoft"
+    },
+    {
+      "subject": "Google",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Oct 2023 Google"
+    },
+    {
+      "subject": "Menlo Ventures",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Dec 2023 18.4B Series D"
+    },
+    {
+      "subject": "Thrive Capital",
+      "relation": "INVESTED_IN",
+      "object": "OpenAI",
+      "kind": "edge",
+      "source": "funding_rounds:Feb 2024 80B"
+    },
+    {
+      "subject": "Microsoft",
+      "relation": "INVESTED_IN",
+      "object": "Mistral AI",
+      "kind": "edge",
+      "source": "funding_rounds:February 2024 Series A+"
+    },
+    {
+      "subject": "Amazon",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Amazon March 2024"
+    },
+    {
+      "subject": "General Catalyst",
+      "relation": "INVESTED_IN",
+      "object": "Mistral AI",
+      "kind": "edge",
+      "source": "funding_rounds:June 2024 6B"
+    },
+    {
+      "subject": "Thrive Capital",
+      "relation": "INVESTED_IN",
+      "object": "OpenAI",
+      "kind": "edge",
+      "source": "funding_rounds:Oct 2024 157B"
+    },
+    {
+      "subject": "Khosla Ventures",
+      "relation": "INVESTED_IN",
+      "object": "OpenAI",
+      "kind": "edge",
+      "source": "funding_rounds:Oct 2024 157B"
+    },
+    {
+      "subject": "Microsoft",
+      "relation": "INVESTED_IN",
+      "object": "OpenAI",
+      "kind": "edge",
+      "source": "funding_rounds:Oct 2024 157B"
+    },
+    {
+      "subject": "Nvidia",
+      "relation": "INVESTED_IN",
+      "object": "OpenAI",
+      "kind": "edge",
+      "source": "funding_rounds:Oct 2024 157B"
+    },
+    {
+      "subject": "Altimeter Capital",
+      "relation": "INVESTED_IN",
+      "object": "OpenAI",
+      "kind": "edge",
+      "source": "funding_rounds:Oct 2024 157B"
+    },
+    {
+      "subject": "Fidelity",
+      "relation": "INVESTED_IN",
+      "object": "OpenAI",
+      "kind": "edge",
+      "source": "funding_rounds:Oct 2024 157B"
+    },
+    {
+      "subject": "SoftBank",
+      "relation": "INVESTED_IN",
+      "object": "OpenAI",
+      "kind": "edge",
+      "source": "funding_rounds:Oct 2024 157B"
+    },
+    {
+      "subject": "Amazon",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Amazon Nov 2024"
+    },
+    {
+      "subject": "Google",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Google 1B 2025"
+    },
+    {
+      "subject": "Elon Musk",
+      "relation": "INVESTED_IN",
+      "object": "xAI",
+      "kind": "edge",
+      "source": "funding_rounds:Mar 2025 80B X merger"
+    },
+    {
+      "subject": "SoftBank",
+      "relation": "INVESTED_IN",
+      "object": "OpenAI",
+      "kind": "edge",
+      "source": "funding_rounds:Mar 2025 300B Stage 1"
+    },
+    {
+      "subject": "ICONIQ",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Sep 2025 183B Series F"
+    },
+    {
+      "subject": "Fidelity Management & Research Company",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Sep 2025 183B Series F"
+    },
+    {
+      "subject": "Lightspeed Venture Partners",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Sep 2025 183B Series F"
+    },
+    {
+      "subject": "Altimeter",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Sep 2025 183B Series F"
+    },
+    {
+      "subject": "Baillie Gifford",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Sep 2025 183B Series F"
+    },
+    {
+      "subject": "BlackRock",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Sep 2025 183B Series F"
+    },
+    {
+      "subject": "Blackstone",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Sep 2025 183B Series F"
+    },
+    {
+      "subject": "Coatue",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Sep 2025 183B Series F"
+    },
+    {
+      "subject": "D1 Capital",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Sep 2025 183B Series F"
+    },
+    {
+      "subject": "SoftBank",
+      "relation": "INVESTED_IN",
+      "object": "OpenAI",
+      "kind": "edge",
+      "source": "funding_rounds:300B final stage"
+    },
+    {
+      "subject": "Valor Equity Partners",
+      "relation": "INVESTED_IN",
+      "object": "xAI",
+      "kind": "edge",
+      "source": "funding_rounds:Jan 2026 20B Series E"
+    },
+    {
+      "subject": "Stepstone Group",
+      "relation": "INVESTED_IN",
+      "object": "xAI",
+      "kind": "edge",
+      "source": "funding_rounds:Jan 2026 20B Series E"
+    },
+    {
+      "subject": "Fidelity Management & Research Company",
+      "relation": "INVESTED_IN",
+      "object": "xAI",
+      "kind": "edge",
+      "source": "funding_rounds:Jan 2026 20B Series E"
+    },
+    {
+      "subject": "Qatar Investment Authority",
+      "relation": "INVESTED_IN",
+      "object": "xAI",
+      "kind": "edge",
+      "source": "funding_rounds:Jan 2026 20B Series E"
+    },
+    {
+      "subject": "MGX",
+      "relation": "INVESTED_IN",
+      "object": "xAI",
+      "kind": "edge",
+      "source": "funding_rounds:Jan 2026 20B Series E"
+    },
+    {
+      "subject": "Baron Capital Group",
+      "relation": "INVESTED_IN",
+      "object": "xAI",
+      "kind": "edge",
+      "source": "funding_rounds:Jan 2026 20B Series E"
+    },
+    {
+      "subject": "GIC",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Feb 2026 380B Series G"
+    },
+    {
+      "subject": "Coatue",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Feb 2026 380B Series G"
+    },
+    {
+      "subject": "D. E. Shaw Ventures",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Feb 2026 380B Series G"
+    },
+    {
+      "subject": "Dragoneer",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Feb 2026 380B Series G"
+    },
+    {
+      "subject": "Founders Fund",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Feb 2026 380B Series G"
+    },
+    {
+      "subject": "ICONIQ",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Feb 2026 380B Series G"
+    },
+    {
+      "subject": "MGX",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Feb 2026 380B Series G"
+    },
+    {
+      "subject": "Microsoft",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Feb 2026 380B Series G"
+    },
+    {
+      "subject": "NVIDIA",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Feb 2026 380B Series G"
+    },
+    {
+      "subject": "SoftBank",
+      "relation": "INVESTED_IN",
+      "object": "OpenAI",
+      "kind": "edge",
+      "source": "funding_rounds:840B Feb 2026"
+    },
+    {
+      "subject": "NVIDIA",
+      "relation": "INVESTED_IN",
+      "object": "OpenAI",
+      "kind": "edge",
+      "source": "funding_rounds:840B Feb 2026"
+    },
+    {
+      "subject": "Amazon",
+      "relation": "INVESTED_IN",
+      "object": "OpenAI",
+      "kind": "edge",
+      "source": "funding_rounds:840B Feb 2026"
+    },
+    {
+      "subject": "Amazon",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Amazon Anthropic April 2026"
+    },
+    {
+      "subject": "Alphabet",
+      "relation": "INVESTED_IN",
+      "object": "Anthropic",
+      "kind": "edge",
+      "source": "funding_rounds:Alphabet Anthropic April 2026"
+    }
+  ],
+  "counts": {
+    "structured": 71,
+    "llm_investor": 59,
+    "total": 130
+  },
+  "usage": {
+    "calls": 44,
+    "cache_hits": 11,
+    "prompt_tokens": 13303,
+    "completion_tokens": 6834,
+    "seconds": 121.01798129081726,
+    "by_stage": {
+      "extract_investors": {
+        "calls": 44,
+        "prompt_tokens": 13303,
+        "completion_tokens": 6834,
+        "seconds": 121.01798129081726
+      }
+    },
+    "total_tokens": 20137,
+    "est_cost_usd": 0.006096
+  }
+}

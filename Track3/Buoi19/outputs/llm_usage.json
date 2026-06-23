@@ -1,0 +1,29 @@
+{
+  "calls": 80,
+  "cache_hits": 2,
+  "prompt_tokens": 35961,
+  "completion_tokens": 2783,
+  "seconds": 120.37809300422668,
+  "by_stage": {
+    "flat_rag_answer": {
+      "calls": 20,
+      "prompt_tokens": 6638,
+      "completion_tokens": 960,
+      "seconds": 28.396007776260376
+    },
+    "graph_rag_answer": {
+      "calls": 20,
+      "prompt_tokens": 22164,
+      "completion_tokens": 1605,
+      "seconds": 43.92713475227356
+    },
+    "judge": {
+      "calls": 40,
+      "prompt_tokens": 7159,
+      "completion_tokens": 218,
+      "seconds": 48.05495047569275
+    }
+  },
+  "total_tokens": 38744,
+  "est_cost_usd": 0.007064
+}

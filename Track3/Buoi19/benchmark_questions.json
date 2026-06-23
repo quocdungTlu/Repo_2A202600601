@@ -1,0 +1,142 @@
+[
+  {
+    "id": "Q01",
+    "question": "Who invested in both OpenAI and Anthropic?",
+    "expected_entities": ["Microsoft", "Amazon", "Nvidia"],
+    "hop": 2,
+    "note": "Cần duyệt investor→company cho cả hai công ty rồi lấy giao"
+  },
+  {
+    "id": "Q02",
+    "question": "Which AI companies work on both Language and Video domains?",
+    "expected_entities": ["OpenAI"],
+    "hop": 2,
+    "note": "Intersection qua domain node"
+  },
+  {
+    "id": "Q03",
+    "question": "What product does OpenAI have and how many users does it have?",
+    "expected_entities": ["ChatGPT"],
+    "hop": 2,
+    "note": "OpenAI→HAS_PRODUCT→ChatGPT→ACTIVE_USERS"
+  },
+  {
+    "id": "Q04",
+    "question": "Which company founded in 2015 has the highest compute spend?",
+    "expected_entities": ["OpenAI"],
+    "hop": 2,
+    "note": "FOUNDED_IN→2015 + COMPUTE_SPEND"
+  },
+  {
+    "id": "Q05",
+    "question": "Name investors that funded xAI.",
+    "expected_entities": ["Sequoia Capital", "Fidelity", "BlackRock"],
+    "hop": 1,
+    "note": "investor→INVESTED_IN→xAI"
+  },
+  {
+    "id": "Q06",
+    "question": "Which AI companies did Amazon invest in?",
+    "expected_entities": ["OpenAI", "Anthropic"],
+    "hop": 1,
+    "note": "Amazon→INVESTED_IN→?"
+  },
+  {
+    "id": "Q07",
+    "question": "Which company has a division called DeepMind?",
+    "expected_entities": ["Google"],
+    "hop": 1,
+    "note": "HAS_DIVISION edge"
+  },
+  {
+    "id": "Q08",
+    "question": "What is the most recent annualized revenue of Anthropic?",
+    "expected_entities": ["47B"],
+    "hop": 1,
+    "note": "ANNUAL_REVENUE attribute"
+  },
+  {
+    "id": "Q09",
+    "question": "Which companies did SoftBank invest in?",
+    "expected_entities": ["OpenAI"],
+    "hop": 1,
+    "note": "SoftBank→INVESTED_IN→?"
+  },
+  {
+    "id": "Q10",
+    "question": "Who are the investors that backed the company with the highest valuation?",
+    "expected_entities": ["OpenAI", "Microsoft", "Nvidia", "SoftBank"],
+    "hop": 2,
+    "note": "Highest VALUATION → OpenAI → investors (2-hop)"
+  },
+  {
+    "id": "Q11",
+    "question": "Which investors funded companies that work on Video AI?",
+    "expected_entities": ["Microsoft", "Nvidia", "SoftBank"],
+    "hop": 2,
+    "note": "investor→company→WORKS_ON→Video (2-hop)"
+  },
+  {
+    "id": "Q12",
+    "question": "What is the valuation of the company Elon Musk founded after leaving OpenAI?",
+    "expected_entities": ["xAI", "$230B"],
+    "hop": 2,
+    "note": "Cần biết xAI do Musk thành lập + VALUATION"
+  },
+  {
+    "id": "Q13",
+    "question": "Which company has both the highest staff count and works on Language models?",
+    "expected_entities": ["Google", "OpenAI"],
+    "hop": 2,
+    "note": "STAFF_COUNT + WORKS_ON→Language"
+  },
+  {
+    "id": "Q14",
+    "question": "What are all the products offered by companies that received investment from Microsoft?",
+    "expected_entities": ["ChatGPT", "API"],
+    "hop": 3,
+    "note": "Microsoft→INVESTED_IN→company→HAS_PRODUCT (3-hop)"
+  },
+  {
+    "id": "Q15",
+    "question": "Which company was founded most recently among those that work on Language models?",
+    "expected_entities": ["DeepSeek"],
+    "hop": 2,
+    "note": "WORKS_ON→Language + FOUNDED_IN sort"
+  },
+  {
+    "id": "Q16",
+    "question": "How much did OpenAI spend on compute in total?",
+    "expected_entities": ["$16B"],
+    "hop": 1,
+    "note": "COMPUTE_SPEND attribute"
+  },
+  {
+    "id": "Q17",
+    "question": "Which investors funded more than one AI company in this dataset?",
+    "expected_entities": ["Microsoft", "Amazon", "Nvidia", "Google"],
+    "hop": 2,
+    "note": "investor→INVESTED_IN nhiều công ty (multi-target 2-hop)"
+  },
+  {
+    "id": "Q18",
+    "question": "What is the total equity funding raised by Mistral AI?",
+    "expected_entities": ["$1B"],
+    "hop": 1,
+    "note": "Tổng từ nhiều round funding"
+  },
+  {
+    "id": "Q19",
+    "question": "Which company has the smallest staff count but received the most funding rounds?",
+    "expected_entities": ["Mistral AI", "DeepSeek"],
+    "hop": 2,
+    "note": "STAFF_COUNT min + count funding rounds"
+  },
+  {
+    "id": "Q20",
+    "question": "Name all companies and their investors that work on the Language domain.",
+    "expected_entities": ["OpenAI", "Anthropic", "Mistral AI", "xAI", "DeepSeek", "MiniMax", "Z.ai"],
+    "hop": 2,
+    "note": "WORKS_ON→Language + investor (multi-company 2-hop)"
+  }
+]

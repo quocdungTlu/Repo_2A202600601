@@ -41,6 +41,85 @@
   .section-title { font-size:1.5rem; font-weight:700; margin-bottom:8px; }
   .section-desc { color:var(--muted); margin-bottom:28px; }
 
+  /* ── FLOW DIAGRAM ── */
+  .flow-wrap { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:36px 28px 28px; overflow-x:auto; }
+  .flow-title { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; text-align:center; margin-bottom:28px; }
+
+  /* Top row: linear pipeline */
+  .flow-pipeline { display:flex; align-items:center; justify-content:center; gap:0; flex-wrap:nowrap; margin-bottom:28px; }
+  .fn { display:flex; flex-direction:column; align-items:center; gap:4px; }
+  .fn-box { background:var(--card); border:2px solid var(--border); border-radius:14px; padding:14px 18px; text-align:center; min-width:110px; cursor:pointer; transition:all .2s; position:relative; }
+  .fn-box:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,.4); }
+  .fn-box .fi { font-size:26px; margin-bottom:5px; }
+  .fn-box .fl { font-size:13px; font-weight:700; color:var(--text); }
+  .fn-box .fs { font-size:11px; color:var(--muted); margin-top:2px; }
+  .fn-box.active-step { box-shadow:0 0 0 2px currentColor, 0 8px 24px rgba(0,0,0,.4); }
+  .fn-box.fn-sup  { border-color:var(--accent);  }
+  .fn-box.fn-res  { border-color:var(--accent2); }
+  .fn-box.fn-ana  { border-color:var(--accent4); }
+  .fn-box.fn-wri  { border-color:var(--accent3); }
+  .fn-box.fn-cri  { border-color:#f472b6; }
+  .fn-box.fn-out  { border-color:var(--green); }
+  .fn-badge { font-size:10px; font-weight:700; padding:2px 8px; border-radius:99px; margin-top:6px; }
+  .fn-badge.sup  { background:rgba(108,99,255,.18); color:var(--accent); }
+  .fn-badge.res  { background:rgba(0,212,170,.15); color:var(--accent2); }
+  .fn-badge.ana  { background:rgba(240,192,64,.15); color:var(--accent4); }
+  .fn-badge.wri  { background:rgba(255,124,92,.15); color:var(--accent3); }
+  .fn-badge.cri  { background:rgba(244,114,182,.15); color:#f472b6; }
+  .fn-badge.out  { background:rgba(100,255,218,.15); color:var(--green); }
+  .flow-arr { color:var(--border); font-size:22px; padding:0 4px; align-self:center; flex-shrink:0; }
+  .flow-arr.loop { color:var(--accent); }
+
+  /* Loop back arrow */
+  .loop-back { display:flex; align-items:center; justify-content:center; gap:0; margin-bottom:4px; }
+  .lb-line { height:2px; background:linear-gradient(90deg,transparent,var(--accent),transparent); flex:1; max-width:460px; }
+  .lb-label { font-size:11px; color:var(--accent); background:var(--surface); padding:0 8px; white-space:nowrap; }
+
+  /* ── AGENT CARDS ── */
+  .agent-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px; margin-top:28px; }
+  .agent-card { background:var(--card); border:1.5px solid var(--border); border-radius:14px; overflow:hidden; transition:transform .18s; }
+  .agent-card:hover { transform:translateY(-2px); }
+  .ac-header { padding:14px 18px 12px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:12px; }
+  .ac-icon { font-size:22px; }
+  .ac-name { font-size:14px; font-weight:800; }
+  .ac-role { font-size:11px; color:var(--muted); font-family:monospace; background:var(--surface); border:1px solid var(--border); padding:2px 7px; border-radius:5px; margin-left:auto; }
+  .ac-body { padding:14px 18px; display:flex; flex-direction:column; gap:10px; }
+  .ac-row { display:flex; gap:8px; }
+  .ac-tag { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; padding:3px 8px; border-radius:5px; flex-shrink:0; margin-top:2px; }
+  .ac-tag.reads  { background:rgba(96,165,250,.15); color:#60a5fa; }
+  .ac-tag.writes { background:rgba(100,255,218,.15); color:var(--green); }
+  .ac-tag.calls  { background:rgba(108,99,255,.15); color:var(--accent); }
+  .ac-tag.guard  { background:rgba(240,192,64,.15); color:var(--accent4); }
+  .ac-val { font-size:12.5px; color:var(--muted); line-height:1.6; }
+  .ac-val code { font-size:11.5px; color:var(--accent2); background:rgba(0,212,170,.08); padding:1px 5px; border-radius:4px; }
+  .ac-header.sup  { border-left:4px solid var(--accent); }
+  .ac-header.res  { border-left:4px solid var(--accent2); }
+  .ac-header.ana  { border-left:4px solid var(--accent4); }
+  .ac-header.wri  { border-left:4px solid var(--accent3); }
+  .ac-header.cri  { border-left:4px solid #f472b6; }
+
+  /* ── STATE TABLE ── */
+  .state-table-wrap { margin-top:28px; overflow-x:auto; }
+  .state-table { width:100%; border-collapse:collapse; font-size:13px; }
+  .state-table th { background:var(--card); color:var(--muted); font-weight:700; text-transform:uppercase; font-size:10.5px; letter-spacing:.06em; padding:10px 14px; text-align:left; border-bottom:2px solid var(--border); }
+  .state-table td { padding:9px 14px; border-bottom:1px solid var(--border); vertical-align:top; }
+  .state-table tr:last-child td { border-bottom:none; }
+  .state-table tr:hover td { background:rgba(255,255,255,.02); }
+  .field-name { font-family:monospace; font-size:12px; color:var(--accent2); font-weight:700; }
+  .field-type { font-size:11px; color:var(--muted); font-family:monospace; }
+  .field-owner { font-size:11px; }
+  .field-desc { color:var(--muted); font-size:12.5px; }
+
+  /* ── ROUTING TREE ── */
+  .route-tree { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:22px 26px; font-family:monospace; font-size:13px; line-height:2; margin-top:28px; }
+  .rt-title { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; font-family:'Segoe UI',sans-serif; font-weight:700; margin-bottom:14px; }
+  .rt-if    { color:#60a5fa; }
+  .rt-then  { color:var(--accent2); }
+  .rt-key   { color:var(--accent4); }
+  .rt-done  { color:var(--green); }
+  .rt-comment { color:#4a5568; }
+
+  /* old selectors kept for compat */
   .arch-diagram { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:32px; display:flex; align-items:center; justify-content:center; gap:0; flex-wrap:wrap; }
   .arch-node { background:var(--card); border:1.5px solid var(--border); border-radius:12px; padding:14px 20px; text-align:center; min-width:120px; }
   .arch-node .icon { font-size:24px; margin-bottom:6px; }
@@ -48,9 +127,9 @@
   .arch-node .sublabel { font-size:11px; color:var(--muted); margin-top:2px; }
   .arch-node.supervisor { border-color:var(--accent); }
   .arch-node.researcher { border-color:var(--accent2); }
-  .arch-node.analyst { border-color:var(--accent4); }
-  .arch-node.writer { border-color:var(--accent3); }
-  .arch-node.critic { border-color:#f472b6; }
+  .arch-node.analyst    { border-color:var(--accent4); }
+  .arch-node.writer     { border-color:var(--accent3); }
+  .arch-node.critic     { border-color:#f472b6; }
   .arch-arrow { color:var(--muted); font-size:20px; padding:0 8px; align-self:center; }
   .arch-col { display:flex; flex-direction:column; gap:10px; align-items:center; }
   .arch-row { display:flex; align-items:center; gap:0; flex-wrap:wrap; justify-content:center; }
@@ -157,70 +236,259 @@
   <section class="arch-section">
     <div class="section-label">Kiến trúc hệ thống</div>
     <div class="section-title">Luồng xử lý đa agent</div>
-    <div class="section-desc">Mỗi agent có system prompt và nhiệm vụ riêng. Supervisor điều phối toàn bộ luồng, dừng khi đủ kết quả hoặc chạm giới hạn.</div>
+    <div class="section-desc">Supervisor điều phối toàn bộ luồng qua LangGraph <code style="font-size:12px;color:var(--accent2);background:rgba(0,212,170,.08);padding:1px 6px;border-radius:4px">StateGraph</code>. Mỗi agent đọc/ghi <code style="font-size:12px;color:var(--accent2);background:rgba(0,212,170,.08);padding:1px 6px;border-radius:4px">ResearchState</code> — shared state duy nhất. Click vào node để xem chi tiết bên dưới.</div>
 
-    <div class="arch-diagram">
-      <div class="arch-row">
+    <!-- ── FLOW PIPELINE ── -->
+    <div class="flow-wrap">
+      <div class="flow-title">Pipeline tổng thể — vòng lặp Supervisor → Worker → Supervisor</div>
+
+      <!-- Loop-back indicator -->
+      <div class="loop-back">
+        <div class="lb-line"></div>
+        <div class="lb-label">↩ loop back → Supervisor (sau mỗi worker)</div>
+        <div class="lb-line"></div>
+      </div>
+
+      <div class="flow-pipeline">
         <!-- User -->
-        <div class="arch-node">
-          <div class="icon">👤</div>
-          <div class="label">User Query</div>
-          <div class="sublabel">ResearchQuery</div>
+        <div class="fn">
+          <div class="fn-box" onclick="highlight(0)">
+            <div class="fi">👤</div>
+            <div class="fl">User Query</div>
+            <div class="fs">ResearchQuery</div>
+          </div>
+          <div class="fn-badge out">input</div>
         </div>
-        <div class="arch-arrow">→</div>
+        <div class="flow-arr">→</div>
 
         <!-- Supervisor -->
-        <div class="arch-node supervisor">
-          <div class="icon">🎯</div>
-          <div class="label">Supervisor</div>
-          <div class="sublabel">Router & Guard</div>
+        <div class="fn">
+          <div class="fn-box fn-sup" onclick="highlight(1)">
+            <div class="fi">🎯</div>
+            <div class="fl">Supervisor</div>
+            <div class="fs">Router · Guard</div>
+          </div>
+          <div class="fn-badge sup">LangGraph</div>
         </div>
-        <div class="arch-arrow">→</div>
+        <div class="flow-arr loop">⇄</div>
 
-        <!-- Workers col -->
-        <div class="arch-col">
-          <div class="arch-node researcher">
-            <div class="icon">🔍</div>
-            <div class="label">Researcher</div>
-            <div class="sublabel">Search + Notes</div>
+        <!-- Researcher -->
+        <div class="fn">
+          <div class="fn-box fn-res" onclick="highlight(2)">
+            <div class="fi">🔍</div>
+            <div class="fl">Researcher</div>
+            <div class="fs">Search · Notes</div>
           </div>
-          <div class="arch-node analyst">
-            <div class="icon">📊</div>
-            <div class="label">Analyst</div>
-            <div class="sublabel">Claims + Insights</div>
-          </div>
-          <div class="arch-node writer">
-            <div class="icon">✍️</div>
-            <div class="label">Writer</div>
-            <div class="sublabel">Final Answer</div>
-          </div>
+          <div class="fn-badge res">step 1</div>
         </div>
-        <div class="arch-arrow">→</div>
+        <div class="flow-arr loop">⇄</div>
+
+        <!-- Analyst -->
+        <div class="fn">
+          <div class="fn-box fn-ana" onclick="highlight(3)">
+            <div class="fi">📊</div>
+            <div class="fl">Analyst</div>
+            <div class="fs">Claims · Insights</div>
+          </div>
+          <div class="fn-badge ana">step 2</div>
+        </div>
+        <div class="flow-arr loop">⇄</div>
+
+        <!-- Writer -->
+        <div class="fn">
+          <div class="fn-box fn-wri" onclick="highlight(4)">
+            <div class="fi">✍️</div>
+            <div class="fl">Writer</div>
+            <div class="fs">Final Answer</div>
+          </div>
+          <div class="fn-badge wri">step 3</div>
+        </div>
+        <div class="flow-arr">→</div>
 
         <!-- Critic -->
-        <div class="arch-node critic">
-          <div class="icon">🛡️</div>
-          <div class="label">Critic</div>
-          <div class="sublabel">Citation Check</div>
+        <div class="fn">
+          <div class="fn-box fn-cri" onclick="highlight(5)">
+            <div class="fi">🛡️</div>
+            <div class="fl">Critic</div>
+            <div class="fs">Citation · QA</div>
+          </div>
+          <div class="fn-badge cri">bonus</div>
         </div>
-        <div class="arch-arrow">→</div>
+        <div class="flow-arr">→</div>
 
         <!-- Output -->
-        <div class="arch-node">
-          <div class="icon">📄</div>
-          <div class="label">Output</div>
-          <div class="sublabel">+ Benchmark</div>
+        <div class="fn">
+          <div class="fn-box fn-out" onclick="highlight(6)">
+            <div class="fi">📄</div>
+            <div class="fl">Output</div>
+            <div class="fs">answer · metrics</div>
+          </div>
+          <div class="fn-badge out">END</div>
         </div>
-      </div>
+      </div><!-- /flow-pipeline -->
+
+      <!-- ── AGENT DETAIL CARDS ── -->
+      <div class="agent-cards" id="agent-cards">
+
+        <!-- 0: User -->
+        <div class="agent-card" data-idx="0" style="display:none">
+          <div class="ac-header">
+            <div class="ac-icon">👤</div>
+            <div><div class="ac-name">User Query</div><div style="font-size:11px;color:var(--muted)">Điểm khởi đầu</div></div>
+            <div class="ac-role">ResearchQuery</div>
+          </div>
+          <div class="ac-body">
+            <div class="ac-row"><span class="ac-tag writes">tạo ra</span><span class="ac-val"><code>query</code> (str) — câu hỏi nghiên cứu<br><code>max_sources</code> (int, default 5)<br><code>iteration = 0</code>, <code>errors = []</code></span></div>
+            <div class="ac-row"><span class="ac-tag guard">init</span><span class="ac-val">ResearchState được khởi tạo với Pydantic v2. Tất cả field còn lại là <code>None</code> / list rỗng. LangGraph nhận dict qua <code>model_dump()</code>.</span></div>
+          </div>
+        </div>
+
+        <!-- 1: Supervisor -->
+        <div class="agent-card" data-idx="1">
+          <div class="ac-header sup">
+            <div class="ac-icon">🎯</div>
+            <div><div class="ac-name" style="color:var(--accent)">Supervisor</div><div style="font-size:11px;color:var(--muted)">Router · Guard · Iteration counter</div></div>
+            <div class="ac-role">[role:supervisor]</div>
+          </div>
+          <div class="ac-body">
+            <div class="ac-row"><span class="ac-tag reads">đọc</span><span class="ac-val"><code>iteration</code>, <code>errors</code>, <code>research_notes</code>, <code>analysis_notes</code>, <code>final_answer</code></span></div>
+            <div class="ac-row"><span class="ac-tag writes">ghi</span><span class="ac-val"><code>iteration += 1</code> mỗi lần gọi · <code>route_history.append(next_node)</code></span></div>
+            <div class="ac-row"><span class="ac-tag calls">quyết định</span><span class="ac-val">Không gọi LLM — logic Python thuần. Trả về tên node kế tiếp cho <code>_route()</code> conditional edge.</span></div>
+            <div class="ac-row"><span class="ac-tag guard">guardrail</span><span class="ac-val">Nếu <code>iteration ≥ MAX_ITERATIONS(6)</code> → DONE ngay. Nếu <code>len(errors) ≥ 2</code> → skip về WRITER nếu có notes, else DONE.</span></div>
+          </div>
+        </div>
+
+        <!-- 2: Researcher -->
+        <div class="agent-card" data-idx="2" style="display:none">
+          <div class="ac-header res">
+            <div class="ac-icon">🔍</div>
+            <div><div class="ac-name" style="color:var(--accent2)">Researcher</div><div style="font-size:11px;color:var(--muted)">Search → Synthesize notes</div></div>
+            <div class="ac-role">[role:researcher]</div>
+          </div>
+          <div class="ac-body">
+            <div class="ac-row"><span class="ac-tag reads">đọc</span><span class="ac-val"><code>query</code>, <code>max_sources</code></span></div>
+            <div class="ac-row"><span class="ac-tag calls">gọi</span><span class="ac-val"><strong>SearchClient.search(query, k=max_sources)</strong> → list <code>SourceDocument</code><br>→ <strong>LLMClient.complete(system, user)</strong> để tổng hợp research notes từ snippets</span></div>
+            <div class="ac-row"><span class="ac-tag writes">ghi</span><span class="ac-val"><code>state.sources</code> (list SourceDocument)<br><code>state.research_notes</code> (str markdown)<br><code>state.agent_results</code> ← AgentResult(cost, tokens, latency)</span></div>
+            <div class="ac-row"><span class="ac-tag guard">system prompt</span><span class="ac-val"><code>[role:researcher]</code> — "Summarize key facts from sources. Use numbered citations [1], [2]…"</span></div>
+          </div>
+        </div>
+
+        <!-- 3: Analyst -->
+        <div class="agent-card" data-idx="3" style="display:none">
+          <div class="ac-header ana">
+            <div class="ac-icon">📊</div>
+            <div><div class="ac-name" style="color:var(--accent4)">Analyst</div><div style="font-size:11px;color:var(--muted)">Extract claims · Identify gaps</div></div>
+            <div class="ac-role">[role:analyst]</div>
+          </div>
+          <div class="ac-body">
+            <div class="ac-row"><span class="ac-tag reads">đọc</span><span class="ac-val"><code>query</code>, <code>research_notes</code></span></div>
+            <div class="ac-row"><span class="ac-tag calls">gọi</span><span class="ac-val"><strong>LLMClient.complete(system, user)</strong><br>Không gọi search — chỉ phân tích nội dung đã có.</span></div>
+            <div class="ac-row"><span class="ac-tag writes">ghi</span><span class="ac-val"><code>state.analysis_notes</code> (str markdown — key claims, gaps, contradictions)<br><code>state.agent_results</code> ← AgentResult</span></div>
+            <div class="ac-row"><span class="ac-tag guard">system prompt</span><span class="ac-val"><code>[role:analyst]</code> — "Identify key claims, supporting evidence, and gaps. Be critical."</span></div>
+          </div>
+        </div>
+
+        <!-- 4: Writer -->
+        <div class="agent-card" data-idx="4" style="display:none">
+          <div class="ac-header wri">
+            <div class="ac-icon">✍️</div>
+            <div><div class="ac-name" style="color:var(--accent3)">Writer</div><div style="font-size:11px;color:var(--muted)">Synthesize → Final answer + References</div></div>
+            <div class="ac-role">[role:writer]</div>
+          </div>
+          <div class="ac-body">
+            <div class="ac-row"><span class="ac-tag reads">đọc</span><span class="ac-val"><code>query</code>, <code>research_notes</code>, <code>analysis_notes</code>, <code>sources</code></span></div>
+            <div class="ac-row"><span class="ac-tag calls">gọi</span><span class="ac-val"><strong>LLMClient.complete(system, user)</strong><br>User prompt bao gồm cả research notes + analysis notes + tiêu đề các nguồn.</span></div>
+            <div class="ac-row"><span class="ac-tag writes">ghi</span><span class="ac-val"><code>state.final_answer</code> (str) — câu trả lời hoàn chỉnh kết thúc bằng <code>## References</code> block<br><code>state.agent_results</code> ← AgentResult</span></div>
+            <div class="ac-row"><span class="ac-tag guard">system prompt</span><span class="ac-val"><code>[role:writer]</code> — "Write a comprehensive answer. End with ## References listing all sources used."</span></div>
+          </div>
+        </div>
+
+        <!-- 5: Critic -->
+        <div class="agent-card" data-idx="5" style="display:none">
+          <div class="ac-header cri">
+            <div class="ac-icon">🛡️</div>
+            <div><div class="ac-name" style="color:#f472b6">Critic</div><div style="font-size:11px;color:var(--muted)">Citation coverage · Quality gate (Bonus)</div></div>
+            <div class="ac-role">heuristic</div>
+          </div>
+          <div class="ac-body">
+            <div class="ac-row"><span class="ac-tag reads">đọc</span><span class="ac-val"><code>final_answer</code>, <code>sources</code></span></div>
+            <div class="ac-row"><span class="ac-tag calls">tính</span><span class="ac-val"><strong>citation_coverage(answer, sources)</strong> — đếm câu có <code>[n]</code> hoặc title mention / tổng câu claim<br><strong>quality_score(state)</strong> — heuristic 0–10 dựa trên stage completion + grounding</span></div>
+            <div class="ac-row"><span class="ac-tag writes">ghi</span><span class="ac-val">Nếu <code>coverage &lt; 0.5</code>: <code>state.errors.append("low citation coverage")</code><br>Không gọi LLM — thuần Python metrics.</span></div>
+            <div class="ac-row"><span class="ac-tag guard">không retry</span><span class="ac-val">Critic chạy một lần duy nhất sau Writer (edge cứng <code>writer → critic → END</code>). Không loop lại Supervisor.</span></div>
+          </div>
+        </div>
+
+        <!-- 6: Output -->
+        <div class="agent-card" data-idx="6" style="display:none">
+          <div class="ac-header" style="border-left:4px solid var(--green)">
+            <div class="ac-icon">📄</div>
+            <div><div class="ac-name" style="color:var(--green)">Output</div><div style="font-size:11px;color:var(--muted)">ResearchState hoàn chỉnh</div></div>
+            <div class="ac-role">END</div>
+          </div>
+          <div class="ac-body">
+            <div class="ac-row"><span class="ac-tag reads">chứa</span><span class="ac-val"><code>final_answer</code> · <code>sources</code> · <code>research_notes</code> · <code>analysis_notes</code></span></div>
+            <div class="ac-row"><span class="ac-tag calls">metrics</span><span class="ac-val"><code>quality_score</code> (0–10) · <code>citation_coverage</code> (0–1) · <code>total_cost_usd</code> · <code>total_tokens</code> · <code>latency_s</code></span></div>
+            <div class="ac-row"><span class="ac-tag writes">lưu</span><span class="ac-val">CLI in ra answer + metrics. <code>bench</code> command ghi vào <code>reports/benchmark.md</code>. Artifact store dùng <code>LocalArtifactStore</code>.</span></div>
+          </div>
+        </div>
+
+      </div><!-- /agent-cards -->
+    </div><!-- /flow-wrap -->
+
+    <!-- ── SHARED STATE TABLE ── -->
+    <div class="state-table-wrap">
+      <div class="rt-title" style="font-family:'Segoe UI',sans-serif;font-size:12px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;">ResearchState — Shared State (Pydantic v2)</div>
+      <table class="state-table">
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Ghi bởi</th>
+            <th>Mô tả</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="field-name">query</span></td><td><span class="field-type">str</span></td><td><span class="field-owner" style="color:var(--muted)">User</span></td><td class="field-desc">Câu hỏi nghiên cứu đầu vào</td></tr>
+          <tr><td><span class="field-name">sources</span></td><td><span class="field-type">list[SourceDoc]</span></td><td><span class="field-owner" style="color:var(--accent2)">Researcher</span></td><td class="field-desc">Danh sách tài liệu tìm được (title, url, snippet, score)</td></tr>
+          <tr><td><span class="field-name">research_notes</span></td><td><span class="field-type">str | None</span></td><td><span class="field-owner" style="color:var(--accent2)">Researcher</span></td><td class="field-desc">Tổng hợp facts từ sources, có citation [n]</td></tr>
+          <tr><td><span class="field-name">analysis_notes</span></td><td><span class="field-type">str | None</span></td><td><span class="field-owner" style="color:var(--accent4)">Analyst</span></td><td class="field-desc">Key claims, gaps, contradictions từ research_notes</td></tr>
+          <tr><td><span class="field-name">final_answer</span></td><td><span class="field-type">str | None</span></td><td><span class="field-owner" style="color:var(--accent3)">Writer</span></td><td class="field-desc">Câu trả lời cuối có ## References block</td></tr>
+          <tr><td><span class="field-name">errors</span></td><td><span class="field-type">list[str]</span></td><td><span class="field-owner" style="color:#f472b6">Any agent</span></td><td class="field-desc">Lỗi runtime. Critic append nếu citation_coverage &lt; 0.5</td></tr>
+          <tr><td><span class="field-name">agent_results</span></td><td><span class="field-type">list[AgentResult]</span></td><td><span class="field-owner" style="color:var(--muted)">All workers</span></td><td class="field-desc">Token/cost/latency per agent — dùng cho benchmark</td></tr>
+          <tr><td><span class="field-name">iteration</span></td><td><span class="field-type">int</span></td><td><span class="field-owner" style="color:var(--accent)">Supervisor</span></td><td class="field-desc">Số vòng lặp đã qua. Guard: dừng nếu ≥ MAX_ITERATIONS</td></tr>
+          <tr><td><span class="field-name">route_history</span></td><td><span class="field-type">list[str]</span></td><td><span class="field-owner" style="color:var(--accent)">Supervisor</span></td><td class="field-desc">Log các bước đã route — dùng để debug và trace</td></tr>
+          <tr><td><span class="field-name">max_sources</span></td><td><span class="field-type">int</span></td><td><span class="field-owner" style="color:var(--muted)">User</span></td><td class="field-desc">Số nguồn tối đa Researcher được fetch (default 5)</td></tr>
+        </tbody>
+      </table>
     </div>
 
-    <div style="margin-top:16px; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:18px 22px; font-size:13px; color:var(--muted);">
-      <b style="color:var(--text)">Routing policy:</b>
-      Supervisor kiểm tra state sau mỗi bước: <code style="color:var(--accent2)">research_notes is None?</code> → Researcher →
-      <code style="color:var(--accent4)">analysis_notes is None?</code> → Analyst →
-      <code style="color:var(--accent3)">final_answer is None?</code> → Writer → Critic → DONE.
-      Guardrails: <code style="color:var(--green)">MAX_ITERATIONS=6</code>, <code style="color:var(--green)">TIMEOUT=60s</code>, fallback nếu <code style="color:var(--green)">errors≥2</code>.
+    <!-- ── ROUTING DECISION TREE ── -->
+    <div class="route-tree">
+      <div class="rt-title">Routing Logic — SupervisorAgent.decide(state) → str</div>
+<pre style="background:none;border:none;margin:0;padding:0;font-family:monospace;font-size:13px;line-height:2.1;overflow-x:auto"><span class="rt-comment"># Được gọi bởi LangGraph conditional edge sau mỗi node</span>
+<span class="rt-if">def</span> <span style="color:var(--text)">decide</span>(state) → <span class="rt-key">str</span>:
+
+    <span class="rt-if">if</span> state.iteration &gt;= <span class="rt-key">MAX_ITERATIONS</span>:        <span class="rt-comment">→ 6 vòng</span>
+        <span class="rt-if">return</span> <span class="rt-done">"done"</span>
+
+    <span class="rt-if">if</span> len(state.errors) &gt;= <span class="rt-key">MAX_ERRORS</span>:          <span class="rt-comment">→ 2 lỗi</span>
+        <span class="rt-if">return</span> <span class="rt-then">"writer"</span> <span class="rt-if">if</span> state.research_notes <span class="rt-if">else</span> <span class="rt-done">"done"</span>
+
+    <span class="rt-if">if</span> state.research_notes <span class="rt-if">is</span> <span class="rt-key">None</span>:
+        <span class="rt-if">return</span> <span class="rt-then">"researcher"</span>                       <span class="rt-comment">→ bước 1</span>
+
+    <span class="rt-if">if</span> state.analysis_notes <span class="rt-if">is</span> <span class="rt-key">None</span>:
+        <span class="rt-if">return</span> <span class="rt-then">"analyst"</span>                         <span class="rt-comment">→ bước 2</span>
+
+    <span class="rt-if">if</span> state.final_answer <span class="rt-if">is</span> <span class="rt-key">None</span>:
+        <span class="rt-if">return</span> <span class="rt-then">"writer"</span>                          <span class="rt-comment">→ bước 3</span>
+
+    <span class="rt-if">return</span> <span class="rt-done">"done"</span>                                 <span class="rt-comment">→ LangGraph END</span>
+
+<span class="rt-comment"># Writer → Critic (edge cứng, không qua Supervisor)</span>
+<span class="rt-comment"># Critic  → END   (edge cứng)</span></pre>
     </div>
+
   </section>
 
   <!-- ══════════════════ BENCHMARK ══════════════════ -->
@@ -746,12 +1014,30 @@ function showTab(idx) {
   document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
   document.querySelectorAll('.tab-pane').forEach((p, i) => p.classList.toggle('active', i === idx));
 }
-// Animate quality bars on load
+
+// ── Agent card highlight on click ──
+let activeIdx = 1; // Supervisor mở mặc định
+function highlight(idx) {
+  // hide all cards
+  document.querySelectorAll('.agent-card').forEach(c => c.style.display = 'none');
+  // show selected
+  const card = document.querySelector(`.agent-card[data-idx="${idx}"]`);
+  if (card) { card.style.display = 'block'; card.scrollIntoView({behavior:'smooth', block:'nearest'}); }
+  // highlight clicked node box
+  document.querySelectorAll('.fn-box').forEach((b, i) => {
+    b.style.transform = i === idx ? 'translateY(-4px) scale(1.03)' : '';
+    b.style.boxShadow = i === idx ? '0 0 0 2px var(--accent), 0 10px 28px rgba(0,0,0,.5)' : '';
+  });
+  activeIdx = idx;
+}
+
+// Animate quality bars on load + init highlight
 window.addEventListener('load', () => {
   document.querySelectorAll('.quality-fill').forEach(el => {
     const w = el.style.width; el.style.width = '0';
     setTimeout(() => el.style.width = w, 200);
   });
+  highlight(1); // mở Supervisor mặc định
 });
 </script>
 </body>

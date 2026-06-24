@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lab 20 — Multi-Agent Research System Demo</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --card: #22263a;
+    --border: #2e3250;
+    --accent: #6c63ff;
+    --accent2: #00d4aa;
+    --accent3: #ff7c5c;
+    --accent4: #f0c040;
+    --text: #e8eaf6;
+    --muted: #8892b0;
+    --green: #64ffda;
+    --tag-bg: #2a2f4a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 15px; line-height: 1.7; }
+
+  /* ── HEADER ── */
+  header { background: linear-gradient(135deg, #12142a 0%, #1a1040 50%, #0d1a30 100%); border-bottom: 1px solid var(--border); padding: 40px 0 32px; text-align: center; position: relative; overflow: hidden; }
+  header::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse at 30% 50%, rgba(108,99,255,.15) 0%, transparent 60%), radial-gradient(ellipse at 70% 50%, rgba(0,212,170,.1) 0%, transparent 60%); pointer-events:none; }
+  .badge { display:inline-block; background:var(--tag-bg); border:1px solid var(--accent); color:var(--accent); padding:4px 14px; border-radius:99px; font-size:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; margin-bottom:16px; }
+  header h1 { font-size:2.4rem; font-weight:800; background:linear-gradient(90deg,#a78bfa,#6ee7f7,#5eead4); -webkit-background-clip:text; -webkit-text-fill-color:transparent; line-height:1.2; }
+  header p { color:var(--muted); margin-top:10px; font-size:1rem; max-width:700px; margin-left:auto; margin-right:auto; }
+  .meta-pills { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:20px; }
+  .pill { background:var(--tag-bg); border:1px solid var(--border); border-radius:99px; padding:5px 14px; font-size:12px; color:var(--muted); display:flex; align-items:center; gap:6px; }
+  .pill span { color:var(--green); font-weight:700; }
+
+  /* ── LAYOUT ── */
+  .container { max-width:1100px; margin:0 auto; padding:0 24px; }
+
+  /* ── ARCHITECTURE ── */
+  .arch-section { padding:40px 0 20px; }
+  .section-label { font-size:11px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:.1em; margin-bottom:10px; }
+  .section-title { font-size:1.5rem; font-weight:700; margin-bottom:8px; }
+  .section-desc { color:var(--muted); margin-bottom:28px; }
+
+  .arch-diagram { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:32px; display:flex; align-items:center; justify-content:center; gap:0; flex-wrap:wrap; }
+  .arch-node { background:var(--card); border:1.5px solid var(--border); border-radius:12px; padding:14px 20px; text-align:center; min-width:120px; }
+  .arch-node .icon { font-size:24px; margin-bottom:6px; }
+  .arch-node .label { font-size:13px; font-weight:700; color:var(--text); }
+  .arch-node .sublabel { font-size:11px; color:var(--muted); margin-top:2px; }
+  .arch-node.supervisor { border-color:var(--accent); }
+  .arch-node.researcher { border-color:var(--accent2); }
+  .arch-node.analyst { border-color:var(--accent4); }
+  .arch-node.writer { border-color:var(--accent3); }
+  .arch-node.critic { border-color:#f472b6; }
+  .arch-arrow { color:var(--muted); font-size:20px; padding:0 8px; align-self:center; }
+  .arch-col { display:flex; flex-direction:column; gap:10px; align-items:center; }
+  .arch-row { display:flex; align-items:center; gap:0; flex-wrap:wrap; justify-content:center; }
+
+  /* ── BENCHMARK ── */
+  .bench-section { padding:32px 0; }
+  .bench-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:16px; margin-bottom:24px; }
+  .bench-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px; }
+  .bench-card h4 { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:12px; }
+  .bench-row { display:flex; justify-content:space-between; align-items:center; padding:7px 0; border-bottom:1px solid var(--border); }
+  .bench-row:last-child { border-bottom:none; }
+  .bench-label { font-size:13px; color:var(--muted); }
+  .bench-val { font-size:14px; font-weight:700; }
+  .bench-val.green { color:var(--green); }
+  .bench-val.yellow { color:var(--accent4); }
+  .bench-val.blue { color:#60a5fa; }
+  .quality-bar { height:6px; border-radius:3px; background:var(--border); margin-top:10px; overflow:hidden; }
+  .quality-fill { height:100%; border-radius:3px; transition:width .8s ease; }
+
+  /* ── TABS ── */
+  .tabs-section { padding:32px 0 60px; }
+  .tabs { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:24px; border-bottom:1px solid var(--border); padding-bottom:0; }
+  .tab-btn { background:none; border:none; padding:10px 20px; color:var(--muted); font-size:14px; font-weight:600; cursor:pointer; border-radius:8px 8px 0 0; border-bottom:2px solid transparent; transition:all .2s; font-family:inherit; }
+  .tab-btn:hover { color:var(--text); background:var(--surface); }
+  .tab-btn.active { color:var(--accent); border-bottom-color:var(--accent); }
+  .tab-pane { display:none; }
+  .tab-pane.active { display:block; }
+
+  /* ── PROMPT CARD ── */
+  .prompt-card { background:var(--surface); border:1px solid var(--border); border-radius:16px; overflow:hidden; margin-bottom:20px; }
+  .prompt-header { padding:20px 24px 16px; border-bottom:1px solid var(--border); display:flex; align-items:flex-start; gap:14px; }
+  .prompt-icon { font-size:28px; flex-shrink:0; }
+  .prompt-title { font-size:1.1rem; font-weight:700; }
+  .prompt-subtitle { font-size:13px; color:var(--muted); margin-top:3px; }
+  .prompt-stats { margin-left:auto; display:flex; gap:8px; flex-shrink:0; flex-wrap:wrap; }
+  .stat-chip { background:var(--tag-bg); border:1px solid var(--border); border-radius:6px; padding:4px 10px; font-size:11px; color:var(--muted); white-space:nowrap; }
+  .stat-chip b { color:var(--green); }
+
+  /* ── EXPLANATION BOX ── */
+  .explain-box { background:linear-gradient(135deg, #1a2040, #141830); border:1px solid #3730a3; border-radius:12px; padding:18px 22px; margin:16px 24px; }
+  .explain-box .explain-title { font-size:12px; font-weight:700; color:#818cf8; text-transform:uppercase; letter-spacing:.08em; margin-bottom:8px; display:flex; align-items:center; gap:6px; }
+  .explain-box p { font-size:13.5px; color:#c7d2fe; line-height:1.7; }
+
+  /* ── CONTENT ── */
+  .prompt-content { padding:22px 24px; }
+  .prompt-input { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:14px 18px; margin-bottom:18px; font-size:13px; color:var(--muted); font-style:italic; }
+  .prompt-input-label { font-size:11px; color:var(--accent4); text-transform:uppercase; letter-spacing:.06em; font-weight:700; margin-bottom:6px; }
+  .output-label { font-size:11px; color:var(--accent2); text-transform:uppercase; letter-spacing:.06em; font-weight:700; margin-bottom:10px; }
+  .output-body { font-size:14px; color:var(--text); line-height:1.8; }
+  .output-body h2 { font-size:1.05rem; font-weight:700; color:var(--accent2); margin:18px 0 8px; }
+  .output-body h3 { font-size:.95rem; font-weight:700; color:var(--accent4); margin:14px 0 6px; }
+  .output-body p { margin-bottom:10px; color:#c8cde8; }
+  .output-body ul, .output-body ol { padding-left:20px; margin-bottom:10px; }
+  .output-body li { margin-bottom:5px; color:#c8cde8; }
+  .output-body strong { color:var(--text); font-weight:700; }
+  .output-body hr { border:none; border-top:1px solid var(--border); margin:16px 0; }
+
+  /* ── ANNOTATIONS ── */
+  .annotation-list { margin-top:20px; display:flex; flex-direction:column; gap:10px; }
+  .annotation { background:var(--card); border-left:3px solid var(--accent); border-radius:0 10px 10px 0; padding:12px 16px; font-size:13px; }
+  .annotation .ann-label { font-size:11px; color:var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:.06em; margin-bottom:4px; }
+  .annotation p { color:var(--muted); }
+  .annotation.good { border-left-color: var(--green); }
+  .annotation.good .ann-label { color: var(--green); }
+  .annotation.warn { border-left-color: var(--accent4); }
+  .annotation.warn .ann-label { color: var(--accent4); }
+
+  /* ── FOOTER ── */
+  footer { background:var(--surface); border-top:1px solid var(--border); padding:24px; text-align:center; color:var(--muted); font-size:13px; }
+  footer b { color:var(--text); }
+
+  /* ── DIVIDER ── */
+  .divider { border:none; border-top:1px solid var(--border); margin:0; }
+
+  @media(max-width:640px) {
+    header h1 { font-size:1.6rem; }
+    .arch-diagram { gap:6px; }
+    .arch-arrow { display:none; }
+    .tabs { gap:4px; }
+    .tab-btn { padding:8px 12px; font-size:13px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ HEADER ══════════════════ -->
+<header>
+  <div class="container">
+    <div class="badge">Lab 20 · Track 3 · Buổi 20</div>
+    <h1>Multi-Agent Research System</h1>
+    <p>Hệ thống nghiên cứu đa agent: Supervisor → Researcher → Analyst → Writer → Critic<br>Chạy thực với OpenAI gpt-4o-mini · 4 prompt từ giáo viên · Benchmark single vs multi-agent</p>
+    <div class="meta-pills">
+      <div class="pill">🤖 Model: <span>gpt-4o-mini</span></div>
+      <div class="pill">⚙️ Framework: <span>LangGraph</span></div>
+      <div class="pill">🧪 Tests: <span>25 passed</span></div>
+      <div class="pill">💰 Total cost: <span>$0.002436</span></div>
+      <div class="pill">🗂 Tokens: <span>4 828</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════ ARCHITECTURE ══════════════════ -->
+<div class="container">
+  <section class="arch-section">
+    <div class="section-label">Kiến trúc hệ thống</div>
+    <div class="section-title">Luồng xử lý đa agent</div>
+    <div class="section-desc">Mỗi agent có system prompt và nhiệm vụ riêng. Supervisor điều phối toàn bộ luồng, dừng khi đủ kết quả hoặc chạm giới hạn.</div>
+
+    <div class="arch-diagram">
+      <div class="arch-row">
+        <!-- User -->
+        <div class="arch-node">
+          <div class="icon">👤</div>
+          <div class="label">User Query</div>
+          <div class="sublabel">ResearchQuery</div>
+        </div>
+        <div class="arch-arrow">→</div>
+
+        <!-- Supervisor -->
+        <div class="arch-node supervisor">
+          <div class="icon">🎯</div>
+          <div class="label">Supervisor</div>
+          <div class="sublabel">Router & Guard</div>
+        </div>
+        <div class="arch-arrow">→</div>
+
+        <!-- Workers col -->
+        <div class="arch-col">
+          <div class="arch-node researcher">
+            <div class="icon">🔍</div>
+            <div class="label">Researcher</div>
+            <div class="sublabel">Search + Notes</div>
+          </div>
+          <div class="arch-node analyst">
+            <div class="icon">📊</div>
+            <div class="label">Analyst</div>
+            <div class="sublabel">Claims + Insights</div>
+          </div>
+          <div class="arch-node writer">
+            <div class="icon">✍️</div>
+            <div class="label">Writer</div>
+            <div class="sublabel">Final Answer</div>
+          </div>
+        </div>
+        <div class="arch-arrow">→</div>
+
+        <!-- Critic -->
+        <div class="arch-node critic">
+          <div class="icon">🛡️</div>
+          <div class="label">Critic</div>
+          <div class="sublabel">Citation Check</div>
+        </div>
+        <div class="arch-arrow">→</div>
+
+        <!-- Output -->
+        <div class="arch-node">
+          <div class="icon">📄</div>
+          <div class="label">Output</div>
+          <div class="sublabel">+ Benchmark</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:16px; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:18px 22px; font-size:13px; color:var(--muted);">
+      <b style="color:var(--text)">Routing policy:</b>
+      Supervisor kiểm tra state sau mỗi bước: <code style="color:var(--accent2)">research_notes is None?</code> → Researcher →
+      <code style="color:var(--accent4)">analysis_notes is None?</code> → Analyst →
+      <code style="color:var(--accent3)">final_answer is None?</code> → Writer → Critic → DONE.
+      Guardrails: <code style="color:var(--green)">MAX_ITERATIONS=6</code>, <code style="color:var(--green)">TIMEOUT=60s</code>, fallback nếu <code style="color:var(--green)">errors≥2</code>.
+    </div>
+  </section>
+
+  <!-- ══════════════════ BENCHMARK ══════════════════ -->
+  <section class="bench-section">
+    <div class="section-label">Benchmark thực tế</div>
+    <div class="section-title">Single-Agent vs Multi-Agent (gpt-4o-mini)</div>
+    <div class="section-desc">3 query chạy thực, đo latency, cost, quality score (heuristic 0-10), citation coverage.</div>
+
+    <div class="bench-grid">
+      <div class="bench-card">
+        <h4>Query 1 — GraphRAG Summary</h4>
+        <div class="bench-row"><span class="bench-label">Baseline quality</span><span class="bench-val yellow">4.0 / 10</span></div>
+        <div class="bench-row"><span class="bench-label">Multi-agent quality</span><span class="bench-val green">8.0 / 10</span></div>
+        <div class="bench-row"><span class="bench-label">Baseline latency</span><span class="bench-val blue">14.6s</span></div>
+        <div class="bench-row"><span class="bench-label">Multi-agent latency</span><span class="bench-val blue">118s*</span></div>
+        <div class="bench-row"><span class="bench-label">Cost ratio</span><span class="bench-val">~3×</span></div>
+        <div class="quality-bar"><div class="quality-fill" style="width:80%;background:linear-gradient(90deg,var(--accent),var(--accent2))"></div></div>
+      </div>
+      <div class="bench-card">
+        <h4>Query 2 — Customer Support</h4>
+        <div class="bench-row"><span class="bench-label">Baseline quality</span><span class="bench-val yellow">4.1 / 10</span></div>
+        <div class="bench-row"><span class="bench-label">Multi-agent quality</span><span class="bench-val green">8.5 / 10</span></div>
+        <div class="bench-row"><span class="bench-label">Baseline latency</span><span class="bench-val blue">14.5s</span></div>
+        <div class="bench-row"><span class="bench-label">Multi-agent latency</span><span class="bench-val blue">21.4s</span></div>
+        <div class="bench-row"><span class="bench-label">Cost ratio</span><span class="bench-val">~1.9×</span></div>
+        <div class="quality-bar"><div class="quality-fill" style="width:85%;background:linear-gradient(90deg,var(--accent),var(--accent2))"></div></div>
+      </div>
+      <div class="bench-card">
+        <h4>Query 3 — Production Guardrails</h4>
+        <div class="bench-row"><span class="bench-label">Baseline quality</span><span class="bench-val yellow">4.1 / 10</span></div>
+        <div class="bench-row"><span class="bench-label">Multi-agent quality</span><span class="bench-val green">8.8 / 10</span></div>
+        <div class="bench-row"><span class="bench-label">Baseline latency</span><span class="bench-val blue">68.2s†</span></div>
+        <div class="bench-row"><span class="bench-label">Multi-agent latency</span><span class="bench-val blue">29.6s</span></div>
+        <div class="bench-row"><span class="bench-label">Cost ratio</span><span class="bench-val">~2.7×</span></div>
+        <div class="quality-bar"><div class="quality-fill" style="width:88%;background:linear-gradient(90deg,var(--accent),var(--accent2))"></div></div>
+      </div>
+    </div>
+    <div style="font-size:12px;color:var(--muted);padding:0 4px;">
+      * Query 1 multi-agent chậm do rate-limit retry — latency thật ~20-30s. &nbsp;† Baseline Q3 chậm do API throttle khi benchmark chạy liên tiếp.
+    </div>
+  </section>
+</div>
+
+<hr class="divider">
+
+<!-- ══════════════════ TABS ══════════════════ -->
+<div class="container">
+  <section class="tabs-section">
+    <div class="section-label" style="margin-top:32px">Kết quả 4 prompt giáo viên</div>
+    <div class="section-title">Output chi tiết từ gpt-4o-mini</div>
+    <div class="section-desc">Mỗi tab hiển thị: prompt gốc → output LLM → giải thích & nhận xét.</div>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showTab(0)">📐 Prompt 1 — Benchmark Design</button>
+      <button class="tab-btn" onclick="showTab(1)">🔬 Prompt 2 — Research Briefing</button>
+      <button class="tab-btn" onclick="showTab(2)">🧪 Prompt 3 — Experimental Design</button>
+      <button class="tab-btn" onclick="showTab(3)">📚 Prompt 4 — Survey Blueprint</button>
+    </div>
+
+    <!-- ══ TAB 1 ══ -->
+    <div class="tab-pane active" id="tab-0">
+      <div class="prompt-card">
+        <div class="prompt-header">
+          <div class="prompt-icon">📐</div>
+          <div>
+            <div class="prompt-title">ResearchAgentBench Benchmark Design</div>
+            <div class="prompt-subtitle">Thiết kế benchmark đánh giá AI hỗ trợ nghiên cứu sinh tốt nghiệp</div>
+          </div>
+          <div class="prompt-stats">
+            <div class="stat-chip">Tokens: <b>1 313</b></div>
+            <div class="stat-chip">Cost: <b>$0.000669</b></div>
+            <div class="stat-chip">Latency: <b>24.9s</b></div>
+          </div>
+        </div>
+
+        <div class="explain-box" style="margin-top:0; border-radius:0; border-left:none; border-right:none; border-top:none;">
+          <div class="explain-title">💡 Tại sao prompt này quan trọng?</div>
+          <p>Benchmark là nền tảng để so sánh hệ thống AI một cách khoa học. Prompt yêu cầu LLM không chỉ liệt kê task mà phải <strong>phân tích failure modes và cách hệ thống có thể gian lận</strong> — đây là yêu cầu nâng cao thường bị bỏ qua trong đánh giá thông thường.</p>
+        </div>
+
+        <div class="prompt-content">
+          <div class="prompt-input-label">📥 Prompt gốc (tóm tắt)</div>
+          <div class="prompt-input">Thiết kế benchmark <em>ResearchAgentBench</em> gồm: mục tiêu, giả định, 5 task categories, ≥12 ví dụ task, rubric chấm, baseline, failure modes & gaming risks, human eval protocol, limitations, recommendations v2. Constraint: realistic cho small lab, không cần annotation đắt tiền, phân biệt usefulness/correctness/research judgment, có adversarial component.</div>
+
+          <div class="output-label">📤 Output từ gpt-4o-mini</div>
+          <div class="output-body">
+            <h2>1. Benchmark Goal</h2>
+            <p>Đánh giá khả năng AI hỗ trợ thực sự cho nghiên cứu sinh hoàn thành công việc — không chỉ tạo văn bản trôi chảy mà phải <strong>hữu ích, chính xác và có nhận định nghiên cứu</strong>.</p>
+
+            <h2>2. Core Assumptions</h2>
+            <ul>
+              <li>Nghiên cứu sinh cần hỗ trợ ở nhiều giai đoạn: literature review, phân tích dữ liệu, viết lách.</li>
+              <li>AI có thể hỗ trợ có ý nghĩa nếu output phù hợp, chính xác, và đúng ngữ cảnh.</li>
+              <li>Benchmark tập trung vào task thực tế phản ánh thách thức thực của nghiên cứu sinh.</li>
+            </ul>
+
+            <h2>3. Task Categories (5 categories)</h2>
+            <ol>
+              <li><strong>Literature Review</strong> — Tìm, tóm tắt, tổng hợp tài liệu học thuật</li>
+              <li><strong>Data Analysis</strong> — Phân tích và diễn giải dataset</li>
+              <li><strong>Writing Assistance</strong> — Soạn, chỉnh sửa, định dạng bài báo</li>
+              <li><strong>Research Design</strong> — Đặt hypothesis, thiết kế experiment</li>
+              <li><strong>Presentation Preparation</strong> — Tạo slide, speaker notes</li>
+            </ol>
+
+            <h2>4. 12 Example Tasks</h2>
+            <h3>Literature Review</h3>
+            <ul>
+              <li>Task 1: Tóm tắt 5 bài báo mới nhất về một topic cho trước</li>
+              <li>Task 2: Tổng hợp findings từ 3 bài, highlight research gaps</li>
+            </ul>
+            <h3>Data Analysis</h3>
+            <ul>
+              <li>Task 3: Phân tích dataset, báo cáo key trends</li>
+              <li>Task 4: Tạo visualizations truyền đạt kết quả</li>
+            </ul>
+            <h3>Writing Assistance</h3>
+            <ul>
+              <li>Task 5: Soạn abstract dựa trên findings</li>
+              <li>Task 6: Edit draft để đảm bảo clarity và academic standards</li>
+            </ul>
+            <h3>Research Design</h3>
+            <ul>
+              <li>Task 7: Đề xuất research question và methodology</li>
+              <li>Task 8: Critique research proposal — điểm mạnh/yếu</li>
+            </ul>
+            <h3>Presentation</h3>
+            <ul>
+              <li>Task 9: Tạo slide tóm tắt research project</li>
+              <li>Task 10: Soạn speaker notes cho 10-phút presentation</li>
+            </ul>
+            <h3>⚔️ Adversarial Component</h3>
+            <ul>
+              <li>Task 11: Đưa fake paper plausible, AI phải nhận diện flaws/misleading claims</li>
+              <li>Task 12: Đưa research question kém cấu trúc, AI phải reformulate thành hypothesis</li>
+            </ul>
+
+            <h2>5. Scoring Rubric</h2>
+            <ul>
+              <li><strong>Usefulness</strong> (0–5): Độ liên quan và ứng dụng được</li>
+              <li><strong>Correctness</strong> (0–5): Chính xác thông tin</li>
+              <li><strong>Research Judgment</strong> (0–5): Khả năng tư duy phê phán và tổng hợp</li>
+              <li><strong>Overall Quality</strong> (0–5): Rõ ràng, mạch lạc, đúng chuẩn học thuật</li>
+              <li>Total: <strong>0–20 điểm/task</strong></li>
+            </ul>
+
+            <h2>6. Baselines</h2>
+            <ul>
+              <li><strong>Human Baseline</strong> — Nghiên cứu sinh có kinh nghiệm</li>
+              <li><strong>Existing AI</strong> — GPT-4, BERT trên cùng task</li>
+              <li><strong>Random Baseline</strong> — Output ngẫu nhiên/keyword matching</li>
+            </ul>
+
+            <h2>7. Failure Modes & Gaming Risks</h2>
+            <ul>
+              <li>Overfitting: AI học thuộc task cụ thể, không generalize</li>
+              <li>Superficial responses: Văn xuôi trôi chảy nhưng thiếu chiều sâu phân tích</li>
+              <li>Gaming: Đáp ứng rubric nhưng không có genuine insight</li>
+            </ul>
+
+            <h2>8. Human Evaluation Protocol</h2>
+            <p>Panel gồm nghiên cứu sinh và giảng viên. Mỗi task được đánh giá bởi ≥3 evaluators độc lập. Cung cấp qualitative feedback bên cạnh điểm số.</p>
+
+            <h2>9. Limitations</h2>
+            <ul>
+              <li>Không capture hết nuance của các ngành chuyên biệt</li>
+              <li>Đánh giá chủ quan từ human evaluators</li>
+              <li>Task chưa đại diện hết breadth thách thức của các disciplines</li>
+            </ul>
+
+            <h2>10. Recommendations for v2</h2>
+            <ul>
+              <li>Mở rộng sang interdisciplinary challenges</li>
+              <li>Thêm multi-step tasks phức tạp hơn</li>
+              <li>Adversarial component mạnh hơn (misinformation, poorly structured input)</li>
+              <li>Khám phá automated scoring để bổ sung human evaluation</li>
+            </ul>
+          </div>
+
+          <div class="annotation-list">
+            <div class="annotation good">
+              <div class="ann-label">✅ Điểm mạnh</div>
+              <p>Đáp ứng đủ 10 mục theo yêu cầu. Adversarial component (Task 11–12) đặc biệt hay — yêu cầu AI nhận diện fake paper là stress-test thực tế. Rubric phân biệt rõ usefulness/correctness/judgment đúng như constraint.</p>
+            </div>
+            <div class="annotation warn">
+              <div class="ann-label">⚠️ Có thể cải thiện</div>
+              <p>Task Data Analysis (Task 3–4) cần dataset cụ thể để benchmark. Baseline "Random" không thực tế — nên thay bằng prompt-only GPT không có tool. Gaming risks chưa đủ chi tiết về cách phát hiện và ngăn chặn.</p>
+            </div>
+            <div class="annotation">
+              <div class="ann-label">💡 Ghi chú thiết kế</div>
+              <p>Benchmark này dùng 1313 tokens và $0.00067 — rẻ hơn nhiều so với một lần human annotation. Đây là minh chứng cho "realistic for a small academic lab" constraint.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ TAB 2 ══ -->
+    <div class="tab-pane" id="tab-1">
+      <div class="prompt-card">
+        <div class="prompt-header">
+          <div class="prompt-icon">🔬</div>
+          <div>
+            <div class="prompt-title">Research Briefing — Multi-Agent LLMs</div>
+            <div class="prompt-subtitle">PhD-level briefing: Multi-agent có thực sự tốt hơn single-agent không?</div>
+          </div>
+          <div class="prompt-stats">
+            <div class="stat-chip">Tokens: <b>986</b></div>
+            <div class="stat-chip">Cost: <b>$0.000463</b></div>
+            <div class="stat-chip">Latency: <b>14.7s</b></div>
+          </div>
+        </div>
+
+        <div class="explain-box" style="margin-top:0; border-radius:0; border-left:none; border-right:none; border-top:none;">
+          <div class="explain-title">💡 Tại sao prompt này quan trọng?</div>
+          <p>Đây là câu hỏi trung tâm của Lab 20. Prompt yêu cầu LLM <strong>không chỉ tổng quan mà phải phân tích where evidence is weak</strong> và phân biệt "true multi-agent gains" vs gains từ nguyên nhân khác (nhiều token hơn, prompt engineering tốt hơn). Kết quả dùng được làm speaking notes cho meeting nhóm nghiên cứu.</p>
+        </div>
+
+        <div class="prompt-content">
+          <div class="prompt-input-label">📥 Prompt gốc (tóm tắt)</div>
+          <div class="prompt-input">Chuẩn bị research briefing: "Multi-agent LLM có thực sự outperform single-agent trên complex tasks?" Gồm: định nghĩa claim chính xác, các trường phái văn học, evidence for/against, methodological concerns, phân biệt true multi-agent gains vs confounds, 3 proposed experiments, final judgment có uncertainty.</div>
+
+          <div class="output-label">📤 Output từ gpt-4o-mini</div>
+          <div class="output-body">
+            <h2>Core Question</h2>
+            <p>Multi-agent LLM systems có thực sự outperform single-agent systems trên complex tasks không?</p>
+
+            <h2>Main Positions</h2>
+            <ul>
+              <li><strong>Proponents:</strong> Multi-agent tận dụng collaborative problem-solving và diverse perspectives → performance vượt trội trên complex tasks.</li>
+              <li><strong>Skeptics:</strong> Lợi thế quan sát được đến từ yếu tố không liên quan đến architecture: nhiều data, prompt engineering tốt hơn.</li>
+              <li><strong>Moderate:</strong> Cải thiện có, nhưng context-dependent — không áp dụng được rộng rãi.</li>
+            </ul>
+
+            <h2>Evidence For</h2>
+            <ul>
+              <li><strong>Collaborative Problem-Solving:</strong> Multi-agent tạo solutions sáng tạo hơn qua dialogue, đặc biệt tasks brainstorming/negotiation.</li>
+              <li><strong>Diversity of Thought:</strong> Diverse agent interactions → better decision-making trong ethical/nuanced understanding tasks.</li>
+              <li><strong>Task-Specific Performance:</strong> Một số studies thấy multi-agent outperform trong game-playing và multi-turn dialogue.</li>
+            </ul>
+
+            <h2>Evidence Against</h2>
+            <ul>
+              <li><strong>Confounding Variables:</strong> Gains có thể từ nhiều tokens hoặc prompt engineering tốt hơn — không phải architecture.</li>
+              <li><strong>Limited Generalizability:</strong> Performance gains không nhất quán qua các loại task khác nhau.</li>
+              <li><strong>Resource Allocation:</strong> Multi-agent cần nhiều tài nguyên hơn → metrics bị skew dưới một số điều kiện.</li>
+            </ul>
+
+            <h2>Methodological Concerns</h2>
+            <ul>
+              <li>Thiếu rigor controls: khó isolate effects của multi-agent collaboration khỏi các biến khác.</li>
+              <li>So sánh với suboptimal single-agent thay vì well-optimized single-agent.</li>
+              <li>Định nghĩa "complex tasks" không nhất quán → kết quả khó so sánh.</li>
+            </ul>
+
+            <h2>Proposed Experiments</h2>
+            <ol>
+              <li><strong>Controlled Task Comparison:</strong> Cả hai systems tackle cùng complex tasks, controlled conditions, đều được optimize tốt như nhau.</li>
+              <li><strong>Token &amp; Prompt Engineering Study:</strong> Systematically vary số tokens và complexity của prompts để assess impact độc lập với architecture.</li>
+              <li><strong>Longitudinal Performance Analysis:</strong> Train và test cả hai over time trên cùng tasks — observe performance evolution.</li>
+            </ol>
+
+            <h2>Final Judgment</h2>
+            <p>Câu hỏi <strong>vẫn chưa có câu trả lời dứt khoát</strong>. Evidence ủng hộ multi-agent tồn tại nhưng thường bị confound bởi token count và prompt engineering. Weaknesses trong methodological design hiện tại cần research nghiêm túc hơn để isolate effects thực sự. <em>Cả hai bên đều có arguments đáng xem xét.</em></p>
+          </div>
+
+          <div class="annotation-list">
+            <div class="annotation good">
+              <div class="ann-label">✅ Điểm mạnh</div>
+              <p>Final judgment đúng tone: thừa nhận uncertainty thay vì kết luận quá tự tin. Methodological concerns section rất thực tế — "so sánh với suboptimal single-agent" là lỗi phổ biến trong nhiều paper hiện tại.</p>
+            </div>
+            <div class="annotation warn">
+              <div class="ann-label">⚠️ Có thể cải thiện</div>
+              <p>Proposed Experiment 1 còn chung chung — thiếu chi tiết về loại task cụ thể, sample size, cách kiểm soát token budget. Nên cite ít nhất 1-2 paper cụ thể (AutoGen, AgentBench, ChatEval) để có credibility trong research context.</p>
+            </div>
+            <div class="annotation">
+              <div class="ann-label">🔗 Liên kết với Lab 20</div>
+              <p>Benchmark của Lab 20 (baseline 4.1/10 vs multi-agent 8.8/10) là minh chứng thực nghiệm nhỏ cho câu hỏi này. Tuy nhiên mock corpus → không generalizable; cần real search để kết luận mạnh hơn.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ TAB 3 ══ -->
+    <div class="tab-pane" id="tab-2">
+      <div class="prompt-card">
+        <div class="prompt-header">
+          <div class="prompt-icon">🧪</div>
+          <div>
+            <div class="prompt-title">Experimental Design — Single-Call vs. Multi-Agent</div>
+            <div class="prompt-subtitle">Lab proposal đầy đủ: thiết kế experiment + red-team critique + revised design</div>
+          </div>
+          <div class="prompt-stats">
+            <div class="stat-chip">Tokens: <b>1 120</b></div>
+            <div class="stat-chip">Cost: <b>$0.000565</b></div>
+            <div class="stat-chip">Latency: <b>15.1s</b></div>
+          </div>
+        </div>
+
+        <div class="explain-box" style="margin-top:0; border-radius:0; border-left:none; border-right:none; border-top:none;">
+          <div class="explain-title">💡 Tại sao prompt này quan trọng?</div>
+          <p>Prompt yêu cầu "red-team section" — nghĩa là tự phê phán experiment của mình rồi sửa lại. Đây là kỹ năng quan trọng trong nghiên cứu: <strong>tự nhìn thấy điểm yếu trước khi reviewer chỉ ra</strong>. Đặc biệt quan trọng: phải address <em>token budget fairness</em> — nếu multi-agent dùng 3× tokens thì không fair.</p>
+        </div>
+
+        <div class="prompt-content">
+          <div class="prompt-input-label">📥 Prompt gốc (tóm tắt)</div>
+          <div class="prompt-input">Thiết kế experiment so sánh single-call vs multi-agent LLM: research question, hypotheses, task design, datasets, fair comparison, metrics, human evaluation, statistical considerations, expected results, red-team critique, revised design. Constraints: phải address token budget fairness, tách gains from decomposition vs inference time.</div>
+
+          <div class="output-label">📤 Output từ gpt-4o-mini</div>
+          <div class="output-body">
+            <h2>1. Research Question</h2>
+            <p>Single-call và multi-agent LLM systems so sánh như thế nào về performance, efficiency, và user satisfaction khi tackle complex research tasks?</p>
+
+            <h2>2. Hypotheses</h2>
+            <ul>
+              <li><strong>H1:</strong> Multi-agent outperform single-call về task completion accuracy.</li>
+              <li><strong>H2:</strong> Single-call hiệu quả hơn (latency) cho simpler tasks.</li>
+              <li><strong>H3:</strong> User satisfaction cao hơn với multi-agent do perceived thoroughness.</li>
+            </ul>
+
+            <h2>3. Task Design</h2>
+            <p>Complex research tasks yêu cầu critical thinking, information synthesis, problem-solving: literature review, experimental protocol design, research proposal generation. Mỗi task yêu cầu tối thiểu 500 tokens để đảm bảo cả hai systems operate trong similar budget.</p>
+
+            <h2>4. Datasets / Source Materials</h2>
+            <ul>
+              <li>PubMed — literature reviews</li>
+              <li>OpenAI API — generating experimental protocols</li>
+              <li>Academic journals — research proposal structure</li>
+            </ul>
+
+            <h2>5. Fair Comparison Setup</h2>
+            <ul>
+              <li>Cùng initial prompt và context cho cả hai systems</li>
+              <li>Token budget cap tại <strong>1000 tokens/task</strong> cho cả hai</li>
+              <li>Multi-agent: tối đa 3 agents × 300 tokens = 900 tokens (trong budget)</li>
+            </ul>
+
+            <h2>6. Metrics</h2>
+            <ul>
+              <li><strong>Accuracy</strong> — Correctness theo predefined rubric</li>
+              <li><strong>Efficiency</strong> — Wall-clock time</li>
+              <li><strong>Token Utilization</strong> — Tokens used / task requirements</li>
+              <li><strong>User Satisfaction</strong> — Post-task survey</li>
+            </ul>
+
+            <h2>7. Human Evaluation</h2>
+            <p>Evaluators blind đến system. Đánh giá: clarity, coherence, depth of analysis, relevance, overall satisfaction.</p>
+
+            <h2>8. Statistical Considerations</h2>
+            <p>ANOVA cho performance metrics, t-tests cho user satisfaction. Balanced design, equal task distribution, control confounding variables.</p>
+
+            <h2>9. Expected Results</h2>
+            <p>Multi-agent sẽ higher accuracy nhờ task decomposition. Alternative: gains đến từ inference time nhiều hơn, không phải architecture.</p>
+
+            <h2>10. ⚠️ Red-Team Critique</h2>
+            <ul>
+              <li><strong>Token Budget Manipulation:</strong> Multi-agent có thể exceed budget qua collaborative responses → unfair advantage.</li>
+              <li><strong>Task Complexity Bias:</strong> Task có thể vô tình favor multi-agent (e.g., yêu cầu multiple perspectives).</li>
+              <li><strong>Inference Time Advantage:</strong> Multi-agent chậm hơn có thể bị diễn giải sai là quality advantage.</li>
+            </ul>
+
+            <h2>11. ✅ Revised Design</h2>
+            <ul>
+              <li>Strict per-agent token limits — tổng không vượt 1000 tokens</li>
+              <li>Random task assignment để balance complexity</li>
+              <li>Controlled timing mechanism — account for time advantage trong analysis</li>
+              <li>Secondary analysis: control for response time khi evaluate performance</li>
+            </ul>
+          </div>
+
+          <div class="annotation-list">
+            <div class="annotation good">
+              <div class="ann-label">✅ Điểm mạnh</div>
+              <p>Token budget fairness được address tốt (1000 tokens/task cho cả hai, multi-agent bị cap 300 tokens/agent). Red-team critique concrete và actionable, không superficial. Blind evaluation protocol loại bỏ confirmation bias.</p>
+            </div>
+            <div class="annotation warn">
+              <div class="ann-label">⚠️ Có thể cải thiện</div>
+              <p>Dataset PubMed + OpenAI API không đủ reproducible — cần fixed dataset (e.g., BEIR, FreshQA). Thiếu thảo luận về inter-rater reliability (Cohen's kappa). Revised design chưa đề cập cách tách decomposition gains vs inference time gains — đây là constraint chính của prompt.</p>
+            </div>
+            <div class="annotation">
+              <div class="ann-label">🔗 Liên kết với Lab 20</div>
+              <p>Lab 20 đã implement chính xác phần "Fair Comparison Setup": cùng query, đo wall-clock, record tokens. Kết quả thực: multi-agent dùng 3-5× tokens nhưng đạt 8.0-8.8/10 vs baseline 4.0-4.1/10.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ TAB 4 ══ -->
+    <div class="tab-pane" id="tab-3">
+      <div class="prompt-card">
+        <div class="prompt-header">
+          <div class="prompt-icon">📚</div>
+          <div>
+            <div class="prompt-title">Survey Paper Blueprint</div>
+            <div class="prompt-subtitle">"AI Agents for Research Assistance: Capabilities, Evaluation, and Open Problems"</div>
+          </div>
+          <div class="prompt-stats">
+            <div class="stat-chip">Tokens: <b>1 409</b></div>
+            <div class="stat-chip">Cost: <b>$0.000738</b></div>
+            <div class="stat-chip">Latency: <b>21.5s</b></div>
+          </div>
+        </div>
+
+        <div class="explain-box" style="margin-top:0; border-radius:0; border-left:none; border-right:none; border-top:none;">
+          <div class="explain-title">💡 Tại sao prompt này quan trọng?</div>
+          <p>Survey paper blueprint là deliverable khó nhất — phải tạo ra cấu trúc mà <strong>một nghiên cứu sinh có thể dùng thực sự để viết paper</strong>. Không phải topic list. Mỗi section cần: purpose, key themes, questions, pitfalls, và open problems cụ thể. Đây kiểm tra xem LLM có thực sự "nghiên cứu" hay chỉ liệt kê.</p>
+        </div>
+
+        <div class="prompt-content">
+          <div class="prompt-input-label">📥 Prompt gốc (tóm tắt)</div>
+          <div class="prompt-input">Tạo survey blueprint cho paper "AI Agents for Research Assistance: Capabilities, Evaluation, and Open Problems". Gồm: title, abstract draft, 6-8 sections outline; mỗi section có purpose, key themes, questions, pitfalls, open problems. Final sections: evaluation gaps và what a strong future benchmark should measure. Constraints: không overlap, feel like real survey (not blog), open problems cụ thể.</div>
+
+          <div class="output-label">📤 Output từ gpt-4o-mini</div>
+          <div class="output-body">
+            <h2>Draft Abstract</h2>
+            <p>Sự tiến bộ nhanh của AI đã tạo ra các AI agents hỗ trợ nghiên cứu. Survey này cung cấp tổng quan toàn diện về capabilities của AI agents trong research assistance, examine functionalities, effectiveness, và limitations. Chúng tôi categorize agents theo roles trong research process, evaluate performance qua established metrics, và identify gaps trong evaluation methodologies. Đồng thời discuss open problems: trust, interpretability, ethical considerations. Bằng cách highlight challenges và propose future benchmark framework, paper này hướng dẫn researchers trong development và deployment của AI agents cho research assistance.</p>
+
+            <h2>8-Section Outline</h2>
+
+            <h3>1. Introduction</h3>
+            <ul>
+              <li><strong>Purpose:</strong> Giới thiệu AI agents trong research assistance — significance và relevance</li>
+              <li><strong>Key Themes:</strong> Định nghĩa AI agents, evolution của research assistance, motivation</li>
+              <li><strong>Questions:</strong> AI agents là gì? Tại sao quan trọng? Gaps trong current literature là gì?</li>
+              <li><strong>Pitfalls:</strong> Overgeneralize AI capabilities, bỏ qua diversity của research domains</li>
+              <li><strong>Open Problems:</strong> Thiếu consensus về definitions và classifications</li>
+            </ul>
+
+            <h3>2. Capabilities of AI Agents</h3>
+            <ul>
+              <li><strong>Purpose:</strong> Categorize và mô tả các capabilities của AI agents</li>
+              <li><strong>Key Themes:</strong> Information retrieval, data analysis, literature review, experimental design, writing</li>
+              <li><strong>Questions:</strong> Tasks cụ thể nào AI có thể làm? Capabilities vary across domains như thế nào?</li>
+              <li><strong>Pitfalls:</strong> Thiếu concrete examples/case studies</li>
+              <li><strong>Open Problems:</strong> Integration of multi-modal capabilities trong single agent</li>
+            </ul>
+
+            <h3>3. Evaluation Metrics for AI Agents</h3>
+            <ul>
+              <li><strong>Purpose:</strong> Review existing metrics đánh giá performance</li>
+              <li><strong>Key Themes:</strong> Accuracy, efficiency, user satisfaction, contextual relevance</li>
+              <li><strong>Questions:</strong> Metrics nào đang dùng? Effective đến đâu?</li>
+              <li><strong>Pitfalls:</strong> Over-reliance on quantitative metrics, bỏ qua qualitative aspects</li>
+              <li><strong>Open Problems:</strong> Comprehensive frameworks với user-centric metrics</li>
+            </ul>
+
+            <h3>4. Case Studies</h3>
+            <ul>
+              <li><strong>Purpose:</strong> Detailed case studies về AI agents deployed thực tế</li>
+              <li><strong>Key Themes:</strong> Real-world applications, user feedback, lessons learned</li>
+              <li><strong>Pitfalls:</strong> Chỉ focus successful cases, bỏ qua failures</li>
+              <li><strong>Open Problems:</strong> Long-term impacts on research productivity</li>
+            </ul>
+
+            <h3>5. Challenges &amp; Limitations</h3>
+            <ul>
+              <li><strong>Key Themes:</strong> Trustworthiness, interpretability, ethical concerns, user resistance</li>
+              <li><strong>Open Problems:</strong> Strategies improving user trust và understanding</li>
+            </ul>
+
+            <h3>6. Open Problems</h3>
+            <ul>
+              <li><strong>Key Themes:</strong> Interdisciplinary collaboration, adaptability, ethical AI usage</li>
+              <li><strong>Open Problems:</strong> Adaptive AI agents học từ user interactions và feedback</li>
+            </ul>
+
+            <h3>7. Evaluation Gaps in Current Research</h3>
+            <ul>
+              <li><strong>Key Themes:</strong> Lack of standardized benchmarks, insufficient longitudinal studies, limited user-centric evaluations</li>
+              <li><strong>Open Problems:</strong> Collaborative standardized evaluation protocols across domains</li>
+            </ul>
+
+            <h3>8. Future Benchmarking Framework</h3>
+            <ul>
+              <li><strong>Key Themes:</strong> Comprehensive metrics, user engagement, adaptability, ethical considerations</li>
+              <li><strong>Questions:</strong> Strong benchmark nên đo gì? Implement như thế nào qua research domains?</li>
+              <li><strong>Pitfalls:</strong> Benchmarks quá phức tạp, khó implement</li>
+              <li><strong>Open Problems:</strong> Collaborative benchmarks với diverse user needs</li>
+            </ul>
+          </div>
+
+          <div class="annotation-list">
+            <div class="annotation good">
+              <div class="ann-label">✅ Điểm mạnh</div>
+              <p>Đúng 8 sections, không overlap nhiều. Mỗi section có đủ 5 sub-components theo yêu cầu. Abstract draft rõ ràng và scholarly. Section 7 (Evaluation Gaps) và 8 (Future Benchmark) tách biệt tốt — đây là điểm nhiều survey blueprint thường merge lại.</p>
+            </div>
+            <div class="annotation warn">
+              <div class="ann-label">⚠️ Có thể cải thiện</div>
+              <p>Open Problems chưa đủ "specific" như yêu cầu — "adaptive AI agents" và "collaborative benchmarks" còn chung. Thiếu citation hooks (nơi nào cần cite paper gì). Case Studies section (4) nên có sub-sections theo domain (biomedical, CS, social science).</p>
+            </div>
+            <div class="annotation">
+              <div class="ann-label">📊 Tổng kết</div>
+              <p>Trong 4 prompts, đây là prompt tốn nhiều tokens nhất (1409) và latency cao nhất (21.5s) — hợp lý vì độ phức tạp cấu trúc cao nhất. $0.000738 cho một survey blueprint đầy đủ là cực kỳ tiết kiệm.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<hr class="divider">
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer>
+  <div class="container">
+    <p>
+      <b>Lab 20 — Multi-Agent Research System</b> ·
+      Track 3 · Buổi 20 · 2026-06-24 ·
+      <b>Lương Quốc Dũng</b> (2A202600601)
+    </p>
+    <p style="margin-top:6px;">
+      Backend: <b>OpenAI gpt-4o-mini</b> · Framework: <b>LangGraph</b> · 25 tests passed · Total cost: <b>$0.00244</b>
+    </p>
+  </div>
+</footer>
+
+<script>
+function showTab(idx) {
+  document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
+  document.querySelectorAll('.tab-pane').forEach((p, i) => p.classList.toggle('active', i === idx));
+}
+// Animate quality bars on load
+window.addEventListener('load', () => {
+  document.querySelectorAll('.quality-fill').forEach(el => {
+    const w = el.style.width; el.style.width = '0';
+    setTimeout(() => el.style.width = w, 200);
+  });
+});
+</script>
+</body>
+</html>

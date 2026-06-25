@@ -1,0 +1,16 @@
+prompt,base,finetuned
+Giải thích khái niệm machine learning cho người mới bắt đầu.,"Machine learning là một kỹ thuật trong trí tuệ nhân tạo nhằm giúp máy tự động học và cải thiện dự đoán dựa trên dữ liệu. Nó giúp máy có khả năng tự học và tự sửa lỗi, từ đó giúp giải quyết các vấn đề khó khăn mà không cần phải viết chương trình hoàn toàn mới.","Machine learning là một phương pháp trong học máy, được sử dụng để học từ dữ liệu và tự cải thiện qua thời gian. Nó là một phần của trí tuệ nhân tạo và được sử dụng để phân tích, dự đoán và tự học từ dữ liệu. Trong machine learning, máy không chỉ dựa vào các chương trình được viết bởi người tạo mà c"
+Viết đoạn code Python tính số Fibonacci thứ n.,"def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)","Bài toán này có thể được giải quyết bằng cách sử dụng hàm đệ quy hoặc vòng lặp. Đây là một ví dụ về hàm đệ quy: ```python def fibonacci(n): if n <= 0: return None if n == 1 or n == 2: return 1 else: return fibonacci(n-1) + fibonacci(n-2) print(fibonacci(10)) ``` Hoặc nếu bạn muốn sử dụng vòng lặp, đ"
+Liệt kê 5 nguyên tắc thiết kế UI/UX.,"1. Tối giản: Phân tích nhu cầu và mục tiêu của người dùng, xác định các yếu tố quan trọng nhất để tối giản giao diện và cung cấp thông tin cần thiết.
+2. Hiệu ứng: Sử dụng hiệu ứng để tạo cảm giác 3D, tạo sự tương tác với người dùng và tăng độ quan tâm của họ với sản phẩm hoặc dịch vụ.
+棒棒棒棒棒棒棒棒棒棒棒棒棒棒",1. Ngôn ngữ: UI/UX thiết kế phải sử dụng ngôn ngữ dễ hiểu và dễ nhớ cho người dùng. 2. Tính năng: UI/UX thiết kế phải cung cấp các tính năng hữu ích và dễ sử dụng cho người dùng. 3. Thiết kế: UI/UX thiết kế phải có tính thẩm mỹ và gây ấn tượng. 4. Chuyển đổi: UI/UX thiết kế phải tạo ra chuyển đổi dễ
+Tóm tắt sự khác biệt giữa LoRA và QLoRA.,"LoRA và QLoRA là hai công nghệ khác nhau, tuy nhiên cả hai đều là phương pháp cải thiện hiệu quả của mô hình NLP. LoRA là viết tắt của Layer-wise Adaptive Regularization Optimization, nó là một phương pháp regularization để cải thiện độ chính xác của mô hình NLP. LoRA được sử dụng để giảm thiểu ảnh ",LoRA (Low-Rank Approximation) và QLoRA (Quantized LoRA) là hai phương pháp cải tiến được phát triển để cải thiện hiệu quả và hiệu năng của các mô hình Transformer. LoRA sử dụng các tham số bổ sung được gọi là tham số LoRA để cài đặt một lớp nâng cấp cho các tham số của mô hình Transformer. LoRA sử d
+"Phân biệt prompt engineering, RAG, và fine-tuning.","Prompt engineering, RAG, và fine-tuning là các kỹ thuật khác nhau trong tự động học (machine learning) và tự động học sâu (deep learning). 
+
+Prompt engineering là một kỹ thuật để cải thiện hiệu suất của mô hình tự động học bằng cách tạo ra các câu hỏi (prompt) cho mô hình để giải quyết. Prompt engin","Prompt engineering, RAG và fine-tuning là ba kỹ thuật khác nhau được sử dụng để cải thiện tính chính xác của mô hình AI. Prompt engineering là kỹ thuật sử dụng câu lệnh để cải thiện hiệu quả của mô hình trong khi giải quyết một vấn đề cụ thể. RAG (Retrieval Augmented Generation) là kỹ thuật sử dụng "

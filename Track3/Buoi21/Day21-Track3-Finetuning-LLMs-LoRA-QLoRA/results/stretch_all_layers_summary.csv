@@ -1,0 +1,3 @@
+config,rank,alpha,target_modules,trainable_params,pct_of_total,train_time_min,peak_vram_gb,final_train_loss,eval_loss,eval_perplexity
+baseline_qv,16,32,"q_proj,v_proj",3686400,0.118,3.954242,6.617750,1.394,1.516083,4.554351
+all_layers,16,32,"q_proj,k_proj,v_proj,o_proj,gate_proj,up_proj,down_proj",29933568,0.961,4.6000,13.2897,1.009,1.4948,4.4586

@@ -1,0 +1,20 @@
+=== PHASE 1: run completed under SqliteSaver ===
+thread_id      : thread-persist-demo
+final route    : error
+final answer   : Hi there! It looks like there was a transient tool failure during your request, ...
+attempts       : 2
+
+=== checkpoint history: 12 snapshots (newest first) ===
+  step= 10  next=('END',)
+  step=  9  next=('finalize',)
+  step=  8  next=('answer',)
+  step=  7  next=('evaluate',)
+  step=  6  next=('tool',)
+  step=  5  next=('retry',)
+
+=== PHASE 2: process 'crash' simulated (graph dropped, DB closed) ===
+=== PHASE 3: reopened SqliteSaver, recovered state by thread_id ===
+recovered route : error
+recovered answer: Hi there! It looks like there was a transient tool failure during your request, ...
+
+RESUME_SUCCESS  : True

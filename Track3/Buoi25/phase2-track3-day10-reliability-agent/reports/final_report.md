@@ -157,18 +157,18 @@ tests/test_redis_cache.py::test_false_hit_different_years PASSED
 ### Redis CLI output
 
 ```bash
-# docker compose exec redis redis-cli KEYS "rl:cache:*"
-# Example output after chaos run with Redis backend:
-1) "rl:cache:a3f1b9c2d4e8"
-2) "rl:cache:77ab23cd0f12"
-3) "rl:cache:e59d8f104a3b"
-...
-# Each key is a Hash with fields "query" and "response"
-# docker compose exec redis redis-cli HGETALL rl:cache:a3f1b9c2d4e8
+# python -c "... c.set(...) ... client.scan_iter('rl:cache:*') ..."
+KEYS rl:cache:*
+  rl:cache:719b1c7fe329  →  "Explain API rate limiting"
+  rl:cache:d5d6ca803338  →  "What is a circuit breaker pattern?"
+  rl:cache:e27f05b60fe8  →  "Summarize the refund policy"
+
+# Each key is a Redis Hash with fields "query" and "response"
+# redis-cli HGETALL rl:cache:e27f05b60fe8
 # 1) "query"
-# 2) "Summarize the refund policy for a student who missed the deadline."
+# 2) "Summarize the refund policy"
 # 3) "response"
-# 4) "[primary] reliable answer for: Summarize the refund policy for a stude"
+# 4) "Refund policy: 30 days, no questions asked."
 ```
 
 ### In-memory vs Redis latency comparison

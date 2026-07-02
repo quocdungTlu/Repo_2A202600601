@@ -62,9 +62,18 @@ Trong UI:
 2. Tab **Tools** → **List Tools** → click `search` cho thấy schema đầy đủ.
 3. Tab **Resources** → đọc `schema://database`; vào **Resource Templates**
    → `schema://table/{table_name}` → nhập `students` → Read.
-4. Quay lại Tools → `search`: `table=students`,
-   `filters` = `{"cohort": "A1"}`, `order_by=score`, `descending=true` → Run
-   → thấy En Vo 8.9, Alice 8.5.
+4. Quay lại Tools → `search`. **Mỗi tham số điền vào Ô RIÊNG của nó**
+   (đừng dán tất cả vào một ô — ô filters chỉ nhận JSON thuần):
+
+   | Ô | Điền |
+   |---|---|
+   | table | `students` |
+   | filters | `{"cohort": "A1"}` |
+   | order_by | `score` |
+   | descending | chọn `true` |
+   | columns / limit / offset | để mặc định |
+
+   → **Run Tool** → thấy En Vo 8.9, Alice 8.5.
 5. Chạy lại `search` với `table=missing_table` → error đỏ:
    "Unknown table 'missing_table'. Available tables: courses, enrollments, students."
 

@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+venv/
+.env
+**/.venv
+.adk/
+*.db
+**/.DS_Store
+.git_disabled/

@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "sqlite-lab": {
+      "type": "stdio",
+      "command": "D:/AI_Thuc_Chien/Track3/Buoi26/Day26-Track3-MCP-tool-integration/implementation/.venv/Scripts/python.exe",
+      "args": [
+        "D:/AI_Thuc_Chien/Track3/Buoi26/Day26-Track3-MCP-tool-integration/implementation/mcp_server.py"
+      ],
+      "env": {}
+    }
+  }
+}

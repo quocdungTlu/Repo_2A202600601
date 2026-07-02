@@ -1,0 +1,25 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"table\":\"students\",\"metric\":\"avg\",\"column\":\"score\",\"group_by\":\"cohort\",\"rows\":[{\"group\":\"A1\",\"value\":8.200000000000001},{\"group\":\"A2\",\"value\":7.8}]}"
+    }
+  ],
+  "structuredContent": {
+    "table": "students",
+    "metric": "avg",
+    "column": "score",
+    "group_by": "cohort",
+    "rows": [
+      {
+        "group": "A1",
+        "value": 8.200000000000001
+      },
+      {
+        "group": "A2",
+        "value": 7.8
+      }
+    ]
+  },
+  "isError": false
+}

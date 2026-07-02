@@ -1,0 +1,29 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"table\":\"students\",\"rows\":[{\"id\":5,\"name\":\"En Vo\",\"cohort\":\"A1\",\"score\":8.9},{\"id\":1,\"name\":\"Alice Nguyen\",\"cohort\":\"A1\",\"score\":8.5}],\"total\":3,\"limit\":2,\"offset\":0}"
+    }
+  ],
+  "structuredContent": {
+    "table": "students",
+    "rows": [
+      {
+        "id": 5,
+        "name": "En Vo",
+        "cohort": "A1",
+        "score": 8.9
+      },
+      {
+        "id": 1,
+        "name": "Alice Nguyen",
+        "cohort": "A1",
+        "score": 8.5
+      }
+    ],
+    "total": 3,
+    "limit": 2,
+    "offset": 0
+  },
+  "isError": false
+}

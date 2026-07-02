@@ -1,0 +1,15 @@
+Perfect! Here are the results from the sqlite-lab database:
+
+## Cohort A1 Students (Names & Scores)
+| Name | Score |
+|------|-------|
+| Alice Nguyen | 8.5 |
+| Binh Tran | 7.2 |
+| En Vo | 8.9 |
+
+**Total A1 students:** 3
+
+## Cohort A2 Average Score
+**Average Score: 7.8**
+
+The search found 3 students in cohort A1, and the aggregate calculation shows that cohort A2 has an average score of 7.8 across all their students.

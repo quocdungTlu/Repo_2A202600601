@@ -1,0 +1,15 @@
+﻿{
+  "resourceTemplates": [
+    {
+      "name": "table_schema",
+      "uriTemplate": "schema://table/{table_name}",
+      "description": "Schema of a single table: column names, types, and constraints.",
+      "mimeType": "application/json",
+      "_meta": {
+        "fastmcp": {
+          "tags": []
+        }
+      }
+    }
+  ]
+}

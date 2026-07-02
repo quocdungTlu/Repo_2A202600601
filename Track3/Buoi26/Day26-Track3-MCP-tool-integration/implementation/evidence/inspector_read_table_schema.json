@@ -1,0 +1,9 @@
+﻿{
+  "contents": [
+    {
+      "uri": "schema://table/students",
+      "mimeType": "text/plain",
+      "text": "{\n  \"table\": \"students\",\n  \"columns\": [\n    {\n      \"name\": \"id\",\n      \"type\": \"INTEGER\",\n      \"not_null\": false,\n      \"default\": null,\n      \"primary_key\": true\n    },\n    {\n      \"name\": \"name\",\n      \"type\": \"TEXT\",\n      \"not_null\": true,\n      \"default\": null,\n      \"primary_key\": false\n    },\n    {\n      \"name\": \"cohort\",\n      \"type\": \"TEXT\",\n      \"not_null\": true,\n      \"default\": null,\n      \"primary_key\": false\n    },\n    {\n      \"name\": \"score\",\n      \"type\": \"REAL\",\n      \"not_null\": false,\n      \"default\": null,\n      \"primary_key\": false\n    }\n  ]\n}"
+    }
+  ]
+}

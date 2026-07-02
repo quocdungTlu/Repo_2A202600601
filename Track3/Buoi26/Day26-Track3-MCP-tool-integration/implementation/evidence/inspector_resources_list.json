@@ -1,0 +1,15 @@
+﻿{
+  "resources": [
+    {
+      "name": "database_schema",
+      "uri": "schema://database",
+      "description": "Full database schema: every table with its column definitions.",
+      "mimeType": "application/json",
+      "_meta": {
+        "fastmcp": {
+          "tags": []
+        }
+      }
+    }
+  ]
+}

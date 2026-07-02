@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Unknown table 'missing_table'. Available tables: courses, enrollments, students."
+    }
+  ],
+  "isError": true
+}

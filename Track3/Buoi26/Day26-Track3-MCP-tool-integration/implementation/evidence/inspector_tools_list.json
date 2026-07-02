@@ -1,0 +1,184 @@
+﻿{
+  "tools": [
+    {
+      "name": "search",
+      "description": "Search rows in a table.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "table": {
+            "type": "string",
+            "description": "table name (see the schema://database resource)."
+          },
+          "filters": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "{column: value} for equality, or\n{column: {\"op\": \"=|!=|<|<=|>|>=|LIKE|IN\", \"value\": ...}}.\nIN takes a list as value. Conditions are AND-ed."
+          },
+          "columns": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "columns to return; omit for all columns."
+          },
+          "limit": {
+            "default": 20,
+            "type": "integer",
+            "description": "max rows to return (1-100, default 20)."
+          },
+          "offset": {
+            "default": 0,
+            "type": "integer",
+            "description": "rows to skip, for pagination."
+          },
+          "order_by": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "column to sort by; descending=true reverses the order."
+          },
+          "descending": {
+            "default": false,
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "table"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "_meta": {
+        "fastmcp": {
+          "tags": []
+        }
+      }
+    },
+    {
+      "name": "insert",
+      "description": "Insert one row into a table.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "table": {
+            "type": "string",
+            "description": "table name (see the schema://database resource)."
+          },
+          "values": {
+            "additionalProperties": true,
+            "type": "object",
+            "description": "non-empty {column: value} map. Values must be strings,\nnumbers, or null. Auto-increment ids are generated."
+          }
+        },
+        "required": [
+          "table",
+          "values"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "_meta": {
+        "fastmcp": {
+          "tags": []
+        }
+      }
+    },
+    {
+      "name": "aggregate",
+      "description": "Compute an aggregate over a table.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "table": {
+            "type": "string",
+            "description": "table name (see the schema://database resource)."
+          },
+          "metric": {
+            "type": "string",
+            "description": "one of count, avg, sum, min, max."
+          },
+          "column": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "column to aggregate; required except for count."
+          },
+          "filters": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "same format as the search tool."
+          },
+          "group_by": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "optional column to group results by."
+          }
+        },
+        "required": [
+          "table",
+          "metric"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "_meta": {
+        "fastmcp": {
+          "tags": []
+        }
+      }
+    }
+  ]
+}

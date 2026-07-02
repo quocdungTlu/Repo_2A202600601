@@ -145,6 +145,12 @@ command = "<abs-path-to-venv-python>"
 args = ["<abs-path-to-mcp_server.py>"]
 ```
 
+## Demo video
+
+`../demo_lab26_track3.mp4` (~2 minutes): init_db → verify 16/16 →
+Inspector UI (tools, resources, valid + rejected call) → Claude Code
+calling the tools → bonus HTTP auth checks.
+
 ## Demo script (~2 minutes)
 
 1. `python init_db.py` — reproducible database. (10s)

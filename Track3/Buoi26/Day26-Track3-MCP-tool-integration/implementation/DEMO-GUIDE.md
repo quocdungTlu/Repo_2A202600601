@@ -46,7 +46,18 @@ Terminal 2:
 ```powershell
 .\start_inspector.ps1
 ```
-Browser tự mở `http://localhost:6274/...`. Trong UI:
+Browser tự mở `http://localhost:6274/...`. **Lưu ý quan trọng:**
+
+- Tab **Tools/Resources chỉ xuất hiện SAU khi bấm Connect** và trạng thái
+  chuyển sang chấm xanh `Connected` (sidebar trái hiện "SQLite Lab MCP
+  Server"). Trước đó màn hình chỉ có chữ "Connect to an MCP server to
+  start inspecting".
+- Nếu bấm Connect mà vẫn `Disconnected`: ô Arguments phải dùng đường dẫn
+  **forward slash** (`D:/...`), vì Inspector nuốt dấu `\` như ký tự escape
+  → python không tìm thấy file. Script `start_inspector.ps1` đã tự xử lý
+  việc này, đừng gõ tay đường dẫn kiểu `D:\...` vào form.
+
+Trong UI:
 1. Bấm **Connect** (form đã điền sẵn command).
 2. Tab **Tools** → **List Tools** → click `search` cho thấy schema đầy đủ.
 3. Tab **Resources** → đọc `schema://database`; vào **Resource Templates**
